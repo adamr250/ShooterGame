@@ -8,9 +8,14 @@ public class Enemy : MonoBehaviour
 	public float speed = 2.0f;
 	private int direction = -1;
 	private Transform enemyShootTransform;
+	private float shootTimer = 0.0f;
 	public bool isShooting;
-	private float nextActionTime = 0.0f;
- 	public float period = 2.0f;
+ 	public float shootCooldown = 2.0f;
+	public int enemyHealth = 5;
+
+	SpriteRenderer enemySpriteRenderer;
+	//							red,			orange,					yellow,			green,		blue
+	Color[] enemyColor = { Color.red, new Color(1.0f, 0.5f, 0.0f), Color.yellow, Color.green, Color.blue };
 
 	public event EventHandler<OnShootEventArgs> OnShoot;
 	public class OnShootEventArgs : EventArgs {
@@ -20,6 +25,8 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+		enemySpriteRenderer.color = enemyColor[enemyHealth - 1];
+		enemySpriteRenderer = GetComponent<SpriteRenderer>();
 		enemyShootTransform = transform.Find("EnemyGun");
     }
 
@@ -27,13 +34,31 @@ public class Enemy : MonoBehaviour
     void Update()
     {
 		LeftRightMovement();
-		if (Time.time > nextActionTime ) {
-			nextActionTime += period;
+		if (Time.time > shootTimer ) {
+			shootTimer += shootCooldown;
 			if(isShooting)
 				Shooting();
 		}
-		
-    }
+
+		if (enemyHealth < 1)
+		{
+			Destroy(gameObject);
+			Debug.Log("Enemy Dead");
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Bullet")
+		{
+			if (enemyHealth > 0)
+			{
+				enemySpriteRenderer.color = enemyColor[enemyHealth-1];
+				enemyHealth--;
+			}
+		}
+	}
+
 
 	void LeftRightMovement()
 	{

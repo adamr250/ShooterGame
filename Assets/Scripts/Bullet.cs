@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy")
         {   
             //Debug.Log("transform.rotation angles x: " + eulerAngles.x + " y: " + eulerAngles.y + " z: " + eulerAngles.z); 
-            Debug.Log("Hit wall");
+            //Debug.Log("Hit wall");
             Destroy(gameObject);
         }
     }

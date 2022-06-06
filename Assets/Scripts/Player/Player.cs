@@ -8,9 +8,16 @@ public class Player : MonoBehaviour
 	private float startX;
 	private float startY;
 	private float movementVertical, movementHorizontal;
-	public float speed = 10.0f;
+    private float shootTimer;
+	
+    public float speed = 10.0f;
+    public float shootCooldown = 2.0f;
+    public bool isShooting;
+    public bool invincible;
+    public bool isCooldown;
+
     Transform playerShootTransform;
-	public bool isShooting;
+    Rigidbody2D body;
 
     public event EventHandler<OnShootEventArgs> OnShoot;
 	public class OnShootEventArgs : EventArgs {
@@ -18,8 +25,6 @@ public class Player : MonoBehaviour
 		public int direction = 1; //up
 	}
 
-
-Rigidbody2D body;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -34,8 +39,14 @@ Rigidbody2D body;
 	   
 	    movementHorizontal = Input.GetAxis("Horizontal");// * speed * Time.deltaTime;
 
-        if(isShooting)
-            Shooting();
+        if (isShooting && Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Time.time > shootTimer || !isCooldown)
+            {
+                Shooting();
+                shootTimer = Time.time + shootCooldown; 
+            }
+        }
     }
 	void FixedUpdate() {
         playerMovement();
@@ -57,23 +68,24 @@ Rigidbody2D body;
 			//GameObject.FindGameObjectWithTag("Your_Tag_Here").transform.position;
 			//transform.position = new Vector2 (transform.position, transform.position.y);
         }
-		
-		if (collision.gameObject.tag == "Enemy")
+
+        if (!invincible)
         {
-            transform.position = new Vector2 (startX, startY);
-        }
-        
-        if (collision.gameObject.tag == "Bullet")
-        {
-            transform.position = new Vector2 (startX, startY);
+            if (collision.gameObject.tag == "Enemy")
+            {
+                transform.position = new Vector2(startX, startY);
+            }
+
+            if (collision.gameObject.tag == "Bullet")
+            {
+                transform.position = new Vector2(startX, startY);
+            }
         }
     }
 
     void Shooting() {
-		if(Input.GetKeyDown(KeyCode.Space)) {
-            if(OnShoot != null) {
-                OnShoot(this, new OnShootEventArgs { shootPosition = playerShootTransform.position });
-            }
+        if(OnShoot != null) {
+            OnShoot(this, new OnShootEventArgs { shootPosition = playerShootTransform.position });
         }
 	}
 }
