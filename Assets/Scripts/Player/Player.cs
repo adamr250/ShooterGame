@@ -15,8 +15,9 @@ public class Player : MonoBehaviour
     public bool isShooting;
     public bool invincible;
     public bool isCooldown;
+    public GameObject shield;
 
-    Transform playerShootTransform;
+    private Transform playerShootTransform;
     Rigidbody2D body;
 
     public event EventHandler<OnShootEventArgs> OnShoot;
@@ -31,6 +32,8 @@ public class Player : MonoBehaviour
         startX = transform.position.x;
         startY = transform.position.y;
         playerShootTransform = transform.Find("PlayerGun");
+
+        Instantiate(shield, new Vector2 (0.0f, -2.5f), Quaternion.identity);
     }
 
     void Update()
@@ -39,9 +42,9 @@ public class Player : MonoBehaviour
 	   
 	    movementHorizontal = Input.GetAxis("Horizontal");// * speed * Time.deltaTime;
 
-        if (isShooting && Input.GetKeyDown(KeyCode.Space))
+        if (isShooting /*&& Input.GetKeyDown(KeyCode.Space)*/)
         {
-            if (Time.time > shootTimer || !isCooldown)
+            if (Time.time > shootTimer /*|| !isCooldown*/ && shootCooldown>0)
             {
                 Shooting();
                 shootTimer = Time.time + shootCooldown; 
@@ -50,6 +53,11 @@ public class Player : MonoBehaviour
     }
 	void FixedUpdate() {
         playerMovement();
+        if (body.velocity.magnitude > 0)
+        {
+            Debug.Log("movement");
+            //Destroy(shield);
+        }
     }
     void playerMovement() {
         body.velocity = new Vector2(movementHorizontal * speed, movementVertical * speed);
@@ -73,10 +81,11 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy")
             {
+                Instantiate(shield, new Vector2(0.0f, -2.5f), Quaternion.identity);
                 transform.position = new Vector2(startX, startY);
             }
 
-            if (collision.gameObject.tag == "Bullet")
+            if (collision.gameObject.tag == "EnemyBullet")
             {
                 transform.position = new Vector2(startX, startY);
             }

@@ -124,10 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2971851edc08d58418fd8f87b3292bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  isShooting: 0
-  shootCooldown: 2
   enemyHealth: 5
+  speed: 1
+  shootCooldown: 0.75
+  isShooting: 1
 --- !u!114 &6270510736115927569
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,66 +5,81 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-	public float speed = 2.0f;
+	private float maxWidth;
+	private float minWidth;
 	private int direction = -1;
-	private Transform enemyShootTransform;
 	private float shootTimer = 0.0f;
-	public bool isShooting;
- 	public float shootCooldown = 2.0f;
+	private float moveRange = 1.5f;
 	public int enemyHealth = 5;
 
+	public float speed = 2.0f;
+ 	public float shootCooldown = 2.0f;
+	public bool isShooting;
+
+	private Transform enemyShootTransform;
 	SpriteRenderer enemySpriteRenderer;
-	//							red,			orange,					yellow,			green,		blue
+	//							grey,		red,			orange,					yellow,			green,		blue
 	Color[] enemyColor = { Color.red, new Color(1.0f, 0.5f, 0.0f), Color.yellow, Color.green, Color.blue };
 
 	public event EventHandler<OnShootEventArgs> OnShoot;
-	public class OnShootEventArgs : EventArgs {
+	public class OnShootEventArgs : EventArgs
+	{
 		public Vector2 shootPosition;
-		public int direction = -1; //down
+		public int direction = -1; //up
 	}
 
-    void Start()
+	void Start()
     {
-		enemySpriteRenderer.color = enemyColor[enemyHealth - 1];
+		enemyHealth--;
+
+		maxWidth = transform.position.x + moveRange;
+		minWidth = transform.position.x - moveRange;
+
 		enemySpriteRenderer = GetComponent<SpriteRenderer>();
+		enemySpriteRenderer.color = enemyColor[enemyHealth];
 		enemyShootTransform = transform.Find("EnemyGun");
-    }
+	}
 
 
-    void Update()
+	void Update()
     {
 		LeftRightMovement();
 		if (Time.time > shootTimer ) {
-			shootTimer += shootCooldown;
-			if(isShooting)
+			shootTimer = Time.time + shootCooldown;
+			if (isShooting)
+			{
 				Shooting();
-		}
-
-		if (enemyHealth < 1)
-		{
-			Destroy(gameObject);
-			Debug.Log("Enemy Dead");
+			}
 		}
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Bullet")
+		if (collision.gameObject.tag == "PlayerBullet")
 		{
-			if (enemyHealth > 0)
-			{
-				enemySpriteRenderer.color = enemyColor[enemyHealth-1];
-				enemyHealth--;
-			}
+			damageTaken();
 		}
 	}
 
+	void damageTaken()
+    {
+		enemyHealth--;
+
+		if (enemyHealth < 0)
+		{
+			Destroy(gameObject);
+			Debug.Log("Enemy Dead");
+		}
+
+		if (enemyHealth >= 0)
+		{
+			enemySpriteRenderer.color = enemyColor[enemyHealth];
+			Debug.Log("Enemy Hit: " + enemyHealth);
+		}
+	}
 
 	void LeftRightMovement()
 	{
-		float maxWidth = 5;
-		float minWidth = -5;
-
 		if(transform.position.x > maxWidth){
 			direction = -1;
 		}
@@ -78,10 +93,13 @@ public class Enemy : MonoBehaviour
 		//transform.position = new Vector2 (5-Mathf.PingPong (Time.time * speed, 10), transform.position.y);
 	}
 
-	void Shooting() {
-        if(OnShoot != null) {
-            OnShoot(this, new OnShootEventArgs { shootPosition = enemyShootTransform.position });
-        }
-    }
-	
+    void Shooting()
+    {
+		if (OnShoot != null) 
+		{
+			OnShoot(this, new OnShootEventArgs { shootPosition = enemyShootTransform.position });
+
+		}
+	}
+
 }

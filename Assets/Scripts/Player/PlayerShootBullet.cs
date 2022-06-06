@@ -12,7 +12,7 @@ public class PlayerShootBullet : MonoBehaviour
     }
 
     private void OnShoot(object sender, Player.OnShootEventArgs e) {
-        Instantiate(prefabBullet, e.shootPosition, Quaternion.identity);
+        Instantiate(prefabBullet, e.shootPosition, Quaternion.Euler(0, 0, 0));
     }
 }
 
