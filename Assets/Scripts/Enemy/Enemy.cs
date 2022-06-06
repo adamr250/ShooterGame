@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 	private Transform enemyShootTransform;
 	public bool isShooting;
 	private float nextActionTime = 0.0f;
- 	public float period = 0.5f;
+ 	public float period = 2.0f;
 
 	public event EventHandler<OnShootEventArgs> OnShoot;
 	public class OnShootEventArgs : EventArgs {
