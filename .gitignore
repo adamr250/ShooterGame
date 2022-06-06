@@ -1,2 +1,4 @@
-**/Temp/
-**/Logs/
+Temp/
+Logs/*.log
+Logs/*.txt
+
