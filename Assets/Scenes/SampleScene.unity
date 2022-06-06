@@ -384,10 +384,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  shootCooldown: 2
+  shootCooldown: 1
   isShooting: 1
-  invincible: 1
+  invincible: 0
   isCooldown: 0
+  shield: {fileID: 846957844662520088, guid: b014a2a4bb123b543b0b3c8c74f51b0a, type: 3}
 --- !u!61 &131485972
 BoxCollider2D:
   m_ObjectHideFlags: 0

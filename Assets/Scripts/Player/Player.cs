@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
 	private float startY;
 	private float movementVertical, movementHorizontal;
     private float shootTimer;
-	
+    private float startSpeed;
+
     public float speed = 10.0f;
     public float shootCooldown = 2.0f;
     public bool isShooting;
@@ -28,6 +29,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        isShooting = false;
+        startSpeed = speed;
         body = GetComponent<Rigidbody2D>();
         startX = transform.position.x;
         startY = transform.position.y;
@@ -53,10 +56,10 @@ public class Player : MonoBehaviour
     }
 	void FixedUpdate() {
         playerMovement();
-        if (body.velocity.magnitude > 0)
+        if (body.velocity.magnitude > 0 && GameObject.Find("Shield(Clone)") != null)
         {
-            Debug.Log("movement");
-            //Destroy(shield);
+            Destroy(GameObject.Find("Shield(Clone)"));
+            isShooting = true;
         }
     }
     void playerMovement() {
@@ -81,13 +84,16 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy")
             {
-                Instantiate(shield, new Vector2(0.0f, -2.5f), Quaternion.identity);
                 transform.position = new Vector2(startX, startY);
             }
 
             if (collision.gameObject.tag == "EnemyBullet")
             {
+                Instantiate(shield, new Vector2(0.0f, -2.5f), Quaternion.identity);
                 transform.position = new Vector2(startX, startY);
+                speed = 0;
+                isShooting = false;
+                Invoke("stopFreeze", 1.0f);
             }
         }
     }
@@ -97,4 +103,9 @@ public class Player : MonoBehaviour
             OnShoot(this, new OnShootEventArgs { shootPosition = playerShootTransform.position });
         }
 	}
+
+    void stopFreeze()
+    {
+        speed = startSpeed;
+    }
 }
