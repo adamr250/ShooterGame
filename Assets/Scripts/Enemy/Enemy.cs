@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
     {
 		LeftRightMovement();
 		if (Time.time > shootTimer ) {
-			shootTimer = Time.time + shootCooldown;
+			shootTimer = Time.time + shootCooldown + UnityEngine.Random.Range(0f, 1.0f);
 			if (isShooting)
 			{
 				Shooting();

@@ -27,14 +27,8 @@ public class SpawnEnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(waiter());
-    }
-
-    IEnumerator waiter()
-    {
         for (int i = 0; i < 14; i++)
         {
-            yield return new WaitForSeconds(0.1f);
             Instantiate(enemyPrefab, enemyLocation[i], Quaternion.identity);
         }
     }
