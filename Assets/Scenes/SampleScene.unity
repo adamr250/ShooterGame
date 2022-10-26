@@ -485,10 +485,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51c81dfb49aa6be4ca7f6b3099ec929b, type: 3}
+  m_Script: {fileID: 11500000, guid: 56ba577f850c4024882ca1dedc379806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6270510736115927574, guid: 2b5f97a30103d7f4ca42d4e357342427, type: 3}
+  waterPrefab: {fileID: 3394300862630850107, guid: 57701498bbe58174b811da2475855c7d, type: 3}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
