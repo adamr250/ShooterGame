@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class HommingEnemy : MonoBehaviour
 {
+    //public Transform player;
     public float speed = 2;
 
-    private float horizontalMovement;
-    private float verticalMovement;
+    private Vector3 direction;
+    private Vector2 movement;
 
     Rigidbody2D body;
 
@@ -19,14 +20,25 @@ public class HommingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMovement = GameObject.Find("Player").transform.position.x - transform.position.x;
-        verticalMovement = GameObject.Find("Player").transform.position.y - transform.position.y;
+        direction = GameObject.Find("Player").transform.position - transform.position;
+        //direction = player.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        body.rotation = angle;
+        direction.Normalize();
 
         //float movement = speed * Time.deltaTime;
         //transform.Translate(0, -movement, 0);
-        body.velocity = new Vector2(horizontalMovement * speed, verticalMovement * speed);
-
         //Debug.Log("Player: " + GameObject.Find("Player").transform.position);
+    }
+
+    private void FixedUpdate()
+    {
+        moveHommingEnemy(direction);
+    }
+
+    void moveHommingEnemy (Vector2 dir)
+    {
+        body.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -34,6 +46,7 @@ public class HommingEnemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Kontakt");
+            Destroy(gameObject);
         }
     }
 }

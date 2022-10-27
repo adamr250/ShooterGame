@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     private Transform playerShootTransform;
     Rigidbody2D body;
 
-    public event EventHandler<OnShootEventArgs> OnShoot;
+    //public event EventHandler<OnShootEventArgs> OnShoot;
 	public class OnShootEventArgs : EventArgs {
 		public Vector2 shootPosition;
 		public int direction = 1; //up
@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         startY = transform.position.y;
         playerShootTransform = transform.Find("PlayerGun");
 
-        Instantiate(shield, new Vector2 (0.0f, -2.5f), Quaternion.identity);
+        //Instantiate(shield, new Vector2 (0.0f, -2.5f), Quaternion.identity);
     }
 
     void Update()
@@ -45,14 +45,14 @@ public class Player : MonoBehaviour
 	   
 	    movementHorizontal = Input.GetAxis("Horizontal");// * speed * Time.deltaTime;
 
-        if (isShooting /*&& Input.GetKeyDown(KeyCode.Space)*/)
-        {
-            if (Time.time > shootTimer /*|| !isCooldown*/ && shootCooldown>0)
-            {
-                Shooting();
-                shootTimer = Time.time + shootCooldown; 
-            }
-        }
+        //if (isShooting /*&& Input.GetKeyDown(KeyCode.Space)*/)
+        //{
+        //   if (Time.time > shootTimer /*|| !isCooldown*/ && shootCooldown>0)
+        //    {
+        //        Shooting();
+        //        shootTimer = Time.time + shootCooldown; 
+        //    }
+        //}
     }
 	void FixedUpdate() {
         playerMovement();
@@ -98,14 +98,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Shooting() {
-        if(OnShoot != null) {
-            OnShoot(this, new OnShootEventArgs { shootPosition = playerShootTransform.position });
-        }
-	}
+    //void Shooting() {
+    //    if(OnShoot != null) {
+    //        OnShoot(this, new OnShootEventArgs { shootPosition = playerShootTransform.position });
+    //    }
+	//}
 
-    void stopFreeze()
-    {
-        speed = startSpeed;
-    }
+    //void stopFreeze()
+    //{
+    //    speed = startSpeed;
+    //}
 }
