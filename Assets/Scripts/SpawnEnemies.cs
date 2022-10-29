@@ -18,16 +18,16 @@ public class SpawnEnemies : MonoBehaviour
         new Vector2 (3.0f, 3.25f),
         new Vector2 (6.0f, 3.25f),
 
-        new Vector2 (-7.5f, 1.7f),
-        new Vector2 (10.5f, 1.7f),
-        new Vector2 (9.0f, 3.25f),
-        new Vector2 (-9.0f, 3.25f),
+        //new Vector2 (-7.5f, 1.7f),
+        //new Vector2 (10.5f, 1.7f),
+        //new Vector2 (9.0f, 3.25f),
+        //new Vector2 (-9.0f, 3.25f),
     };
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 14; i++)
+        for (int i = 0; i < 10; i++)
         {
             Instantiate(enemyPrefab, enemyLocation[i], Quaternion.identity);
         }

@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
 		minWidth = transform.position.x - moveRange;
 
 		enemySpriteRenderer = GetComponent<SpriteRenderer>();
-		enemySpriteRenderer.color = enemyColor[enemyHealth];
+		enemySpriteRenderer.color = enemyColor[0];
 		enemyShootTransform = transform.Find("EnemyGun");
 	}
 
@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
     {
 		LeftRightMovement();
 		if (Time.time > shootTimer ) {
-			shootTimer = Time.time + shootCooldown + UnityEngine.Random.Range(0f, 1.0f);
+			shootTimer = Time.time + shootCooldown;// + UnityEngine.Random.Range(0f, 1.0f);
 			if (isShooting)
 			{
 				Shooting();
