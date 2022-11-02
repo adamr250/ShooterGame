@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7979391047792831001}
   - component: {fileID: 4785097996416596296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bullet_Texture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8385884787409892414}
   - component: {fileID: 5598713306145778215}
   - component: {fileID: 3724544171503462542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: prefabEnemyBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ef557b37cd8f643b3d340af4145f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
   lifeTime: 1.5
 --- !u!58 &8385884787409892414
 CircleCollider2D:

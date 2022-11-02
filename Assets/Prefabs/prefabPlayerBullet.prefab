@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3667434597827841798}
   - component: {fileID: 6042431509733650156}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bullet_Texture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6131110377951604900}
   - component: {fileID: 5859120515076190176}
   - component: {fileID: 3847453933119474582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: prefabPlayerBullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}

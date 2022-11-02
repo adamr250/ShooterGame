@@ -10,23 +10,19 @@ public class Enemy : MonoBehaviour
 	private int direction = -1;
 	private float shootTimer = 0.0f;
 	private float moveRange = 1.5f;
-	public int enemyHealth = 5;
+	private Transform child;
+	private Vector3 enemyGun;
 
+	public int enemyHealth = 5;
 	public float speed = 2.0f;
  	public float shootCooldown = 2.0f;
 	public bool isShooting;
-
+	public GameObject bulletPref;
+	
 	private Transform enemyShootTransform;
 	SpriteRenderer enemySpriteRenderer;
 	//							grey,		red,			orange,					yellow,			green,		blue
 	Color[] enemyColor = { Color.red, new Color(1.0f, 0.5f, 0.0f), Color.yellow, Color.green, Color.blue };
-
-	public event EventHandler<OnShootEventArgs> OnShoot;
-	public class OnShootEventArgs : EventArgs
-	{
-		public Vector2 shootPosition;
-		public int direction = -1; //up
-	}
 
 	void Start()
     {
@@ -95,11 +91,15 @@ public class Enemy : MonoBehaviour
 
     void Shooting()
     {
-		if (OnShoot != null) 
-		{
-			OnShoot(this, new OnShootEventArgs { shootPosition = enemyShootTransform.position });
-
-		}
+		child = this.gameObject.transform.GetChild(0);
+		enemyGun = child.transform.position;
+		//playerGun = GameObject.Find("PlayerGun").transform.position;
+		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 160));
+		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 170));
+		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 180));
+		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 190));
+		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 200));
+		//Instantiate(bulletPref, enemyGun, Quaternion.Euler(0,0,180));
 	}
 
 }

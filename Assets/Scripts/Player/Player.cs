@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	private float startX;
-	private float startY;
+	private float startX = 2.75f;
+	private float startY = -3.0f;
 	private float movementVertical, movementHorizontal;
     private float shootTimer;
     private float startSpeed;
@@ -29,11 +29,12 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        transform.position = new Vector2(2.75f, -3.0f);
         isShooting = false;
         startSpeed = speed;
         body = GetComponent<Rigidbody2D>();
-        startX = transform.position.x;
-        startY = transform.position.y;
+        //startX = transform.position.x;
+        //startY = transform.position.y;
         playerShootTransform = transform.Find("PlayerGun");
 
         //Instantiate(shield, new Vector2 (0.0f, -2.5f), Quaternion.identity);
@@ -104,8 +105,8 @@ public class Player : MonoBehaviour
     //    }
 	//}
 
-    //void stopFreeze()
-    //{
-    //    speed = startSpeed;
-    //}
+    void stopFreeze()
+    {
+        speed = startSpeed;
+    }
 }

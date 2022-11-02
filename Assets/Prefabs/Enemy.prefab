@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 6270510736115927572}
   - component: {fileID: 6270510736115927573}
   - component: {fileID: 6270510736115927571}
-  - component: {fileID: 6270510736115927570}
-  - component: {fileID: 6270510736115927569}
+  - component: {fileID: -5200538140593245743}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -110,9 +109,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.536756, y: 2.5524368}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &6270510736115927570
+--- !u!114 &-5200538140593245743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,21 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 5
   speed: 0.75
-  shootCooldown: 0.5
+  shootCooldown: 1
   isShooting: 1
---- !u!114 &6270510736115927569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6270510736115927574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 938a0c14160c15a47a0f88084171486c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabBullet: {fileID: 1590792988392632359, guid: 311050c06f5c9eb448a55eeb8dd0406e, type: 3}
+  bulletPref: {fileID: 5404478362954745999, guid: 311050c06f5c9eb448a55eeb8dd0406e, type: 3}
 --- !u!1 &6270510736592276510
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class Water : MonoBehaviour
         if (transform.position.y <= -10.0f) {
             //Debug.Log("water y = -10");
             //Destroy(gameObject);
-            transform.position = new Vector3(0.0f, 10.0f, 1.0f);
+            transform.position = new Vector3(0.0f, 10.0f, 100.0f);
         }
     }
 }

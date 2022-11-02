@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemies : MonoBehaviour
+public class BulletHellTime : MonoBehaviour
 {
     public GameObject enemyPrefab;
 
