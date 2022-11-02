@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7164936644740793513}
   - component: {fileID: 7164936644740793518}
   - component: {fileID: 7164936644740793519}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HommingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7164936644921997572}
   - component: {fileID: 7164936644921997575}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HommingEnemySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

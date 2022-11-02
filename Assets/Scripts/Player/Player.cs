@@ -18,26 +18,18 @@ public class Player : MonoBehaviour
     public bool isCooldown;
     public GameObject shield;
 
-    private Transform playerShootTransform;
+    //private Transform playerShootTransform;
     Rigidbody2D body;
-
-    //public event EventHandler<OnShootEventArgs> OnShoot;
-	public class OnShootEventArgs : EventArgs {
-		public Vector2 shootPosition;
-		public int direction = 1; //up
-	}
 
     void Start()
     {
-        transform.position = new Vector2(2.75f, -3.0f);
+        transform.position = new Vector2(startX, startY);
         isShooting = false;
         startSpeed = speed;
         body = GetComponent<Rigidbody2D>();
-        //startX = transform.position.x;
-        //startY = transform.position.y;
-        playerShootTransform = transform.Find("PlayerGun");
+        //playerShootTransform = transform.Find("PlayerGun");
 
-        //Instantiate(shield, new Vector2 (0.0f, -2.5f), Quaternion.identity);
+        //Instantiate(shield, new Vector2(startX, startY - 0.5f), Quaternion.identity);
     }
 
     void Update()
@@ -90,7 +82,7 @@ public class Player : MonoBehaviour
 
             if (collision.gameObject.tag == "EnemyBullet")
             {
-                Instantiate(shield, new Vector2(0.0f, -2.5f), Quaternion.identity);
+                Instantiate(shield, new Vector2(startX, startY + 0.5f), Quaternion.identity);
                 transform.position = new Vector2(startX, startY);
                 speed = 0;
                 isShooting = false;

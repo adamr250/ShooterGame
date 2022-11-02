@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6270510736115927573}
   - component: {fileID: 6270510736115927571}
   - component: {fileID: -5200538140593245743}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6270510736592276509}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 	private float minWidth;
 	private int direction = -1;
 	private float shootTimer = 0.0f;
-	private float moveRange = 1.5f;
+	private float moveRange = 1.0f;
 	private Transform child;
 	private Vector3 enemyGun;
 
@@ -95,9 +95,9 @@ public class Enemy : MonoBehaviour
 		enemyGun = child.transform.position;
 		//playerGun = GameObject.Find("PlayerGun").transform.position;
 		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 160));
-		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 170));
+		//Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 170));
 		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 180));
-		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 190));
+		//Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 190));
 		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 200));
 		//Instantiate(bulletPref, enemyGun, Quaternion.Euler(0,0,180));
 	}
