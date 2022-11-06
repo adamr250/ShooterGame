@@ -39,7 +39,6 @@ public class Enemy : MonoBehaviour
 
 	void Update()
     {
-		LeftRightMovement();
 		if (Time.time > shootTimer ) {
 			shootTimer = Time.time + shootCooldown;// + UnityEngine.Random.Range(0f, 1.0f);
 			if (isShooting)
@@ -47,6 +46,11 @@ public class Enemy : MonoBehaviour
 				Shooting();
 			}
 		}
+	}
+
+    private void FixedUpdate()
+    {
+		LeftRightMovement();
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)

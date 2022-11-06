@@ -38,7 +38,7 @@ public class HommingEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
         {
-            Debug.Log("Kontakt");
+            //Debug.Log("Kontakt");
             Destroy(gameObject);
         }
     }

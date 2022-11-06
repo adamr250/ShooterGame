@@ -32,12 +32,11 @@ public class SniperEnemy : MonoBehaviour
         direction.Normalize();
 
         enemyGun = child.transform.position;
-        //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
 
         if (Time.time > shootTimer)
         {
             shootTimer = Time.time + shootCooldown;
-            Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, rotation));
+            Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
         }
     }
 
@@ -54,5 +53,14 @@ public class SniperEnemy : MonoBehaviour
     void movement(Vector2 dir)
     {
         body.MovePosition((Vector2)transform.position - (dir * speed * Time.deltaTime));
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
+        {
+            Debug.Log("Kontakt");
+            Destroy(gameObject);
+        }
     }
 }

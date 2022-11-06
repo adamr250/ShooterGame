@@ -62,16 +62,16 @@ public class Player : MonoBehaviour
     }
 	void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Obstacle")
+        /*if (collision.gameObject.tag == "Obstacle")
         {
-            Debug.Log("Found obstacle!");
-			Debug.Log(transform.position.y);
+            //Debug.Log("Found obstacle!");
+			//Debug.Log(transform.position.y);
             //wallCollision = true;
             //wallX = transform.position.x;
             //wallY = transform.position.y;
 			//GameObject.FindGameObjectWithTag("Your_Tag_Here").transform.position;
 			//transform.position = new Vector2 (transform.position, transform.position.y);
-        }
+        }*/
 
         if (!invincible)
         {
