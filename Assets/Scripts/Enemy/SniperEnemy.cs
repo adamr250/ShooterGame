@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SniperEnemy : MonoBehaviour
 {
+    Score score;
+
+    private GameObject scoreHolder;
     private float shootTimer = 0.0f;
     private Transform child;
     private Vector3 enemyGun;
@@ -17,6 +20,9 @@ public class SniperEnemy : MonoBehaviour
 
     void Start()
     {
+        scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
+        score = scoreHolder.GetComponent<Score>();
+
         child = this.gameObject.transform.GetChild(0);
         body = GetComponent<Rigidbody2D>();
     }
@@ -59,8 +65,8 @@ public class SniperEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
         {
-            Debug.Log("Kontakt");
             Destroy(gameObject);
+            score.increaseScore(1000.0f);
         }
     }
 }

@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class HommingEnemy : MonoBehaviour
 {
+    Score score;
+
+    private GameObject scoreHolder;
+    private Vector3 direction;
+
     public float speed = 2;
 
-    private Vector3 direction;
     //private Vector2 movement;
 
     Rigidbody2D body;
 
     void Start()
     {
+        scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
+        score = scoreHolder.GetComponent<Score>();
+
         body = GetComponent<Rigidbody2D>();
     }
 
@@ -40,6 +47,7 @@ public class HommingEnemy : MonoBehaviour
         {
             //Debug.Log("Kontakt");
             Destroy(gameObject);
+            score.increaseScore(100.0f);
         }
     }
 }

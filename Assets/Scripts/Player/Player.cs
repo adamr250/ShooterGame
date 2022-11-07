@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -75,7 +76,12 @@ public class Player : MonoBehaviour
 
         if (!invincible)
         {
-            if (collision.gameObject.tag == "Enemy")
+            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
+            {
+                SceneManager.LoadScene(0);
+                //SceneManager.UnloadSceneAsync(1);
+            }
+            /*if (collision.gameObject.tag == "Enemy")
             {
                 transform.position = new Vector2(startX, startY);
             }
@@ -87,15 +93,9 @@ public class Player : MonoBehaviour
                 speed = 0;
                 isShooting = false;
                 Invoke("stopFreeze", 1.0f);
-            }
+            }*/
         }
     }
-
-    //void Shooting() {
-    //    if(OnShoot != null) {
-    //        OnShoot(this, new OnShootEventArgs { shootPosition = playerShootTransform.position });
-    //    }
-	//}
 
     void stopFreeze()
     {

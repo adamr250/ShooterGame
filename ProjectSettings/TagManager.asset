@@ -9,6 +9,7 @@ TagManager:
   - PlayerBullet
   - EnemyBullet
   - Water
+  - ScoreVal
   layers:
   - Default
   - TransparentFX
