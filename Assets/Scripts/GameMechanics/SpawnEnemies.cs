@@ -8,7 +8,7 @@ public class SpawnEnemies : MonoBehaviour
     public bool spawnSniperOff = false;
 
     public GameObject hommingEnemy;
-    public float hommingSpawnCd = 2.0f;
+    public float hommingSpawnCd = 5.0f;
     private float hommingSpawnTimer = 0.0f;
     private Vector3 spawnPointHomming;// = new Vector3(10f, 3.0f, 0.0f);
 
@@ -24,6 +24,8 @@ public class SpawnEnemies : MonoBehaviour
         spawnSniper();
 
         //bulletHellTime();
+        hommingSpawnCd = 5.0f/(1+(Score.scoreNum/10000));
+
     }
     public void spawnHomming()
     {
@@ -34,7 +36,7 @@ public class SpawnEnemies : MonoBehaviour
                 hommingSpawnTimer = Time.time + hommingSpawnCd;
                 float axis = Random.Range(0f, 1.0f);
                 int plusminus = Random.Range(0, 2) * 2 - 1;
-                //Debug.Log(multiplying);
+                Debug.Log("cd: " + hommingSpawnCd);
                 if (axis <= 0.5f)
                 {
                     spawnPointHomming = new Vector3(Random.Range(-3.4f, 9.5f), plusminus * 6.0f, 0.0f);
