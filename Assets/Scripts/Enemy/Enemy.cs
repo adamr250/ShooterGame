@@ -86,8 +86,7 @@ public class Enemy : MonoBehaviour
 		if(transform.position.x < minWidth){
 			direction = 1;
 		}
-		float movementHorizontal = direction * speed;
-		movementHorizontal *= Time.deltaTime;
+		float movementHorizontal = direction * speed * Time.deltaTime;
 		transform.Translate(movementHorizontal, 0, 0);
 		
 		//transform.position = new Vector2 (5-Mathf.PingPong (Time.time * speed, 10), transform.position.y);

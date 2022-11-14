@@ -22,7 +22,7 @@ public class Life : MonoBehaviour
 
         if(lifeNum <= 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadSceneAsync(0);
             //SceneManager.UnloadSceneAsync(1);
         }
     }

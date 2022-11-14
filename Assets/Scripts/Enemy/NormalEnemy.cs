@@ -6,18 +6,22 @@ public class NormalEnemy : MonoBehaviour
 {
 	Score score;
 
-	private float shootTimer = 0.0f;
+	private float shootTimer;
 	private Transform child;
 	private Vector3 enemyGun;
 	private GameObject scoreHolder;
 
 
-	public float shootCooldown = 2.0f;
+	public float shootCooldown = 1.5f;
 	public GameObject bulletPref;
 
 
 	void Start()
 	{
+		shootTimer = shootCooldown;
+
+		Debug.Log("time: " + Time.time + ";  shootTimer:" + shootTimer);
+
 		scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
 		score = scoreHolder.GetComponent<Score>();
 	}
@@ -27,6 +31,7 @@ public class NormalEnemy : MonoBehaviour
 	{
 		if (Time.time > shootTimer)
 		{
+			//Debug.Log(Time.time + ";  " + shootTimer);
 			shootTimer = Time.time + shootCooldown;
 			Shooting();
 		}
@@ -34,7 +39,10 @@ public class NormalEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        if(transform.position.y > 4f)
+        {
+			movement();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -44,6 +52,14 @@ public class NormalEnemy : MonoBehaviour
 			Destroy(gameObject);
 			score.increaseScore(50);
 		}
+	}
+
+	void movement()
+    {
+		float speed = 4f;
+		float movementHorizontal = speed * Time.deltaTime;
+		transform.Translate(0, -movementHorizontal, 0);
+		//transform.Translate(transform.position.x, movementHorizontal, transform.position.z);
 	}
 
 	void Shooting()
