@@ -66,7 +66,7 @@ public class SniperEnemy : MonoBehaviour
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
         {
             Destroy(gameObject);
-            score.increaseScore(1000.0f);
+            score.increaseScore(1000);
         }
     }
 }

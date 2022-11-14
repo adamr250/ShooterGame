@@ -47,7 +47,7 @@ public class HommingEnemy : MonoBehaviour
         {
             //Debug.Log("Kontakt");
             Destroy(gameObject);
-            score.increaseScore(100.0f);
+            score.increaseScore(100);
         }
     }
 }

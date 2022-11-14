@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-	private float startX = 2.75f;
+    Life life;
+    
+    private float startX = 2.75f;
 	private float startY = -3.0f;
 	private float movementVertical, movementHorizontal;
     private float shootTimer;
@@ -18,8 +20,10 @@ public class Player : MonoBehaviour
     public bool invincible;
     public bool isCooldown;
     public GameObject shield;
+    public GameObject lifeHolder;
 
     //private Transform playerShootTransform;
+    
     Rigidbody2D body;
 
     void Start()
@@ -27,7 +31,9 @@ public class Player : MonoBehaviour
         transform.position = new Vector2(startX, startY);
         isShooting = false;
         startSpeed = speed;
+        
         body = GetComponent<Rigidbody2D>();
+        life = lifeHolder.GetComponent<Life>();
         //playerShootTransform = transform.Find("PlayerGun");
 
         //Instantiate(shield, new Vector2(startX, startY - 0.5f), Quaternion.identity);
@@ -48,6 +54,7 @@ public class Player : MonoBehaviour
         //    }
         //}
     }
+
 	void FixedUpdate() {
         playerMovement();
         if (body.velocity.magnitude > 0 && GameObject.Find("Shield(Clone)") != null)
@@ -56,29 +63,21 @@ public class Player : MonoBehaviour
             isShooting = true;
         }
     }
+
     void playerMovement() {
         body.velocity = new Vector2(movementHorizontal * speed, movementVertical * speed);
         //transform.Translate(movementHorizontal, movementVertical, 0);
         //rb2D.AddForce(transform.up * thrust);
     }
-	void OnCollisionEnter2D(Collision2D collision)
-    {
-        /*if (collision.gameObject.tag == "Obstacle")
-        {
-            //Debug.Log("Found obstacle!");
-			//Debug.Log(transform.position.y);
-            //wallCollision = true;
-            //wallX = transform.position.x;
-            //wallY = transform.position.y;
-			//GameObject.FindGameObjectWithTag("Your_Tag_Here").transform.position;
-			//transform.position = new Vector2 (transform.position, transform.position.y);
-        }*/
 
+	void OnCollisionEnter2D(Collision2D collision)
+    {        
         if (!invincible)
         {
             if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
             {
-                SceneManager.LoadScene(0);
+                life.lifeChangeValue(-1);
+                //SceneManager.LoadScene(0);
                 //SceneManager.UnloadSceneAsync(1);
             }
             /*if (collision.gameObject.tag == "Enemy")

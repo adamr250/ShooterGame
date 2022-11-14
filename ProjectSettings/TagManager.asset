@@ -10,6 +10,7 @@ TagManager:
   - EnemyBullet
   - Water
   - ScoreVal
+  - LifeVal
   layers:
   - Default
   - TransparentFX

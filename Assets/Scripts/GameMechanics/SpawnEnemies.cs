@@ -6,6 +6,7 @@ public class SpawnEnemies : MonoBehaviour
 {
     public bool spawnHommingOff = false;
     public bool spawnSniperOff = false;
+    public bool spawnNormalOff = false;
 
     public GameObject hommingEnemy;
     public float hommingSpawnCd = 5.0f;
@@ -17,6 +18,10 @@ public class SpawnEnemies : MonoBehaviour
     private float sniperSpawnTimer = 0.0f;
     private Vector3 spawnPointSniper;// = new Vector3(10f, 3.0f, 0.0f);
 
+    public GameObject normalEnemy;
+    public float normalSpawnCd = 5.0f;
+    private float normalSpawnTimer = 0.0f;
+    private Vector3 spawnPointNormal;
     void Update()
     {
         spawnHomming();
@@ -24,7 +29,7 @@ public class SpawnEnemies : MonoBehaviour
         spawnSniper();
 
         //bulletHellTime();
-        hommingSpawnCd = 5.0f/(1+(Score.scoreNum/10000));
+        hommingSpawnCd = 5.0f/(1+((float)Score.scoreNum/10000));
 
     }
     public void spawnHomming()
@@ -51,6 +56,20 @@ public class SpawnEnemies : MonoBehaviour
             }
         }
     }
+
+    public void spawnNormal()
+    {
+        if (!spawnNormalOff)
+        {
+            if (Time.time > normalSpawnTimer)
+            {
+                normalSpawnTimer = Time.time + normalSpawnCd;
+                spawnPointNormal = new Vector3(Random.Range(-2f, 8f), 4.25f, 0f);
+
+                Instantiate(normalEnemy, spawnPointNormal, Quaternion.identity);
+            }
+        }
+    }
     public void spawnSniper()
     {
         if (!spawnSniperOff)
@@ -58,7 +77,7 @@ public class SpawnEnemies : MonoBehaviour
             if (Time.time > sniperSpawnTimer)
             {
                 sniperSpawnTimer = Time.time + sniperSpawnCd;
-                spawnPointSniper = new Vector3(Random.Range(-2f, 8f), Random.Range(-1.0f, 1.0f) + 4.0f, 0.0f);
+                spawnPointSniper = new Vector3(Random.Range(-2f, 8f), Random.Range(-1.0f, 1.0f) + 6.0f, 0.0f);
 
                 Instantiate(sniperEnemy, spawnPointSniper, Quaternion.identity);
             }

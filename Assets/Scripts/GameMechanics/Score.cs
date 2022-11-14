@@ -7,9 +7,11 @@ public class Score : MonoBehaviour
 {
 	private float scoreTimer = 1.0f;
 	private float scoreInterval = 1.0f;
-	public static float scoreNum = 0.0f;
+	public static int scoreNum = 0;
 
 	public Text scoreText;
+
+
     void Update()
     {
 		if (Time.time > scoreTimer)
@@ -19,10 +21,10 @@ public class Score : MonoBehaviour
 		}
 	}
 
-	public void increaseScore(float x)
+	public void increaseScore(int x)
     {
 		scoreNum += x;
 		//Debug.Log("score: " + scoreNum);
-		scoreText.text = (float.Parse(scoreText.text) + x).ToString();
+		scoreText.text = scoreNum.ToString();
     }
 }
