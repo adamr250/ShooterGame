@@ -5,16 +5,17 @@ using UnityEngine;
 public class NormalEnemy : MonoBehaviour
 {
 	Score score;
+	SpawnBuffs spawnBuffs;
 
 	private float shootTimer;
 	private Transform child;
 	private Vector3 enemyGun;
 	private GameObject scoreHolder;
+	private GameObject buffsObject;
 
 
 	public float shootCooldown = 1.5f;
 	public GameObject bulletPref;
-
 
 	void Start()
 	{
@@ -24,6 +25,9 @@ public class NormalEnemy : MonoBehaviour
 
 		scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
 		score = scoreHolder.GetComponent<Score>();
+
+		buffsObject = GameObject.Find("GameCore");
+		spawnBuffs = buffsObject.GetComponent<SpawnBuffs>();
 	}
 
 
@@ -49,6 +53,7 @@ public class NormalEnemy : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
 		{
+			spawnBuffs.spawnBuffs(transform.position);
 			Destroy(gameObject);
 			score.increaseScore(50);
 		}

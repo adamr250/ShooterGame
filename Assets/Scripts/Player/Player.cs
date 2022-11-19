@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    Life life;
-    
+    //Life life;
+    HealthBar healthBar;
+
     private float startX = 2.75f;
 	private float startY = -3.0f;
 	private float movementVertical, movementHorizontal;
@@ -20,7 +21,8 @@ public class Player : MonoBehaviour
     public bool invincible;
     public bool isCooldown;
     public GameObject shield;
-    public GameObject lifeHolder;
+    //public GameObject lifeHolder;
+    public GameObject health;
 
     //private Transform playerShootTransform;
     
@@ -33,7 +35,8 @@ public class Player : MonoBehaviour
         startSpeed = speed;
         
         body = GetComponent<Rigidbody2D>();
-        life = lifeHolder.GetComponent<Life>();
+        healthBar = health.GetComponent<HealthBar>();
+        //life = lifeHolder.GetComponent<Life>();
         //playerShootTransform = transform.Find("PlayerGun");
 
         //Instantiate(shield, new Vector2(startX, startY - 0.5f), Quaternion.identity);
@@ -76,7 +79,8 @@ public class Player : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
             {
-                life.lifeChangeValue(-1);
+                healthBar.damageTaken(20);
+                //life.lifeChangeValue(-1);
                 //SceneManager.LoadScene(0);
                 //SceneManager.UnloadSceneAsync(1);
             }

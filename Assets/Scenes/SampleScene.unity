@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5a540a1ed86b24493c175ec039a1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeHolder: {fileID: 2089097213}
   slider: {fileID: 44674812}
 --- !u!1 &69442527
 GameObject:
@@ -852,6 +853,129 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57701498bbe58174b811da2475855c7d, type: 3}
+--- !u!1 &255992781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 255992784}
+  - component: {fileID: 255992783}
+  - component: {fileID: 255992785}
+  - component: {fileID: 255992782}
+  m_Layer: 0
+  m_Name: heart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &255992782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255992781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3969ebc816e740aa3eeb9cddb420d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeHolder: {fileID: 2089097213}
+--- !u!212 &255992783
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255992781}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 57c5ebf5f8558e74480311d3422c10fb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.32, y: 0.32}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &255992784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255992781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &255992785
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255992781}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.25, y: 0.25}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.25}
+  m_EdgeRadius: 0
 --- !u!1 &329984271
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,9 +1118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977db1181ed0c7c4b807df619ffc1569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnHommingOff: 0
-  spawnSniperOff: 0
-  spawnNormalOff: 0
+  spawnHommingOff: 1
+  spawnSniperOff: 1
+  spawnNormalOff: 1
   hommingEnemy: {fileID: 7164936644740793517, guid: 2be86baaad704844e8b47c1e5f42c078, type: 3}
   hommingSpawnCd: 4
   sniperEnemy: {fileID: 6037528568567741527, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
@@ -1600,7 +1724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.96, y: -1.56}
+  m_AnchoredPosition: {x: -6.97, y: -6.44}
   m_SizeDelta: {x: 58.1463, y: 12.7507}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &626641624
@@ -1650,13 +1774,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c748828ac164ac438b1b6445ff4d015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   shootCooldown: 1
   isShooting: 1
-  invincible: 1
+  invincible: 0
   isCooldown: 0
   shield: {fileID: 846957844662520088, guid: b014a2a4bb123b543b0b3c8c74f51b0a, type: 3}
-  lifeHolder: {fileID: 2089097213}
+  health: {fileID: 44674810}
 --- !u!50 &626641628
 Rigidbody2D:
   serializedVersion: 4
@@ -1902,7 +2026,6 @@ GameObject:
   m_Component:
   - component: {fileID: 998075307}
   - component: {fileID: 998075309}
-  - component: {fileID: 998075308}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -1931,19 +2054,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0, y: 0}
   m_SizeDelta: {x: 50, y: 6.2505}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &998075308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998075306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c5a540a1ed86b24493c175ec039a1c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 998075309}
 --- !u!114 &998075309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3491,6 +3601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeNum: 2
   lifeText: {fileID: 2089097216}
+  playerObject: {fileID: 0}
 --- !u!114 &2089097216
 MonoBehaviour:
   m_ObjectHideFlags: 0

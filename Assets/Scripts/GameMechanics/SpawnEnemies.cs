@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
+    public bool spawnNormalOff = false;
     public bool spawnHommingOff = false;
     public bool spawnSniperOff = false;
-    public bool spawnNormalOff = false;
+
+    public GameObject normalEnemy;
+    public float normalSpawnCd = 4.5f;
+    private float normalSpawnTimer;
+    private Vector3 spawnPointNormal;
 
     public GameObject hommingEnemy;
     public float hommingSpawnCd = 7.0f;
@@ -18,11 +23,6 @@ public class SpawnEnemies : MonoBehaviour
     private float sniperSpawnTimer;
     private Vector3 spawnPointSniper;// = new Vector3(10f, 3.0f, 0.0f);
 
-    public GameObject normalEnemy;
-    public float normalSpawnCd = 4.5f;
-    private float normalSpawnTimer;
-    private Vector3 spawnPointNormal;
-
     private void Start()
     {
         hommingSpawnTimer = hommingSpawnCd;
@@ -31,12 +31,13 @@ public class SpawnEnemies : MonoBehaviour
     }
     void Update()
     {
-        spawnHomming();
+        spawnNormal();
 
         if(Score.scoreNum > 1000)
-            spawnSniper();
+            spawnHomming();
 
-        spawnNormal();
+        if(Score.scoreNum > 10000)
+            spawnSniper();
 
         //bulletHellTime();
 

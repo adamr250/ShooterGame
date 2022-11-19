@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
-    Life life;
-
-    private int playerMaxHealth = 100;
+    public int maxHealth = 100;
 
     public GameObject lifeHolder;
     public Slider slider;
 
     void Start()
     {
-        life = lifeHolder.GetComponent<Life>();
-        setMaxHealth(playerMaxHealth);
+        setMaxHealth(maxHealth);
     }
 
     public void setMaxHealth(int health)
@@ -23,13 +20,13 @@ public class HealthBar : MonoBehaviour
         slider.maxValue = health;
         slider.value = health;
     }
+
     public void damageTaken(int damage)
     {
         slider.value -= damage;
-        if(slider.value <= 0)
+        if (slider.value <= 0)
         {
-            life.lifeChangeValue(-1);
-            setMaxHealth(playerMaxHealth);
+            //destory object
         }
     }
 }

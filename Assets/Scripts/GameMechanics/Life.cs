@@ -9,8 +9,8 @@ public class Life : MonoBehaviour
     private int addLifeOnScore = 1000;
 
     public int lifeNum = 2;
-
     public Text lifeText;
+    public GameObject playerObject;
 
     void Update()
     {
@@ -31,5 +31,6 @@ public class Life : MonoBehaviour
     {
         lifeNum += x;
         lifeText.text = lifeNum.ToString();
+
     } 
 }
