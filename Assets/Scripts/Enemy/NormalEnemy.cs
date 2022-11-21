@@ -21,7 +21,7 @@ public class NormalEnemy : MonoBehaviour
 	{
 		shootTimer = shootCooldown;
 
-		Debug.Log("time: " + Time.time + ";  shootTimer:" + shootTimer);
+		//Debug.Log("time: " + Time.time + ";  shootTimer:" + shootTimer);
 
 		scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
 		score = scoreHolder.GetComponent<Score>();

@@ -44,6 +44,21 @@ public class SpawnEnemies : MonoBehaviour
         hommingSpawnCd = 5.0f/(1+((float)Score.scoreNum/10000));
 
     }
+
+    public void spawnNormal()
+    {
+        if (!spawnNormalOff)
+        {
+            if (Time.time > normalSpawnTimer)
+            {
+                normalSpawnTimer = Time.time + normalSpawnCd;
+                spawnPointNormal = new Vector3(Random.Range(-2f, 8f), 6.0f, 0f);
+
+                Instantiate(normalEnemy, spawnPointNormal, Quaternion.identity);
+            }
+        }
+    }
+
     public void spawnHomming()
     {
         if (!spawnHommingOff)
@@ -68,19 +83,6 @@ public class SpawnEnemies : MonoBehaviour
         }
     }
 
-    public void spawnNormal()
-    {
-        if (!spawnNormalOff)
-        {
-            if (Time.time > normalSpawnTimer)
-            {
-                normalSpawnTimer = Time.time + normalSpawnCd;
-                spawnPointNormal = new Vector3(Random.Range(-2f, 8f), 6.0f, 0f);
-
-                Instantiate(normalEnemy, spawnPointNormal, Quaternion.identity);
-            }
-        }
-    }
     public void spawnSniper()
     {
         if (!spawnSniperOff)

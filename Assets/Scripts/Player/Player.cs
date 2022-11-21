@@ -100,6 +100,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void godmode()
+    {
+        invincible = !invincible;
+    }
+
     void stopFreeze()
     {
         speed = startSpeed;
