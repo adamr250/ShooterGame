@@ -30,16 +30,22 @@ public class AimAndShoot : MonoBehaviour
 
             //if (Time.time > shootTimer1)
             //{
-                if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
+            {
+                //shootTimer1 = Time.time + shootCooldown;
+
+                //Debug.Log("X: " + mouse.x + ";    Y: " + mouse.y);
+                playerGun = GameObject.Find("PlayerGun").transform.position;
+                Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
+                //Debug.Log("X: " + GameObject.Find("Player").transform.position.x + ";    Y: " + GameObject.Find("Player").transform.position.y);
+                if(Player.attackBoosted)
                 {
-                    //shootTimer1 = Time.time + shootCooldown;
+                    Debug.Log("Boosted Attack");
+                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 85));
+                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 95));
+                }
 
-                    //Debug.Log("X: " + mouse.x + ";    Y: " + mouse.y);
-                    playerGun = GameObject.Find("PlayerGun").transform.position;
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
-                    //Debug.Log("X: " + GameObject.Find("Player").transform.position.x + ";    Y: " + GameObject.Find("Player").transform.position.y);
-
-                };
+            };
             //}
 
             if (Time.time > shootTimer2)

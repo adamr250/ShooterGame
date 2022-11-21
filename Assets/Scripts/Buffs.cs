@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Heart : MonoBehaviour
+public class Buffs : MonoBehaviour
 {
     Life life;
 
@@ -12,6 +12,7 @@ public class Heart : MonoBehaviour
     {
         lifeHolder = GameObject.Find("LifesVal");
         life = lifeHolder.GetComponent<Life>();
+        Destroy(gameObject, 5.0f);
     }
 
     private void FixedUpdate()
@@ -24,7 +25,7 @@ public class Heart : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            life.lifeChangeValue(1);
+            //life.lifeChangeValue(1);
         }
     }
 

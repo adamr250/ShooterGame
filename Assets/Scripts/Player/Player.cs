@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    //Life life;
+    Life life;
     HealthBar healthBar;
 
     private float startX = 2.75f;
@@ -15,13 +15,22 @@ public class Player : MonoBehaviour
     private float shootTimer;
     private float startSpeed;
 
+    private bool speedBoosted = false;
+    private float speedBoostDuration = 15.0f;
+    private float speedBoostTimer;
+
+    public static bool attackBoosted = false;
+    private float attackBoostDuration = 20.0f;
+    private float attackBoostTimer;
+
     public float speed = 10.0f;
+    public float boostedSpeed;
     public float shootCooldown = 2.0f;
     public bool isShooting;
     public bool invincible;
     public bool isCooldown;
     public GameObject shield;
-    //public GameObject lifeHolder;
+    public GameObject lifeHolder;
     public GameObject health;
 
     //private Transform playerShootTransform;
@@ -33,10 +42,12 @@ public class Player : MonoBehaviour
         transform.position = new Vector2(startX, startY);
         isShooting = false;
         startSpeed = speed;
+        boostedSpeed = speed * 2.0f;
         
         body = GetComponent<Rigidbody2D>();
         healthBar = health.GetComponent<HealthBar>();
-        //life = lifeHolder.GetComponent<Life>();
+        
+        life = lifeHolder.GetComponent<Life>();
         //playerShootTransform = transform.Find("PlayerGun");
 
         //Instantiate(shield, new Vector2(startX, startY - 0.5f), Quaternion.identity);
@@ -45,17 +56,16 @@ public class Player : MonoBehaviour
     void Update()
     {
         movementVertical = Input.GetAxis("Vertical");// * speed * Time.deltaTime;
-	   
 	    movementHorizontal = Input.GetAxis("Horizontal");// * speed * Time.deltaTime;
 
-        //if (isShooting /*&& Input.GetKeyDown(KeyCode.Space)*/)
-        //{
-        //   if (Time.time > shootTimer /*|| !isCooldown*/ && shootCooldown>0)
-        //    {
-        //        Shooting();
-        //        shootTimer = Time.time + shootCooldown; 
-        //    }
-        //}
+        if (speedBoosted && speedBoostTimer < Time.time)
+        {
+            speed = startSpeed;
+            speedBoosted = false;
+        }
+
+        if (attackBoosted && attackBoostTimer < Time.time)
+            attackBoosted = false;
     }
 
 	void FixedUpdate() {
@@ -74,39 +84,59 @@ public class Player : MonoBehaviour
     }
 
 	void OnCollisionEnter2D(Collision2D collision)
-    {        
-        if (!invincible)
+    {
+        string tagName = collision.gameObject.tag;
+        switch (tagName)
         {
-            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
-            {
-                healthBar.damageTaken(20);
-                //life.lifeChangeValue(-1);
-                //SceneManager.LoadScene(0);
-                //SceneManager.UnloadSceneAsync(1);
-            }
-            /*if (collision.gameObject.tag == "Enemy")
-            {
-                transform.position = new Vector2(startX, startY);
-            }
-
-            if (collision.gameObject.tag == "EnemyBullet")
-            {
-                Instantiate(shield, new Vector2(startX, startY + 0.5f), Quaternion.identity);
-                transform.position = new Vector2(startX, startY);
-                speed = 0;
-                isShooting = false;
-                Invoke("stopFreeze", 1.0f);
-            }*/
+            case "Enemy":
+            case "EnemyBullet":
+                if (!invincible)
+                    dmgTaken(20);
+                break;
+            case "LifeBuff":
+                Debug.Log("Life collected");
+                life.lifeChangeValue(1);
+                break;
+            case "SpeedBuff":
+                speedBoosted = true;
+                speedBoostTimer = Time.time + speedBoostDuration;
+                speed = boostedSpeed;
+                break;
+            case "AttackBuff":
+                attackBoosted = true;
+                attackBoostTimer = Time.time + attackBoostDuration;
+                break;
         }
+        /*if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
+        {
+            if (!invincible)
+            {
+                dmgTaken(20);
+            }
+        }
+
+        if (collision.gameObject.tag == "LifeBuff")
+        {
+            Debug.Log("Life collected");
+            life.lifeChangeValue(1);
+        }
+
+        if(collision.gameObject.tag == "SpeedBuff")
+        {
+
+            speedBoosted = true;
+            speedBoostTimer = Time.time + speedBoostDuration;
+        }
+
+        if*/
     }
 
+    public void dmgTaken(int dmg)
+    {
+        healthBar.damageTaken(20);
+    }
     public void godmode()
     {
         invincible = !invincible;
-    }
-
-    void stopFreeze()
-    {
-        speed = startSpeed;
     }
 }

@@ -11,6 +11,9 @@ TagManager:
   - Water
   - ScoreVal
   - LifeVal
+  - LifeBuff
+  - SpeedBuff
+  - AttackBuff
   layers:
   - Default
   - TransparentFX

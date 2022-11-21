@@ -10,7 +10,7 @@ public class Life : MonoBehaviour
 
     public int lifeNum = 2;
     public Text lifeText;
-    public GameObject playerObject;
+    //public GameObject playerObject;
 
     void Update()
     {

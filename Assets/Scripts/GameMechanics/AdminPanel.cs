@@ -7,10 +7,12 @@ public class AdminPanel : MonoBehaviour
     Player player;
     public GameObject playerObject;
 
+    SpawnEnemies spawnEnemies;
+
     public InputField inputField;
     public GameObject hommingEnemy;
     public GameObject sniperEnemy;
-    private Vector3 spawnPoint1 = new Vector3(10f, 3.0f, 0.0f);
+
     private string textInput;
     private string[] commandsList = { "normal", "homming", "sniper", "kill_all", "godmode", "add_score"};
 
@@ -18,6 +20,7 @@ public class AdminPanel : MonoBehaviour
     private void Start()
     {
         player = playerObject.GetComponent<Player>();
+        spawnEnemies = gameObject.GetComponent<SpawnEnemies>();
     }
 
     private void Update()
@@ -28,9 +31,22 @@ public class AdminPanel : MonoBehaviour
         }
     }
 
+    public void normal()
+    {
+        spawnEnemies.spawnNormal();
+        Debug.Log("Spawning normal");
+    }
+
     public void homming()
-    { 
-        Instantiate(hommingEnemy, spawnPoint1, Quaternion.identity);
+    {
+        spawnEnemies.spawnHomming();
+        Debug.Log("Spawning homming");
+    }
+
+    public void sniper()
+    {
+        spawnEnemies.spawnSniper();
+        Debug.Log("Spawning sniper");
     }
 
     /*public void bulletHellTime()
@@ -38,18 +54,12 @@ public class AdminPanel : MonoBehaviour
         BulletHellTime.bulletHellTime();
     }*/
 
-    public void sniper()
-    {
-        Vector3 spawnPointSniper = new Vector3(Random.Range(-2f, 8f), Random.Range(-0.5f, 0.5f) + 4.25f, 0.0f);
-        Instantiate(sniperEnemy, spawnPointSniper, Quaternion.identity);
-    }
-
     public void kill_all()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
 
-        for (int i=0; i< enemies.Length; i++)
+        for (int i = 0; i < enemies.Length; i++)
         {
             Destroy(enemies[i]);
         }
@@ -57,6 +67,7 @@ public class AdminPanel : MonoBehaviour
         {
             Destroy(enemyBullets[i]);
         }
+        Debug.Log("kill all");
     }
 
     public void godmode()
@@ -67,7 +78,6 @@ public class AdminPanel : MonoBehaviour
     public void readStringInput(string s)
     {
         textInput = inputField.text;
-        //Debug.Log("text_input: " + textInput);
         inputField.text = "";
 
         if (Input.GetKeyDown(KeyCode.Return)) 
