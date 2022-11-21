@@ -1,0 +1,4 @@
+-health bar, zdrowie
+-konsola
+-buffy
+-homming spawn cd nie spadnie poniżej sek
