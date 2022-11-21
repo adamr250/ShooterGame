@@ -7,6 +7,9 @@ public class AdminPanel : MonoBehaviour
     Player player;
     public GameObject playerObject;
 
+    Score score;
+    public GameObject scoreObject;
+
     SpawnEnemies spawnEnemies;
 
     public InputField inputField;
@@ -21,6 +24,8 @@ public class AdminPanel : MonoBehaviour
     {
         player = playerObject.GetComponent<Player>();
         spawnEnemies = gameObject.GetComponent<SpawnEnemies>();
+
+        score = scoreObject.GetComponent<Score>();
     }
 
     private void Update()
@@ -73,6 +78,11 @@ public class AdminPanel : MonoBehaviour
     public void godmode()
     {
         player.godmode();
+    }
+
+    public void add_score()
+    {
+        score.increaseScore(1000);
     }
 
     public void readStringInput(string s)

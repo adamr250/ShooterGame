@@ -63,8 +63,8 @@ public class SpawnEnemies : MonoBehaviour
 
 
         //bulletHellTime();
-
-        hommingSpawnCd = 5.0f/(1+((float)Score.scoreNum/10000));
+        if(hommingSpawnCd > 1.0f)
+            hommingSpawnCd = 5.0f/(1+((float)Score.scoreNum/10000));
 
     }
 
@@ -100,8 +100,9 @@ public class SpawnEnemies : MonoBehaviour
 
         Instantiate(sniperEnemy, spawnPointSniper, Quaternion.identity);
     }
-    public void bulletHellTime()
+
+    /*public void bulletHellTime()
     {
 
-    }
+    }*/
 }
