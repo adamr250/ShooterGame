@@ -850,6 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 626641624}
+  scoreObject: {fileID: 1903593041}
   inputField: {fileID: 983294602}
   hommingEnemy: {fileID: 7164936644740793517, guid: 2be86baaad704844e8b47c1e5f42c078, type: 3}
   sniperEnemy: {fileID: 6037528568567741527, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
@@ -1874,7 +1875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651118653206068830, guid: aa48842f11eb83944bc97c2fa0cc3467, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4657032
+      value: 3.14
       objectReference: {fileID: 0}
     - target: {fileID: 2651118653206068830, guid: aa48842f11eb83944bc97c2fa0cc3467, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2812,7 +2813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2535115027304729328, guid: e07a00816b81faa448181da12401088c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4346905
+      value: 3.1089873
       objectReference: {fileID: 0}
     - target: {fileID: 2535115027304729328, guid: e07a00816b81faa448181da12401088c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3043,7 +3044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2535115027304729328, guid: e07a00816b81faa448181da12401088c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4657032
+      value: 3.14
       objectReference: {fileID: 0}
     - target: {fileID: 2535115027304729328, guid: e07a00816b81faa448181da12401088c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3193,7 +3194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651118653206068830, guid: aa48842f11eb83944bc97c2fa0cc3467, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.5319638
+      value: 3.2062607
       objectReference: {fileID: 0}
     - target: {fileID: 2651118653206068830, guid: aa48842f11eb83944bc97c2fa0cc3467, type: 3}
       propertyPath: m_LocalPosition.y
