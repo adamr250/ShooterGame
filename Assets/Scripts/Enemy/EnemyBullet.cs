@@ -7,7 +7,7 @@ public class EnemyBullet : MonoBehaviour
     private Vector3 directory;
     private Vector3 eulerAngles;
 
-    public float speed = 2.0f;
+    public float speed;
     public float lifeTime;
     /*private void Setup(Vector3 direction)
     {

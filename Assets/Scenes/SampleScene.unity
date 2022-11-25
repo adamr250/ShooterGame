@@ -850,6 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 626641624}
+  scoreObject: {fileID: 1903593041}
   inputField: {fileID: 983294602}
   hommingEnemy: {fileID: 7164936644740793517, guid: 2be86baaad704844e8b47c1e5f42c078, type: 3}
   sniperEnemy: {fileID: 6037528568567741527, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
@@ -875,10 +876,10 @@ MonoBehaviour:
   sniperEnemy: {fileID: 6037528568567741527, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
   sniperSpawnCd: 9
   colliders: []
-  radius: 0
+  radius: 20
   mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!114 &376018261
 MonoBehaviour:
   m_ObjectHideFlags: 0

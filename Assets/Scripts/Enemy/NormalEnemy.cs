@@ -14,7 +14,7 @@ public class NormalEnemy : MonoBehaviour
 	private GameObject buffsObject;
 
 
-	public float shootCooldown = 1.5f;
+	public float shootCooldown;
 	public GameObject bulletPref;
 
 	void Start()
@@ -41,13 +41,13 @@ public class NormalEnemy : MonoBehaviour
 		}
 	}
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         if(transform.position.y > 4f)
         {
 			movement();
         }
-    }
+    }*/
 
     void OnCollisionEnter2D(Collision2D collision)
 	{

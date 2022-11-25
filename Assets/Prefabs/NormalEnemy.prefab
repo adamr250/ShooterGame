@@ -206,5 +206,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b7c42d43aae7542961c32e33c3fcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootCooldown: 1.5
+  shootCooldown: 0.4
   bulletPref: {fileID: 5404478362954745999, guid: 311050c06f5c9eb448a55eeb8dd0406e, type: 3}
