@@ -1,11 +1,10 @@
+-buffs (speed up, silniejszy atak)
 -wrogowie nie pojawiają się na sobie
 
 -pociski: dmg zamiast one-shot, różne typy pocisków
 -bomba pod prawym przyciskiem (zabija wszystko poza bossem)
 -nowe typy wrogów: cannon, boss
 -?warstwowe tło/paralaksa
-
--zmieniający się przeciwnicy (mutacja)
 
 bug:
 kiedy masz attack boost możesz zrespić killka buffów na raz
