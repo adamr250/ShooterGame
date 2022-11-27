@@ -14,6 +14,7 @@ TagManager:
   - LifeBuff
   - SpeedBuff
   - AttackBuff
+  - Bomb
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,5 @@
--pociski: dmg zamiast one-shot, różne typy pocisków
 -bomba pod prawym przyciskiem (zabija wszystko poza bossem)
--nowe typy wrogów: cannon
+-nowe typy wrogów i pocisków: cannon
 -?warstwowe tło/paralaksa
 -mutacje wrogów (np: normal -> sniper)
 -boss składający się z kilku zależnych objektów (wąż)

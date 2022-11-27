@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     Life life;
     HealthBar healthBar;
+    Bomb bomb;
 
     private float startX = 2.75f;
 	private float startY = -3.0f;
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
     public GameObject shield;
     public GameObject lifeHolder;
     public GameObject health;
+    public GameObject bombObject;
 
     //private Transform playerShootTransform;
     
@@ -46,8 +48,9 @@ public class Player : MonoBehaviour
         
         body = GetComponent<Rigidbody2D>();
         healthBar = health.GetComponent<HealthBar>();
-        
         life = lifeHolder.GetComponent<Life>();
+        bomb = bombObject.GetComponent<Bomb>();
+
         //playerShootTransform = transform.Find("PlayerGun");
 
         //Instantiate(shield, new Vector2(startX, startY - 0.5f), Quaternion.identity);
@@ -66,6 +69,22 @@ public class Player : MonoBehaviour
 
         if (attackBoosted && attackBoostTimer < Time.time)
             attackBoosted = false;
+
+        if(Input.GetKeyDown(KeyCode.Space) && Bomb.bombCount > 0)
+        {
+            bomb.bombTextDisplay(-1);
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                Destroy(enemies[i]);
+            }
+            for (int i = 0; i < enemyBullets.Length; i++)
+            {
+                Destroy(enemyBullets[i]);
+            }
+        }
     }
 
 	void FixedUpdate() {
@@ -105,6 +124,9 @@ public class Player : MonoBehaviour
             case "AttackBuff":
                 attackBoosted = true;
                 attackBoostTimer = Time.time + attackBoostDuration;
+                break;
+            case "Bomb":
+                bomb.bombTextDisplay(1);
                 break;
         }
         /*if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
