@@ -5,7 +5,7 @@ using UnityEngine;
 public class Water : MonoBehaviour
 {
     public float speed = 2.0f;
-    public GameObject waterPrefab;
+    //public GameObject waterPrefab;
     //private Vector3 spawnPoint1 = new Vector3(0f, 0f, 1.0f);
     //private Vector3 spawnPoint2 = new Vector3(0f, 10f, 1.0f);
 

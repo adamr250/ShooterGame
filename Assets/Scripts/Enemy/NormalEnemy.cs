@@ -13,7 +13,7 @@ public class NormalEnemy : MonoBehaviour
 	private GameObject scoreHolder;
 	private GameObject buffsObject;
 
-
+	public int health;
 	public float shootCooldown;
 	public GameObject bulletPref;
 
@@ -39,6 +39,13 @@ public class NormalEnemy : MonoBehaviour
 			shootTimer = Time.time + shootCooldown;
 			Shooting();
 		}
+
+		if(health <= 0)
+        {
+			spawnBuffs.spawnBuffs(transform.position);
+			Destroy(gameObject);
+			score.increaseScore(50);
+		}
 	}
 
     /*private void FixedUpdate()
@@ -51,12 +58,16 @@ public class NormalEnemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
+		if (collision.gameObject.tag == "Player")
 		{
 			spawnBuffs.spawnBuffs(transform.position);
 			Destroy(gameObject);
 			score.increaseScore(50);
-		}
+		} 
+		else if(collision.gameObject.tag == "PlayerBullet")
+        {
+			health -= 50;
+        }
 	}
 
 	void movement()

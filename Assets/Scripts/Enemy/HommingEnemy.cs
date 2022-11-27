@@ -9,7 +9,7 @@ public class HommingEnemy : MonoBehaviour
     private GameObject scoreHolder;
     private Vector3 direction;
 
-    public float speed = 2;
+    public float speed;
 
     //private Vector2 movement;
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2651118653206068830}
   - component: {fileID: 5970025530573094817}
   - component: {fileID: 1746165889162874184}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Speed
   m_TagString: SpeedBuff
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4993320117998357661}
   - component: {fileID: 6201575583850424609}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

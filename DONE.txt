@@ -2,4 +2,7 @@
 -konsola
 -buffs (speed up, silniejszy atak)
 -homming spawn cd nie spadnie poniżej sek
+
 -wrogowie nie pojawiają się na sobie
+-bomba pod prawym przyciskiem (zabija wszystko poza bossem)
+

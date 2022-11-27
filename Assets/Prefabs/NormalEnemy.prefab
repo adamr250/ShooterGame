@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8664049339814771637}
   - component: {fileID: 1574439756926731467}
-  - component: {fileID: 6947597281918274817}
   - component: {fileID: -3273108410533812858}
   m_Layer: 7
   m_Name: NormalEnemy
@@ -173,27 +172,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!50 &6947597281918274817
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6234781747577869134}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &-3273108410533812858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,5 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b7c42d43aae7542961c32e33c3fcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootCooldown: 0.4
+  health: 100
+  shootCooldown: 0.39
   bulletPref: {fileID: 5404478362954745999, guid: 311050c06f5c9eb448a55eeb8dd0406e, type: 3}

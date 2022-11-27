@@ -24,9 +24,9 @@ public class AimAndShoot : MonoBehaviour
         {
             mouse = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
 
-            Vector3 direction = mouse - GameObject.Find("Player").transform.position;
+            Vector3 direction = mouse - GameObject.Find("PlayerSprite").transform.position;
             float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            GameObject.Find("Player").transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotation);
+            GameObject.Find("PlayerSprite").transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotation-90);
 
             //if (Time.time > shootTimer1)
             //{
@@ -34,15 +34,13 @@ public class AimAndShoot : MonoBehaviour
             {
                 //shootTimer1 = Time.time + shootCooldown;
 
-                //Debug.Log("X: " + mouse.x + ";    Y: " + mouse.y);
                 playerGun = GameObject.Find("PlayerGun").transform.position;
                 Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
-                //Debug.Log("X: " + GameObject.Find("Player").transform.position.x + ";    Y: " + GameObject.Find("Player").transform.position.y);
                 if(Player.attackBoosted)
                 {
                     Debug.Log("Boosted Attack");
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 85.0f));
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 95.0f));
+                    //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 85.0f));
+                    //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 95.0f));
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 87.5f));
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 92.5f));
                 }

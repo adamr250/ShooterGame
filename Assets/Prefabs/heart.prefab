@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7084745318451304151}
   - component: {fileID: 7084745318451304144}
   - component: {fileID: 7084745318451304145}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Heart
   m_TagString: LifeBuff
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7084745318938845842}
   - component: {fileID: 7084745318938845841}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -24,10 +24,9 @@ public class Player : MonoBehaviour
     private float attackBoostDuration = 20.0f;
     private float attackBoostTimer;
 
-    public float speed = 10.0f;
+    public float speed;
     public float boostedSpeed;
     public float shootCooldown = 2.0f;
-    public bool isShooting;
     public bool invincible;
     public bool isCooldown;
     public GameObject shield;
@@ -42,7 +41,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         transform.position = new Vector2(startX, startY);
-        isShooting = false;
         startSpeed = speed;
         boostedSpeed = speed * 2.0f;
         
@@ -89,11 +87,6 @@ public class Player : MonoBehaviour
 
 	void FixedUpdate() {
         playerMovement();
-        if (body.velocity.magnitude > 0 && GameObject.Find("Shield(Clone)") != null)
-        {
-            Destroy(GameObject.Find("Shield(Clone)"));
-            isShooting = true;
-        }
     }
 
     void playerMovement() {
@@ -108,6 +101,9 @@ public class Player : MonoBehaviour
         switch (tagName)
         {
             case "Enemy":
+                if (!invincible)
+                    dmgTaken(100);
+                break;
             case "EnemyBullet":
                 if (!invincible)
                     dmgTaken(20);
@@ -155,7 +151,7 @@ public class Player : MonoBehaviour
 
     public void dmgTaken(int dmg)
     {
-        healthBar.damageTaken(20);
+        healthBar.damageTaken(dmg);
     }
     public void godmode()
     {

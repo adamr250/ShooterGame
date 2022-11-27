@@ -67,7 +67,7 @@ public class SpawnEnemies : MonoBehaviour
         while (true)
         {
             normalSpawnTimer = Time.time + normalSpawnCd;
-            spawnPointNormal = new Vector3(Random.Range(-2f, 8f), Random.Range(3.5f, 4.0f), 0f);
+            spawnPointNormal = new Vector3(Random.Range(-2f, 8f), Random.Range(3.5f, 4.5f), 0f);
 
             canSpawnHere = preventSpawnOverlap(spawnPointNormal);
 
@@ -88,15 +88,15 @@ public class SpawnEnemies : MonoBehaviour
     public void spawnHomming()
     {
         hommingSpawnTimer = Time.time + hommingSpawnCd;
-        float axis = Random.Range(0f, 1.0f);
+        int axis = Random.Range(0, 1);
         int plusOrMinus = Random.Range(0, 2) * 2 - 1;
-        if (axis <= 0.5f)
-        {
+        if (axis == 0)
+        {   //spawn at axis Y
             spawnPointHomming = new Vector3(Random.Range(-3.4f, 9.5f), plusOrMinus * 6.0f, 0.0f);
         }
         else
-        {
-            spawnPointHomming = new Vector3((plusOrMinus * 6.55f) + 2.95f, Random.Range(-5.5f, 5.5f), 0.0f);
+        {   //spawn at axis X
+            spawnPointHomming = new Vector3((plusOrMinus * 6.55f) + 2.95f, Random.Range(-1.5f, 5.5f), 0.0f);
         }
 
         Instantiate(hommingEnemy, spawnPointHomming, Quaternion.identity);

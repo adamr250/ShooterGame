@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2535115027304729328}
   - component: {fileID: 7361705064988684259}
   - component: {fileID: 9001755325467388641}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Attack
   m_TagString: AttackBuff
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3758914540688743773}
   - component: {fileID: 1351458927468340618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
