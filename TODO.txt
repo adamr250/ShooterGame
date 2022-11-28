@@ -1,7 +1,7 @@
 -nowe typy wrogów i pocisków: cannon
 -?warstwowe tło/paralaksa
 -mutacje wrogów (np: normal -> sniper)
--boss składający się z kilku zależnych objektów (wąż)
+-celownik zamiast kursora (kurson niewidzialny, w jego miesce sprite)
 
 bug:
 kiedy masz attack boost możesz zrespić killka buffów na raz

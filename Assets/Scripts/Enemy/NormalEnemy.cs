@@ -66,7 +66,7 @@ public class NormalEnemy : MonoBehaviour
 		} 
 		else if(collision.gameObject.tag == "PlayerBullet")
         {
-			health -= 50;
+			health -= 51;
         }
 	}
 

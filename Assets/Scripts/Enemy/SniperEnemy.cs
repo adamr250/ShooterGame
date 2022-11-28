@@ -23,7 +23,7 @@ public class SniperEnemy : MonoBehaviour
         scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
         score = scoreHolder.GetComponent<Score>();
 
-        child = this.gameObject.transform.GetChild(0);
+        child = gameObject.transform.GetChild(0);
         body = GetComponent<Rigidbody2D>();
     }
 

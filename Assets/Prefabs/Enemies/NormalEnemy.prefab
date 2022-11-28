@@ -186,4 +186,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   shootCooldown: 0.39
+  speed: 2
   bulletPref: {fileID: 5404478362954745999, guid: 311050c06f5c9eb448a55eeb8dd0406e, type: 3}
