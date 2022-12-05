@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class AimAtPlayer : MonoBehaviour
 {
+    [SerializeField] GameObject bulletPref;
+    [SerializeField] float shootCooldown;
+    private float shootTimer;
 
     private Vector3 target;
     private Vector3 direction;
     private Vector3 weaponPoint;
+
     private void Start()
     {
         if(!gameObject.GetComponent<Rigidbody2D>())
@@ -16,7 +20,7 @@ public class AimAtPlayer : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
     }
-    void Update()
+    void FixedUpdate()
     {
         target = GameObject.Find("Player").transform.position;
 
@@ -26,5 +30,11 @@ public class AimAtPlayer : MonoBehaviour
         direction.Normalize();
 
         weaponPoint = gameObject.transform.GetChild(0).transform.position;
+
+        if (Time.time > shootTimer)
+        {
+            shootTimer = Time.time + shootCooldown;
+            Instantiate(bulletPref, weaponPoint, Quaternion.Euler(0.0f, 0.0f, rotation-90));
+        }
     }
 }

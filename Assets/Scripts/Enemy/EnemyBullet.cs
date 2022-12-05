@@ -15,7 +15,7 @@ public class EnemyBullet : MonoBehaviour
         eulerAngles = transform.rotation.eulerAngles;
     }*/
 
-    void Update()
+    void FixedUpdate()
     {
         float movement = speed * Time.deltaTime;
 		transform.Translate(0, movement, 0);

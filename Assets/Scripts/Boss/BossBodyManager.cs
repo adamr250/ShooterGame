@@ -37,6 +37,7 @@ public class BossBodyManager : MonoBehaviour
         if(Input.GetAxis("Horizontal") != 0)
         {
             bossBody[0].transform.Rotate(new Vector3(0, 0, -turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal")));
+            Debug.Log(Input.GetAxis("Horizontal"));
         }
 
         if(bossBody.Count > 1)
