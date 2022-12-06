@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class WaypointManager : MonoBehaviour
 {
-    private float transformTimer;
-    private float transformCD;
+    private static float transformTimer;
+    private static float transformCD;
 
-    private bool showTime = true;
+    private static bool showTimer = false;
+
+    public static int hope = 10;
 
     private void Start()
     {
@@ -19,15 +21,38 @@ public class WaypointManager : MonoBehaviour
 
     public void Update()
     {
-        if(!showTime)
+        /*if(!showTimer)
+         {
+             Debug.Log("T: " + (transformTimer - Time.time));
+             //Debug.Log("transform time: " + (transformTimer - Time.time) + "---------------------------------------------");
+             //showTime = true;
+         }
+         if(showTimer == true)
+         {
+             Debug.Log("I DON'T KNOW WHAT IS GOING ON!!! PLEASE HELP!!!");
+         }
+         if (Time.time > transformTimer)
+         {
+             transformTimer = Time.time + transformCD;
+             //Debug.Log("transform time: " + (transformTimer - Time.time));
+             transform.position = new Vector3(Random.Range(-2.0f, 8.0f), Random.Range(-5.0f, 5.0f), 0);
+             Debug.Log("Waypoint_Pos: " + transform.position);
+             //changePosition();
+         }*/
+        changePosition();
+    }
+
+    public void changePosition()
+    {
+        //Debug.Log("HOPE: " + hope);
+        if(showTimer)
         {
             Debug.Log("T: " + (transformTimer - Time.time));
-            //Debug.Log("transform time: " + (transformTimer - Time.time) + "---------------------------------------------");
-            //showTime = true;
+            //showTimer = false;
         }
-        if(showTime)
+        if (showTimer == false)
         {
-            Debug.Log("I DON'T KNOW WHAT IS GOING ON!!!");
+            Debug.Log("I DON'T KNOW WHAT IS GOING ON!!! PLEASE HELP!!!");
         }
         if (Time.time > transformTimer)
         {
@@ -39,28 +64,13 @@ public class WaypointManager : MonoBehaviour
         }
     }
 
-    /*public void changePosition()
-    {
-        transformTimer = Time.time + transformCD;
-        Vector3 oldPosition = transform.position;
-        transform.position = new Vector3(Random.Range(-2.0f, 8.0f), Random.Range(-5.0f, 5.0f), 0);
-        Vector3 newPosition = transform.position;
-        if(oldPosition == newPosition)
-        {
-            Debug.Log("WHAT THE... ?!");
-        } else
-        {
-            Debug.Log("Old: " + oldPosition + ";     New: " + newPosition);
-        }
-        Debug.Log("here");
-    }*/
-
     public void refreshTimer()
     {
-        Debug.Log("timer 2: " + transformTimer);
+        //Debug.Log("timer 2: " + transformTimer);
         transformTimer = Time.time + transformCD;
-        Debug.Log("refreshed timer: " + (transformTimer-Time.time));
-        showTime = false;
+        hope = 5;
+        //Debug.Log("refreshed timer: " + (transformTimer-Time.time));
+        showTimer = true;
     }
 
     
