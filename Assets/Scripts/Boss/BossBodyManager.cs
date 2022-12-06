@@ -5,8 +5,6 @@ using UnityEngine;
 public class BossBodyManager : MonoBehaviour
 {
     [SerializeField] float bodyPartsDistance = 1;
-    [SerializeField] float speed = 100;
-    [SerializeField] float turnSpeed = 100;
     [SerializeField] List<GameObject> bodyParts = new List<GameObject>();
     List<GameObject> bossBody = new List<GameObject>();
 
@@ -27,18 +25,18 @@ public class BossBodyManager : MonoBehaviour
         {
             createBody();
         }
-        bossMovement();   
+        bodyMovement();   
     }
 
-    void bossMovement()
+    void bodyMovement()
     {
-        bossBody[0].GetComponent<Rigidbody2D>().velocity = bossBody[0].transform.right * speed * Time.deltaTime;
+        /*bossBody[0].GetComponent<Rigidbody2D>().velocity = bossBody[0].transform.right * speed * Time.deltaTime;
 
         if(Input.GetAxis("Horizontal") != 0)
         {
             bossBody[0].transform.Rotate(new Vector3(0, 0, -turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal")));
             Debug.Log(Input.GetAxis("Horizontal"));
-        }
+        }*/
 
         if(bossBody.Count > 1)
         {

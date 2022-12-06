@@ -7,3 +7,5 @@
 -bomba pod prawym przyciskiem (zabija wszystko poza bossem)
 -boss składający się z kilku zależnych objektów (wąż)
 
+-boss porusza się samodzielnie w losowy sposób używając waypointu
+-waypoint sam zmienia pozycje po pewnym czasie, jeśli boss do niego nie dotrze
