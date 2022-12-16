@@ -1,7 +1,13 @@
--nowe typy wrogów i pocisków: cannon
--?warstwowe tło/paralaksa
--mutacje wrogów (np: normal -> sniper)
 -celownik zamiast kursora (kurson niewidzialny, w jego miesce sprite)
+-warunek pojawienia się bossa (opcje: po upływie czau, ilość ptk, ilość zabitych wrogów)
+-poprawa balnsu gry
+-różne typy wrogich pocisków (różna prędkość, dmg itp)
+-nowy wróg cannon
+-mutacje wrogów (np: normal -> sniper)
+-boss od czasu do czasu próbuje taranować gracza (leci troche przed gracza)
+-dynamiczny poziom tródności
+-sniper - animacja strzelania (czewony laser łączący sanipera z graczem tuż przed strzałem)
+-?warstwowe tło/paralaksa
 
 bug:
 kiedy masz attack boost możesz zrespić killka buffów na raz
