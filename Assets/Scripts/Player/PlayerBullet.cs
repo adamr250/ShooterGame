@@ -7,8 +7,8 @@ public class PlayerBullet : MonoBehaviour
     private Vector3 directory;
     private Vector3 eulerAngles;
 
-    public float speed = 2.0f;
-    public float lifeTime;
+    private float speed = 9.0f;
+    private float lifeTime = 0.75f;
     /*private void Setup(Vector3 direction)
     {
         this.direction = direction;

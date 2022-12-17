@@ -26,23 +26,16 @@ public class HeadMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //float distance = Vector2.Distance(target.transform.position, transform.position);
 
         body.velocity = body.transform.right * speed * Time.deltaTime;
 
-        //if (distance > 1)
-        //{
-            direction = target.transform.position - transform.position;
-            float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            body.MoveRotation(Mathf.LerpAngle(body.rotation, rotation, rotationSpeed * Time.deltaTime));
-        //}
+        direction = target.transform.position - transform.position;
+        float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        body.MoveRotation(Mathf.LerpAngle(body.rotation, rotation, rotationSpeed * Time.deltaTime));
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        //Destroy(target);
-        waypointManager.refreshTimer();
-        target.transform.position = new Vector3(Random.Range(-2.0f, 8.0f), Random.Range(-5.0f, 5.0f), 0);
-        Debug.Log("Target_Pos: " + target.transform.position);
+        waypointManager.changePosition();
     }
 }

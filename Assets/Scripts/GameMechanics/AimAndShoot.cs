@@ -6,15 +6,23 @@ public class AimAndShoot : MonoBehaviour
 {
     private Vector3 mouse;
     private Vector3 playerGun;
-    //private float shootTimer1 = 0.0f;
-    private float shootTimer2 = 0.0f;
+    private float shootTimer = 0.0f;
+    private float shotgunTimer = 0.0f;
 
-    //public float shootCooldown = 0.5f;
+    [SerializeField] private Texture2D cursorTexture;
+    private Vector2 hotSpot = Vector2.zero;
+    private CursorMode cursorMode = CursorMode.Auto;
+
+    private float shootCooldownDefault = 0.3f;
+    private float shootCooldownBoosted = 0.2f;
+    private float shootCooldown;
     public float shotgunCooldown = 5.0f;
     public GameObject bulletPref;
 
     void Start()
     {
+        shootCooldown = shootCooldownDefault;
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
         //Cursor.visible = false;
     }
 
@@ -22,7 +30,7 @@ public class AimAndShoot : MonoBehaviour
     {
         if (!Pause.Paused)
         {
-            mouse = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
+            mouse = transform.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
 
             Vector3 direction = mouse - GameObject.Find("PlayerSprite").transform.position;
             float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -30,29 +38,34 @@ public class AimAndShoot : MonoBehaviour
 
             //if (Time.time > shootTimer1)
             //{
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0) && Time.time > shootTimer)
             {
-                //shootTimer1 = Time.time + shootCooldown;
+
+                shootTimer = Time.time + shootCooldown;
 
                 playerGun = GameObject.Find("PlayerGun").transform.position;
                 Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
                 if(Player.attackBoosted)
                 {
                     Debug.Log("Boosted Attack");
+                    shootCooldown = shootCooldownBoosted;
                     //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 85.0f));
                     //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 95.0f));
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 87.5f));
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 92.5f));
+                } else
+                {
+                    shootCooldown = shootCooldownDefault;
                 }
 
             };
             //}
 
-            if (Time.time > shootTimer2)
+            if (Time.time > shotgunTimer)
             {
                 if (Input.GetMouseButtonDown(1))
                 {
-                    shootTimer2 = Time.time + shotgunCooldown;
+                    shotgunTimer = Time.time + shotgunCooldown;
 
                     playerGun = GameObject.Find("PlayerGun").transform.position;
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 70));

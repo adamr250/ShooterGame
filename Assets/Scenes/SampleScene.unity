@@ -278,7 +278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38560886}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 131485970}
@@ -850,9 +850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977db1181ed0c7c4b807df619ffc1569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnNormalOff: 1
-  spawnHommingOff: 1
-  spawnSniperOff: 1
+  spawnNormalOff: 0
+  spawnHommingOff: 0
+  spawnSniperOff: 0
   normalEnemy: {fileID: 6234781747577869134, guid: 9a3645aa098705948a59a773ccac909b, type: 3}
   normalSpawnCd: 1.9
   hommingEnemy: {fileID: 7164936644740793517, guid: 2be86baaad704844e8b47c1e5f42c078, type: 3}
@@ -864,6 +864,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 128
+  bossManager: {fileID: 868761364}
 --- !u!114 &376018261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,6 +1281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09138e76d5d9fab44a2538b020afdf7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: ab5481b3c49dabd459717edf231e895f, type: 3}
   shotgunCooldown: 5
   bulletPref: {fileID: 5830193729959033905, guid: e00a6b1d0bf37e94887fa6413f66487e, type: 3}
 --- !u!1 &549483029
@@ -1548,7 +1550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c748828ac164ac438b1b6445ff4d015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 6
   boostedSpeed: 0
   shootCooldown: 1
   invincible: 1
@@ -1920,7 +1922,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868761364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ad0ea9fa440ea140b11cb49e4a143cf, type: 3}
   m_Name: 

@@ -28,9 +28,15 @@ public class SpawnEnemies : MonoBehaviour
     public LayerMask mask;
 
     private bool canSpawnHere = false;
+    private bool canSpawnHere1 = false;
+    private bool canSpawnHere2 = false;
+
+    [SerializeField] private GameObject bossManager;
+    private bool bossIsSpawned = false;
 
     private void Start()
     {
+        bossManager.GetComponent<BossBodyManager>().enabled = false;
         hommingSpawnTimer = hommingSpawnCd;
         sniperSpawnTimer = sniperSpawnCd;
         normalSpawnTimer = normalSpawnCd;
@@ -38,36 +44,63 @@ public class SpawnEnemies : MonoBehaviour
 
     void Update()
     {
-        if (!spawnNormalOff && Time.time > normalSpawnTimer)
+        if (Score.scoreNum < 50000)
         {
-            spawnNormal();
-        }
+            if (!spawnNormalOff && Time.time > normalSpawnTimer)
+            {
+                spawnNormal();
+            }
 
-        if (!spawnHommingOff && Time.time > hommingSpawnTimer && Score.scoreNum > 1000)
+            if (!spawnHommingOff && Time.time > hommingSpawnTimer && Score.scoreNum > 800)
+            {
+                spawnHomming();
+            }
+
+            if (!spawnSniperOff && Time.time > sniperSpawnTimer && Score.scoreNum > 5000)
+            {
+                spawnSniper();
+            }
+        } else if(!bossIsSpawned)
         {
-            spawnHomming();
+            bossIsSpawned = true;
+            bossManager.GetComponent<BossBodyManager>().enabled = true;
         }
-
-        if (!spawnSniperOff && Time.time > sniperSpawnTimer && Score.scoreNum > 10000)
-        {
-             spawnSniper();
-        }
-
 
         //bulletHellTime();
-        if(hommingSpawnCd > 1.0f)
+        if (hommingSpawnCd > 1.0f)
             hommingSpawnCd = 5.0f/(1+((float)Score.scoreNum/10000));
 
     }
 
     public void spawnNormal()
     {
-        canSpawnHere = false;
+        canSpawnHere = false; //responsible for overlaping
+        canSpawnHere1 = false; //responsible for distance from player
+        canSpawnHere2 = false; //responsible for distance from map center
+
         int safetyBreak = 0;
         while (true)
         {
             normalSpawnTimer = Time.time + normalSpawnCd;
-            spawnPointNormal = new Vector3(Random.Range(-2f, 8f), Random.Range(3.5f, 4.5f), 0f);
+
+            int axis = Random.Range(0, 2);
+            int plusOrMinus = Random.Range(0, 2) * 2 - 1;
+            //spawnPointNormal = new Vector3(Random.Range(-2f, 8f), Random.Range(3.5f, 4.5f), 0f);
+            /*spawnPointNormal = Random.insideUnitCircle;
+            Debug.Log("random spawn point: " + spawnPointNormal);
+            Debug.Log("corrected spawn point: " + spawnPointNormal*3 + " + " + (spawnPointNormal.normalized));
+            spawnPointNormal = spawnPointNormal * 2 + (spawnPointNormal.normalized)*3;
+            spawnPointNormal += new Vector3(2.0f, 0, 0);
+            spawnPointNormal.x *= 1.5f;*/
+            Debug.Log("axis: " + axis);
+            if (axis == 0)
+            {   //spawn at axis X
+                spawnPointNormal = new Vector3(Random.Range(-2.2f, 8.3f), plusOrMinus * 4.25f, 0.0f);
+            }
+            else
+            {   //spawn at axis Y
+                spawnPointNormal = new Vector3((plusOrMinus * 5.25f) + 2.95f, Random.Range(-4.75f, 4.75f), 0.0f);
+            }
 
             canSpawnHere = preventSpawnOverlap(spawnPointNormal);
 
@@ -88,15 +121,15 @@ public class SpawnEnemies : MonoBehaviour
     public void spawnHomming()
     {
         hommingSpawnTimer = Time.time + hommingSpawnCd;
-        int axis = Random.Range(0, 1);
+        int axis = Random.Range(0, 2);
         int plusOrMinus = Random.Range(0, 2) * 2 - 1;
         if (axis == 0)
-        {   //spawn at axis Y
+        {   //spawn at axis X
             spawnPointHomming = new Vector3(Random.Range(-3.4f, 9.5f), plusOrMinus * 6.0f, 0.0f);
         }
         else
-        {   //spawn at axis X
-            spawnPointHomming = new Vector3((plusOrMinus * 6.55f) + 2.95f, Random.Range(-1.5f, 5.5f), 0.0f);
+        {   //spawn at axis Y
+            spawnPointHomming = new Vector3((plusOrMinus * 6.55f) + 2.95f, Random.Range(-5.5f, 5.5f), 0.0f);
         }
 
         Instantiate(hommingEnemy, spawnPointHomming, Quaternion.identity);

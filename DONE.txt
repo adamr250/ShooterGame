@@ -9,3 +9,5 @@
 
 -boss porusza się samodzielnie w losowy sposób używając waypointu
 -waypoint sam zmienia pozycje po pewnym czasie, jeśli boss do niego nie dotrze
+
+-celownik zamiast kursora (kurson niewidzialny, w jego miesce sprite)

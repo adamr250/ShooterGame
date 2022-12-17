@@ -17,7 +17,7 @@ public class AdminPanel : MonoBehaviour
     public GameObject sniperEnemy;
 
     private string textInput;
-    private string[] commandsList = { "normal", "homming", "sniper", "kill_all", "godmode", "add_score"};
+    private string[] commandsList = { "normal", "homming", "sniper", "kill_all", "godmode", "add_1000", "add_10000" };
 
 
     private void Start()
@@ -80,9 +80,14 @@ public class AdminPanel : MonoBehaviour
         player.godmode();
     }
 
-    public void add_score()
+    public void add_1000()
     {
         score.increaseScore(1000);
+    }
+
+    public void add_10000()
+    {
+        score.increaseScore(10000);
     }
 
     public void readStringInput(string s)

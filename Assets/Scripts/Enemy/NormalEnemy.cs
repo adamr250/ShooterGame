@@ -13,13 +13,24 @@ public class NormalEnemy : MonoBehaviour
 	private GameObject scoreHolder;
 	private GameObject buffsObject;
 
+	private float rotation;
+
 	public int health;
 	public float shootCooldown;
 	public GameObject bulletPref;
 
+	private Vector3 target;
+	private Vector3 direction;
+
+
 	void Start()
 	{
-		shootTimer = shootCooldown;
+		if(!gameObject.GetComponent<Rigidbody2D>())
+        {
+			gameObject.AddComponent<Rigidbody2D>();
+			gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+		}
+		shootTimer = 3*shootCooldown;
 
 		//Debug.Log("time: " + Time.time + ";  shootTimer:" + shootTimer);
 
@@ -28,6 +39,13 @@ public class NormalEnemy : MonoBehaviour
 
 		buffsObject = GameObject.Find("GameCore");
 		spawnBuffs = buffsObject.GetComponent<SpawnBuffs>();
+
+
+		target = GameObject.Find("Player").transform.position;
+
+		direction = target - transform.position;
+		rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+		GetComponent<Rigidbody2D>().rotation = rotation + 90;
 	}
 
 
@@ -48,21 +66,27 @@ public class NormalEnemy : MonoBehaviour
 		}
 	}
 
-    /*private void FixedUpdate()
+	/*private void FixedUpdate()
     {
         if(transform.position.y > 4f)
         {
 			movement();
         }
     }*/
+	void Shooting()
+	{
+		child = this.gameObject.transform.GetChild(0);
+		enemyGun = child.transform.position;
+		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
+	}
 
-    void OnCollisionEnter2D(Collision2D collision)
+	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.tag == "Player")
 		{
 			spawnBuffs.spawnBuffs(transform.position);
-			Destroy(gameObject);
 			score.increaseScore(50);
+			Destroy(gameObject);
 		} 
 		else if(collision.gameObject.tag == "PlayerBullet")
         {
@@ -76,12 +100,5 @@ public class NormalEnemy : MonoBehaviour
 		float movementHorizontal = speed * Time.deltaTime;
 		transform.Translate(0, -movementHorizontal, 0);
 		//transform.Translate(transform.position.x, movementHorizontal, transform.position.z);
-	}
-
-	void Shooting()
-	{
-		child = this.gameObject.transform.GetChild(0);
-		enemyGun = child.transform.position;
-		Instantiate(bulletPref, enemyGun, Quaternion.Euler(0.0f, 0.0f, 180));
 	}
 }
