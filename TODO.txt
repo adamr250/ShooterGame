@@ -1,5 +1,4 @@
 (-poprawa balnsu gry )
--sniper - laser jako imitacja celownika i strzału
 
 -nowy wróg cannon
 -różne typy wrogich pocisków (różna prędkość, dmg itp)
