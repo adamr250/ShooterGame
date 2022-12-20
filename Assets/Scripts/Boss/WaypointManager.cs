@@ -6,8 +6,8 @@ public class WaypointManager : MonoBehaviour
 {
     private static float transformTimer;
     private static float transformCD;
-
-    private void Start()
+    
+    void Start()
     {
         transformCD = 5;
         transformTimer = transformCD + Time.time;
@@ -15,18 +15,23 @@ public class WaypointManager : MonoBehaviour
         //Debug.Log("timer 1: " + transformTimer);
     }
 
-    public void Update()
+    void Update()
     {
         if (Time.time > transformTimer)
         {
-            changePosition();
+            changePosition(gameObject);
         }
     }
 
-    public void changePosition()
+    public void changePosition(GameObject target)
     {
         transformTimer = Time.time + transformCD;
-        transform.position = new Vector3(Random.Range(-2.0f, 8.0f), Random.Range(-5.0f, 5.0f), 0);
-        //Debug.Log("Waypoint_Pos: " + transform.position);
+        target.transform.position = new Vector3(Random.Range(-2.0f, 8.0f), Random.Range(-5.0f, 5.0f), 0);
+        //Debug.Log("Waypoint_Pos: " + tmp++);
     }    
+
+    public void refreshTimer()
+    {
+        transformTimer = Time.time + transformCD;
+    }
 }

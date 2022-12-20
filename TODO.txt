@@ -1,12 +1,14 @@
--warunek pojawienia się bossa (opcje: po upływie czau, ilość ptk, ilość zabitych wrogów)
--NormalEnemy pojawiają się na obrzeżach całej mapy, nie tylko góra, w pewnej odległości od gracza i środka mapy
--poprawa balnsu gry
--różne typy wrogich pocisków (różna prędkość, dmg itp)
-	-sniper - animacja strzelania (czewony laser)
+(-poprawa balnsu gry )
+-sniper - laser jako imitacja celownika i strzału
+
 -nowy wróg cannon
+-różne typy wrogich pocisków (różna prędkość, dmg itp)
+
 -dynamiczny poziom tródności
+
 -mutacje wrogów (np: normal -> sniper)
 -boss od czasu do czasu próbuje taranować gracza (leci troche przed gracza)
+
 -?warstwowe tło/paralaksa
 
 bug:

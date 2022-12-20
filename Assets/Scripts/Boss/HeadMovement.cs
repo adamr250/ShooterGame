@@ -36,6 +36,8 @@ public class HeadMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        waypointManager.changePosition();
+        //waypointManager.refreshTimer();
+        //target.transform.position = new Vector3(Random.Range(-2.0f, 8.0f), Random.Range(-5.0f, 5.0f), 0);
+        waypointManager.changePosition(target);
     }
 }

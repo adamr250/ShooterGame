@@ -4,28 +4,33 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    public bool spawnNormalOff = false;
-    public bool spawnHommingOff = false;
-    public bool spawnSniperOff = false;
+    [SerializeField] private bool spawnNormalOff = false;
+    [SerializeField] private bool spawnHommingOff = false;
+    [SerializeField] private bool spawnSniperOff = false;
 
-    public GameObject normalEnemy;
-    public float normalSpawnCd = 4.5f;
+    [SerializeField] private GameObject normalEnemy;
+    [SerializeField] private float normalSpawnCd = 4.5f;
     private float normalSpawnTimer;
     private Vector3 spawnPointNormal;
 
-    public GameObject hommingEnemy;
-    public float hommingSpawnCd = 7.0f;
+    [SerializeField] private GameObject hommingEnemy;
+    [SerializeField] private float hommingSpawnCd = 7.0f;
     private float hommingSpawnTimer;
     private Vector3 spawnPointHomming;// = new Vector3(10f, 3.0f, 0.0f);
 
-    public GameObject sniperEnemy;
-    public float sniperSpawnCd = 10.0f;
+    [SerializeField] private GameObject sniperEnemy;
+    [SerializeField] private float sniperSpawnCd = 10.0f;
     private float sniperSpawnTimer;
     private Vector3 spawnPointSniper;// = new Vector3(10f, 3.0f, 0.0f);
 
-    public Collider2D[] colliders;
-    public float radius = 20;
-    public LayerMask mask;
+    [SerializeField] private Collider2D[] colliders;
+    [SerializeField] private float radius = 20;
+    [SerializeField] LayerMask mask;
+
+    [SerializeField] private int scoreToSpawnNormal;
+    [SerializeField] private int scoreToSpawnHomming;
+    [SerializeField] private int scoreToSpawnSniper;
+    [SerializeField] private int scoreToSpawnBoss;
 
     private bool canSpawnHere = false;
     private bool canSpawnHere1 = false;
@@ -44,19 +49,19 @@ public class SpawnEnemies : MonoBehaviour
 
     void Update()
     {
-        if (Score.scoreNum < 50000)
+        if (Score.scoreNum < scoreToSpawnBoss)
         {
-            if (!spawnNormalOff && Time.time > normalSpawnTimer)
+            if (!spawnNormalOff && Time.time > normalSpawnTimer && Score.scoreNum >= scoreToSpawnNormal)
             {
                 spawnNormal();
             }
 
-            if (!spawnHommingOff && Time.time > hommingSpawnTimer && Score.scoreNum > 800)
+            if (!spawnHommingOff && Time.time > hommingSpawnTimer && Score.scoreNum >= scoreToSpawnHomming)
             {
                 spawnHomming();
             }
 
-            if (!spawnSniperOff && Time.time > sniperSpawnTimer && Score.scoreNum > 5000)
+            if (!spawnSniperOff && Time.time > sniperSpawnTimer && Score.scoreNum >= scoreToSpawnSniper)
             {
                 spawnSniper();
             }
@@ -95,11 +100,11 @@ public class SpawnEnemies : MonoBehaviour
             Debug.Log("axis: " + axis);
             if (axis == 0)
             {   //spawn at axis X
-                spawnPointNormal = new Vector3(Random.Range(-2.2f, 8.3f), plusOrMinus * 4.25f, 0.0f);
+                spawnPointNormal = new Vector3(Random.Range(-2.2f, 8.3f), plusOrMinus * 5.25f, 0.0f);
             }
             else
             {   //spawn at axis Y
-                spawnPointNormal = new Vector3((plusOrMinus * 5.25f) + 2.95f, Random.Range(-4.75f, 4.75f), 0.0f);
+                spawnPointNormal = new Vector3((plusOrMinus * 6.25f) + 2.95f, Random.Range(-4.75f, 4.75f), 0.0f);
             }
 
             canSpawnHere = preventSpawnOverlap(spawnPointNormal);

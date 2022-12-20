@@ -783,6 +783,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332728172}
   m_CullTransparentMesh: 1
+--- !u!1001 &338728889
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741523, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037528568567741527, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
+      propertyPath: m_Name
+      value: SniperEnemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
 --- !u!1 &376018257
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,11 +907,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977db1181ed0c7c4b807df619ffc1569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnNormalOff: 0
-  spawnHommingOff: 0
-  spawnSniperOff: 0
+  spawnNormalOff: 1
+  spawnHommingOff: 1
+  spawnSniperOff: 1
   normalEnemy: {fileID: 6234781747577869134, guid: 9a3645aa098705948a59a773ccac909b, type: 3}
-  normalSpawnCd: 1.9
+  normalSpawnCd: 3.8
   hommingEnemy: {fileID: 7164936644740793517, guid: 2be86baaad704844e8b47c1e5f42c078, type: 3}
   hommingSpawnCd: 4
   sniperEnemy: {fileID: 6037528568567741527, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
@@ -864,6 +921,10 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 128
+  scoreToSpawnNormal: 0
+  scoreToSpawnHomming: 800
+  scoreToSpawnSniper: 5000
+  scoreToSpawnBoss: 25000
   bossManager: {fileID: 868761364}
 --- !u!114 &376018261
 MonoBehaviour:
@@ -1553,7 +1614,7 @@ MonoBehaviour:
   speed: 6
   boostedSpeed: 0
   shootCooldown: 1
-  invincible: 1
+  invincible: 0
   isCooldown: 0
   shield: {fileID: 846957844662520088, guid: b014a2a4bb123b543b0b3c8c74f51b0a, type: 3}
   lifeHolder: {fileID: 2089097213}

@@ -11,3 +11,5 @@
 -waypoint sam zmienia pozycje po pewnym czasie, jeśli boss do niego nie dotrze
 
 -celownik zamiast kursora (kurson niewidzialny, w jego miesce sprite)
+-warunek pojawienia się bossa (opcje: po upływie czau, ilość ptk, ilość zabitych wrogów)
+-NormalEnemy pojawiają się na obrzeżach całej mapy, nie tylko góra, wcelowani w gracza i lecą przed siebie

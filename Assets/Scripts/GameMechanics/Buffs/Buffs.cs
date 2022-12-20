@@ -7,9 +7,17 @@ public class Buffs : MonoBehaviour
     Life life;
 
     private GameObject lifeHolder;
+    private Rigidbody2D body; 
 
     void Start()
     {
+        if (!gameObject.GetComponent<Rigidbody2D>())
+        {
+            body = gameObject.AddComponent<Rigidbody2D>();
+            body.gravityScale = 0;
+            body.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+
         lifeHolder = GameObject.Find("LifesVal");
         life = lifeHolder.GetComponent<Life>();
         Destroy(gameObject, 5.0f);
@@ -31,8 +39,11 @@ public class Buffs : MonoBehaviour
 
     void movement()
     {
-        float speed = 2f;
-        float movementHorizontal = speed * Time.deltaTime;
-        transform.Translate(0, -movementHorizontal, 0);
+        //float speed = 2f;
+        //float movementHorizontal = speed * Time.deltaTime;
+        //transform.Translate(0, -movementHorizontal, 0);
+
+        float speed = 50f;
+        body.velocity = body.transform.up * speed * Time.deltaTime;
     }
 }

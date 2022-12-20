@@ -9,24 +9,24 @@ public class SpawnBuffs : MonoBehaviour
 	public GameObject attack;
 	public GameObject bomb;
 
-	public void spawnBuffs(Vector3 spawnPoint)
+	public void spawnBuffs(Vector3 spawnPoint, float rotation)
 	{
-		if(Random.Range(0f, 100f) < 10)
+		if(Random.Range(0f, 100f) < 70)
 		{
 			int buffID = Random.Range(1, 4);
 			switch(buffID)
             {
 				case 1:
 					Debug.Log("heart spawned");
-					Instantiate(heart, spawnPoint, Quaternion.identity);
+					Instantiate(heart, spawnPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
 					break;
 				case 2:
 					Debug.Log("attac boost spawned");
-					Instantiate(attack, spawnPoint, Quaternion.identity);
+					Instantiate(attack, spawnPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
 					break;
 				case 3:
 					Debug.Log("bomb spawned");
-					Instantiate(bomb, spawnPoint, Quaternion.identity);
+					Instantiate(bomb, spawnPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
 					break;
 				/*case 4:
 					Debug.Log("speed boost spawned");

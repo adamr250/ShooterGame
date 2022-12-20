@@ -22,14 +22,17 @@ public class NormalEnemy : MonoBehaviour
 	private Vector3 target;
 	private Vector3 direction;
 
+	private Rigidbody2D body;
 
 	void Start()
 	{
 		if(!gameObject.GetComponent<Rigidbody2D>())
         {
-			gameObject.AddComponent<Rigidbody2D>();
-			gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+			body = gameObject.AddComponent<Rigidbody2D>();
+			body.gravityScale = 0;
+			body.constraints = RigidbodyConstraints2D.FreezeRotation;
 		}
+
 		shootTimer = 3*shootCooldown;
 
 		//Debug.Log("time: " + Time.time + ";  shootTimer:" + shootTimer);
@@ -60,19 +63,17 @@ public class NormalEnemy : MonoBehaviour
 
 		if(health <= 0)
         {
-			spawnBuffs.spawnBuffs(transform.position);
+			spawnBuffs.spawnBuffs(transform.position, rotation);
 			Destroy(gameObject);
 			score.increaseScore(50);
 		}
 	}
 
-	/*private void FixedUpdate()
+	private void FixedUpdate()
     {
-        if(transform.position.y > 4f)
-        {
-			movement();
-        }
-    }*/
+		movement();
+    }
+
 	void Shooting()
 	{
 		child = this.gameObject.transform.GetChild(0);
@@ -84,7 +85,7 @@ public class NormalEnemy : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			spawnBuffs.spawnBuffs(transform.position);
+			spawnBuffs.spawnBuffs(transform.position, rotation);
 			score.increaseScore(50);
 			Destroy(gameObject);
 		} 
@@ -96,9 +97,7 @@ public class NormalEnemy : MonoBehaviour
 
 	void movement()
     {
-		float speed = 4f;
-		float movementHorizontal = speed * Time.deltaTime;
-		transform.Translate(0, -movementHorizontal, 0);
-		//transform.Translate(transform.position.x, movementHorizontal, transform.position.z);
+		float speed = 50f;
+		body.velocity = -body.transform.up * speed * Time.deltaTime;
 	}
 }
