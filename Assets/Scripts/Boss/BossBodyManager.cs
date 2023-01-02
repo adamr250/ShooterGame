@@ -11,7 +11,9 @@ public class BossBodyManager : MonoBehaviour
     [SerializeField] GameObject weaponObject;
     List<GameObject> weaponList = new List<GameObject>();
 
-    private float countUp = 0; 
+    private float countUp = 0;
+
+    public static bool isInvulnerable = true;
 
     void Start()
     {
@@ -24,7 +26,11 @@ public class BossBodyManager : MonoBehaviour
         if(bodyParts.Count > 0)
         {
             createBody();
+        } else
+        {
+            isInvulnerable = false;
         }
+
         bodyMovement();   
     }
 
@@ -88,5 +94,13 @@ public class BossBodyManager : MonoBehaviour
 
             weaponList.Add(weapon);
         }
+    }
+
+    public void destoryBodySegment()
+    {
+        Destroy(weaponList[weaponList.Count - 1]);
+        weaponList.RemoveAt(weaponList.Count - 1);
+        Destroy(bossBody[bossBody.Count - 1]);
+        bossBody.RemoveAt(bossBody.Count - 1);
     }
 }

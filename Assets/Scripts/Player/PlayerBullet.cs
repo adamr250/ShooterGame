@@ -24,7 +24,8 @@ public class PlayerBullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Enemy")
+        string objectTag = collision.gameObject.tag;
+        if (objectTag == "Obstacle" || objectTag == "Enemy" || objectTag == "Boss")
         {   
             //Debug.Log("transform.rotation angles x: " + eulerAngles.x + " y: " + eulerAngles.y + " z: " + eulerAngles.z); 
             //Debug.Log("Hit wall");

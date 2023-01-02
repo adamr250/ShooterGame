@@ -125,28 +125,6 @@ public class Player : MonoBehaviour
                 bomb.bombTextDisplay(1);
                 break;
         }
-        /*if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
-        {
-            if (!invincible)
-            {
-                dmgTaken(20);
-            }
-        }
-
-        if (collision.gameObject.tag == "LifeBuff")
-        {
-            Debug.Log("Life collected");
-            life.lifeChangeValue(1);
-        }
-
-        if(collision.gameObject.tag == "SpeedBuff")
-        {
-
-            speedBoosted = true;
-            speedBoostTimer = Time.time + speedBoostDuration;
-        }
-
-        if*/
     }
 
     public void dmgTaken(int dmg)

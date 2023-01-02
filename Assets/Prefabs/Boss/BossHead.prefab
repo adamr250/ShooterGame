@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2975324772179201958}
   - component: {fileID: 3661084979769628498}
   - component: {fileID: 7723576167727322923}
+  - component: {fileID: 7967804021398897934}
   m_Layer: 7
   m_Name: BossHead
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,6 +164,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac089bb6b0cfc044ab4632faf913317b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoint: {fileID: 234856885942222305, guid: 74fb14996bc616a4aab1a64a677224be, type: 3}
+  waypoint: {fileID: 1451910450230980702, guid: 0a42ddf7065481740bfc07f75288afe6, type: 3}
   speed: 150
   rotationSpeed: 2
+--- !u!114 &7967804021398897934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169642235000949733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad1c86d82f3fdf43a9b18dfd72f40b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossHealth: {fileID: 0}

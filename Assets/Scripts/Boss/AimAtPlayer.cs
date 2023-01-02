@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AimAtPlayer : MonoBehaviour
 {
-    [SerializeField] GameObject bulletPref;
-    [SerializeField] float shootCooldown;
+    [SerializeField] private GameObject bulletPref;
+    [SerializeField] private float shootCooldown;
     private float shootTimer;
 
     private Vector3 target;

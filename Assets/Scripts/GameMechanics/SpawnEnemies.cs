@@ -32,14 +32,13 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] private int scoreToSpawnSniper;
     [SerializeField] private int scoreToSpawnBoss;
 
-    private bool canSpawnHere = false;
-
     [SerializeField] private GameObject bossManager;
     private bool bossIsSpawned = false;
 
     private void Start()
     {
-        bossManager.GetComponent<BossBodyManager>().enabled = false;
+        bossManager.SetActive(false);
+
         hommingSpawnTimer = hommingSpawnCd;
         sniperSpawnTimer = sniperSpawnCd;
         normalSpawnTimer = normalSpawnCd;
@@ -66,7 +65,8 @@ public class SpawnEnemies : MonoBehaviour
         } else if(!bossIsSpawned)
         {
             bossIsSpawned = true;
-            bossManager.GetComponent<BossBodyManager>().enabled = true;
+            //bossManager.GetComponent<BossBodyManager>().enabled = true;
+            bossManager.SetActive(true);
         }
 
         //bulletHellTime();
@@ -77,9 +77,9 @@ public class SpawnEnemies : MonoBehaviour
 
     public void spawnNormal()
     {
-        canSpawnHere = false; //responsible for overlaping
-        canSpawnHere1 = false; //responsible for distance from player
-        canSpawnHere2 = false; //responsible for distance from map center
+        bool canSpawnHere = false; //responsible for overlaping
+        //canSpawnHere1 = false; //responsible for distance from player
+        //canSpawnHere2 = false; //responsible for distance from map center
 
         int safetyBreak = 0;
         while (true)
@@ -140,6 +140,7 @@ public class SpawnEnemies : MonoBehaviour
 
     public void spawnSniper()
     {
+        bool canSpawnHere = false;
         //spawnPointSniper = new Vector3(Random.Range(-2f, 8f), Random.Range(4.0f, 4.75f), 0.0f);
         int safetyBreak = 0;
         while (true)
