@@ -71,14 +71,14 @@ public class SniperEnemy : MonoBehaviour
             shootTimer = Time.time + shootCooldown;
             if (isAiming)
             {
-                Debug.Log("isAiming");
+                //Debug.Log("isAiming");
                 isAiming = false;
                 isShooting = true;
                 isReloading = false;
                 lineRenderer.enabled = true;
             } else if(isShooting)
             {
-                Debug.Log("isShooting");
+                //Debug.Log("isShooting");
                 isAiming = false;
                 isShooting = false;
                 isReloading = true;
@@ -89,7 +89,7 @@ public class SniperEnemy : MonoBehaviour
                     Instantiate(bulletPref, lineRenderer.GetPosition(lineRenderer.positionCount - 1), Quaternion.Euler(0.0f, 0.0f, rotation - 90));
                 isFreshlySpawned = false;
 
-                Debug.Log("isRealoading");
+                //Debug.Log("isRealoading");
                 isAiming = true;
                 isShooting = false;
                 isReloading = false;

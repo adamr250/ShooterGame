@@ -19,7 +19,7 @@ public class SpawnEnemies : MonoBehaviour
     private Vector3 spawnPointHomming;// = new Vector3(10f, 3.0f, 0.0f);
 
     [SerializeField] private GameObject sniperEnemy;
-    [SerializeField] private float sniperSpawnCd = 10.0f;
+    [SerializeField] private float sniperSpawnCd = 7.3f;
     private float sniperSpawnTimer;
     private Vector3 spawnPointSniper;// = new Vector3(10f, 3.0f, 0.0f);
 
@@ -33,8 +33,6 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] private int scoreToSpawnBoss;
 
     private bool canSpawnHere = false;
-    private bool canSpawnHere1 = false;
-    private bool canSpawnHere2 = false;
 
     [SerializeField] private GameObject bossManager;
     private bool bossIsSpawned = false;
@@ -72,8 +70,8 @@ public class SpawnEnemies : MonoBehaviour
         }
 
         //bulletHellTime();
-        if (hommingSpawnCd > 1.0f)
-            hommingSpawnCd = 5.0f/(1+((float)Score.scoreNum/10000));
+        if (hommingSpawnCd > 2.0f)
+            hommingSpawnCd = 5.0f/(1+((float)Score.scoreNum/20000));
 
     }
 
@@ -142,10 +140,46 @@ public class SpawnEnemies : MonoBehaviour
 
     public void spawnSniper()
     {
-        sniperSpawnTimer = Time.time + sniperSpawnCd;
-        spawnPointSniper = new Vector3(Random.Range(-2f, 8f), Random.Range(4.0f, 4.75f), 0.0f);
+        //spawnPointSniper = new Vector3(Random.Range(-2f, 8f), Random.Range(4.0f, 4.75f), 0.0f);
+        int safetyBreak = 0;
+        while (true)
+        {
+            sniperSpawnTimer = Time.time + sniperSpawnCd;
 
-        Instantiate(sniperEnemy, spawnPointSniper, Quaternion.identity);
+            int axis = Random.Range(0, 2);
+            int plusOrMinus = Random.Range(0, 2) * 2 - 1;
+            //spawnPointNormal = new Vector3(Random.Range(-2f, 8f), Random.Range(3.5f, 4.5f), 0f);
+            /*spawnPointNormal = Random.insideUnitCircle;
+            Debug.Log("random spawn point: " + spawnPointNormal);
+            Debug.Log("corrected spawn point: " + spawnPointNormal*3 + " + " + (spawnPointNormal.normalized));
+            spawnPointNormal = spawnPointNormal * 2 + (spawnPointNormal.normalized)*3;
+            spawnPointNormal += new Vector3(2.0f, 0, 0);
+            spawnPointNormal.x *= 1.5f;*/
+            Debug.Log("axis: " + axis);
+            if (axis == 0)
+            {   //spawn at axis X
+                spawnPointSniper = new Vector3(Random.Range(-2.2f, 8.3f), plusOrMinus * 4.25f, 0.0f);
+            }
+            else
+            {   //spawn at axis Y
+                spawnPointSniper = new Vector3((plusOrMinus * 5.25f) + 2.95f, Random.Range(-4.5f, 4.5f), 0.0f);
+            }
+
+            canSpawnHere = preventSpawnOverlap(spawnPointSniper);
+
+            if (canSpawnHere)
+            {
+                Instantiate(sniperEnemy, spawnPointSniper, Quaternion.identity);
+                break;
+            }
+
+            if (safetyBreak++ > 50)
+            {
+                Debug.Log("Sniper Enemy didn't spawn due to too many attempts.");
+                break;
+            }
+        }
+
     }
 
     bool preventSpawnOverlap(Vector3 spawnPoint)
