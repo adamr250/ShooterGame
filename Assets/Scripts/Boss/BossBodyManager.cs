@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossBodyManager : MonoBehaviour
 {
-    [SerializeField] float bodyPartsDistance = 1;
+    private float bodyPartsDistance = 0.3f;
     [SerializeField] List<GameObject> bodyParts = new List<GameObject>();
     List<GameObject> bossBody = new List<GameObject>();
 
@@ -13,7 +13,8 @@ public class BossBodyManager : MonoBehaviour
 
     private float countUp = 0;
 
-    public static bool isInvulnerable = true;
+    public static int bodyPartsDestroyedCounter = 0;
+    public static bool bossBodyCompleted = false;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class BossBodyManager : MonoBehaviour
             createBody();
         } else
         {
-            isInvulnerable = false;
+            bossBodyCompleted = true;
         }
 
         bodyMovement();   
@@ -100,7 +101,29 @@ public class BossBodyManager : MonoBehaviour
     {
         Destroy(weaponList[weaponList.Count - 1]);
         weaponList.RemoveAt(weaponList.Count - 1);
+
         Destroy(bossBody[bossBody.Count - 1]);
         bossBody.RemoveAt(bossBody.Count - 1);
+
+        bodyPartsDestroyedCounter++;
+
+        //correctBossBodyPartsLocations();
+        
+    }
+
+
+    public void death()
+    {
+        Destroy(gameObject);
+    }
+    
+
+    private void correctBossBodyPartsLocations()
+    {
+        for (int i = 1; i < bossBody.Count; i++)
+        {
+            bossBody[i].GetComponent<CheckpointManager>().clearPartOfCheckpointList();
+            weaponList[i - 1].GetComponent<CheckpointManager>().clearPartOfCheckpointList();
+        }
     }
 }

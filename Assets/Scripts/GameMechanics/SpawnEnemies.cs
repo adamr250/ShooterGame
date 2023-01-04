@@ -23,6 +23,8 @@ public class SpawnEnemies : MonoBehaviour
     private float sniperSpawnTimer;
     private Vector3 spawnPointSniper;// = new Vector3(10f, 3.0f, 0.0f);
 
+    [SerializeField] GameObject boss;
+
     [SerializeField] private Collider2D[] colliders;
     [SerializeField] private float radius = 20;
     [SerializeField] LayerMask mask;
@@ -37,7 +39,7 @@ public class SpawnEnemies : MonoBehaviour
 
     private void Start()
     {
-        bossManager.SetActive(false);
+        //bossManager.SetActive(false);
 
         hommingSpawnTimer = hommingSpawnCd;
         sniperSpawnTimer = sniperSpawnCd;
@@ -66,7 +68,8 @@ public class SpawnEnemies : MonoBehaviour
         {
             bossIsSpawned = true;
             //bossManager.GetComponent<BossBodyManager>().enabled = true;
-            bossManager.SetActive(true);
+            //bossManager.SetActive(true);
+            Instantiate(boss, new Vector3(-4.83f, 4.08f, 0.0f), Quaternion.identity);
         }
 
         //bulletHellTime();

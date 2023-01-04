@@ -14,15 +14,15 @@ public class DamageManager : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
+        if (collision.gameObject.tag == "PlayerBullet")
         {
-            dmgTaken(20);
+            dmgTaken(90);
         }
     }
 
     public void dmgTaken(int dmg)
     {
-        bossHealthBar.damageTaken(10);
+        bossHealthBar.damageTaken(dmg);
         //Debug.Log("Boss damaged");
     }
 }

@@ -6,7 +6,7 @@ public class AimAtPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private float shootCooldown;
-    private float shootTimer;
+    private float shootTimer = 0.0f;
 
     private Vector3 target;
     private Vector3 direction;
@@ -30,11 +30,18 @@ public class AimAtPlayer : MonoBehaviour
         direction.Normalize();
 
         weaponPoint = gameObject.transform.GetChild(0).transform.position;
+        shooting(rotation);
+        
+    }
 
+    private void shooting(float rotation)
+    {
         if (Time.time > shootTimer)
         {
             shootTimer = Time.time + shootCooldown;
-            Instantiate(bulletPref, weaponPoint, Quaternion.Euler(0.0f, 0.0f, rotation-90));
+            if (BossHealthBar.isInvulnerable || !BossBodyManager.bossBodyCompleted)
+                return;
+            Instantiate(bulletPref, weaponPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
         }
     }
 }
