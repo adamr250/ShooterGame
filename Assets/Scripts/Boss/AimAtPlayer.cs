@@ -6,6 +6,7 @@ public class AimAtPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private float shootCooldown;
+    private float defaultShootCooldown;
     private float shootTimer = 0.0f;
 
     private Vector3 target;
@@ -14,11 +15,19 @@ public class AimAtPlayer : MonoBehaviour
 
     private void Start()
     {
+        defaultShootCooldown = shootCooldown;
+
         if(!gameObject.GetComponent<Rigidbody2D>())
         {
             gameObject.AddComponent<Rigidbody2D>();
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
+    }
+
+    private void Update()
+    {
+        shootCooldown = defaultShootCooldown / (1 + (float)BossBodyManager.bodyPartsDestroyedCounter / 3.5f);
+        Debug.Log("shoot cd: " + shootCooldown);
     }
     void FixedUpdate()
     {
