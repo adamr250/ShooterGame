@@ -1,16 +1,11 @@
 (-poprawa balnsu gry )
--boss: dodanie hp i mechanik umierania
--boss: mniej segmentow -> szybszy
-
--dynamiczny poziom tródności
-
--sniper: ucieka na wyższym poziomie trudności
-
--różne typy wrogich pocisków (różna prędkość, dmg itp)
-
--mutacje wrogów (np: normal -> sniper)
 -boss od czasu do czasu próbuje taranować gracza (leci troche przed gracza)
 
+-dynamiczny poziom tródności
+-sniper: ucieka na wyższym poziomie trudności
+-mutacje wrogów (np: normal -> sniper)
+
+-różne typy wrogich pocisków (różna prędkość, dmg itp)
 -nowy wróg cannon
 -?warstwowe tło/paralaksa
 

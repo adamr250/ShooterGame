@@ -14,3 +14,6 @@
 -warunek pojawienia się bossa (opcje: po upływie czau, ilość ptk, ilość zabitych wrogów)
 -NormalEnemy pojawiają się na obrzeżach całej mapy, nie tylko góra, wcelowani w gracza i lecą przed siebie
 -sniper - laser jako imitacja celownika i strzału
+
+-boss: dodanie hp i mechanik umierania
+-boss: mniej segmentow -> szybszy ruch i strzał
