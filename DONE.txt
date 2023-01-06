@@ -17,3 +17,4 @@
 
 -boss: dodanie hp i mechanik umierania
 -boss: mniej segmentow -> szybszy ruch i strzał
+-sniper umiera po oddaniu 4 strzałów

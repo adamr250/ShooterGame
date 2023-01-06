@@ -23,10 +23,10 @@ public class Buffs : MonoBehaviour
         Destroy(gameObject, 5.0f);
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         movement();
-    }
+    }*/
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -37,7 +37,7 @@ public class Buffs : MonoBehaviour
         }
     }
 
-    void movement()
+   /* void movement()
     {
         //float speed = 2f;
         //float movementHorizontal = speed * Time.deltaTime;
@@ -45,5 +45,5 @@ public class Buffs : MonoBehaviour
 
         float speed = 50f;
         body.velocity = body.transform.up * speed * Time.deltaTime;
-    }
+    }*/
 }

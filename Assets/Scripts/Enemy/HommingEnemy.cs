@@ -17,6 +17,8 @@ public class HommingEnemy : MonoBehaviour
 
     void Start()
     {
+        DifficultyManager.enemySpawnedCount++;
+
         scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
         score = scoreHolder.GetComponent<Score>();
 
@@ -45,7 +47,8 @@ public class HommingEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
         {
-            //Debug.Log("Kontakt");
+             DifficultyManager.enemyKilledCount++;
+
             Destroy(gameObject);
             score.increaseScore(100);
         }

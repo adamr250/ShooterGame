@@ -7,8 +7,8 @@ public class EnemyBullet : MonoBehaviour
     private Vector3 directory;
     private Vector3 eulerAngles;
 
-    public float speed;
-    public float lifeTime;
+    [SerializeField] private float speed;
+    [SerializeField] private float lifeTime;
 
     private Rigidbody2D body;
 

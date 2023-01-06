@@ -7,6 +7,8 @@ public class NormalEnemy : MonoBehaviour
 	Score score;
 	SpawnBuffs spawnBuffs;
 
+	[SerializeField] private float speed;
+
 	private float shootTimer;
 	private Transform child;
 	private Vector3 enemyGun;
@@ -26,7 +28,9 @@ public class NormalEnemy : MonoBehaviour
 
 	void Start()
 	{
-		if(!gameObject.GetComponent<Rigidbody2D>())
+		DifficultyManager.enemySpawnedCount++;
+		
+		if (!gameObject.GetComponent<Rigidbody2D>())
         {
 			body = gameObject.AddComponent<Rigidbody2D>();
 			body.gravityScale = 0;
@@ -60,13 +64,6 @@ public class NormalEnemy : MonoBehaviour
 			shootTimer = Time.time + shootCooldown;
 			Shooting();
 		}
-
-		if(health <= 0)
-        {
-			spawnBuffs.spawnBuffs(transform.position, rotation);
-			Destroy(gameObject);
-			score.increaseScore(50);
-		}
 	}
 
 	private void FixedUpdate()
@@ -85,19 +82,30 @@ public class NormalEnemy : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			spawnBuffs.spawnBuffs(transform.position, rotation);
-			score.increaseScore(50);
-			Destroy(gameObject);
+			health = -1;
 		} 
 		else if(collision.gameObject.tag == "PlayerBullet")
         {
 			health -= 51;
-        }
+		}
+
+		if (health <= 0)
+		{
+			death();
+		}
 	}
 
 	void movement()
     {
-		float speed = 50f;
 		body.velocity = -body.transform.up * speed * Time.deltaTime;
+	}
+
+	void death()
+    {
+		DifficultyManager.enemyKilledCount++;
+
+		spawnBuffs.spawnBuffs(transform.position, rotation);
+		Destroy(gameObject);
+		score.increaseScore(50);
 	}
 }

@@ -8,7 +8,7 @@ public class Life : MonoBehaviour
 {
     private int addLifeOnScore = 1000;
 
-    public int lifeNum = 2;
+    public static int lifeNum = 2;
     public Text lifeText;
     //public GameObject playerObject;
 
@@ -29,6 +29,13 @@ public class Life : MonoBehaviour
 
     public void lifeChangeValue(int x)
     {
+        if(x > 0)
+        {
+            DifficultyManager.totalLifesCount += x;
+        } else
+        {
+            DifficultyManager.deathsCount++;
+        }
         lifeNum += x;
         lifeText.text = lifeNum.ToString();
 

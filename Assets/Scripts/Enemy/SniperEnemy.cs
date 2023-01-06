@@ -14,6 +14,8 @@ public class SniperEnemy : MonoBehaviour
     private Vector3 direction;
     private float rotation;
 
+    private int shootCounter = 0;
+
     public float shootCooldown = 2.0f;
     public GameObject bulletPref;
     public float speed = 3.0f;
@@ -27,11 +29,11 @@ public class SniperEnemy : MonoBehaviour
     private bool isAiming = false;
     private bool isReloading = false;
     private bool isShooting = false;
-    private bool isFreshlySpawned;
+    private bool isFreshlySpawned = true;
 
     void Start()
     {
-        isFreshlySpawned = true;
+        DifficultyManager.enemySpawnedCount++;
 
         scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
         score = scoreHolder.GetComponent<Score>();
@@ -85,9 +87,12 @@ public class SniperEnemy : MonoBehaviour
                 lineRenderer.enabled = true;
             } else if(isReloading)
             {
-                if(!isFreshlySpawned)
+                if (!isFreshlySpawned)
+                {
                     Instantiate(bulletPref, lineRenderer.GetPosition(lineRenderer.positionCount - 1), Quaternion.Euler(0.0f, 0.0f, rotation - 90));
-                isFreshlySpawned = false;
+                    isFreshlySpawned = false;
+                    shootCounter++;
+                }
 
                 //Debug.Log("isRealoading");
                 isAiming = true;
@@ -98,6 +103,10 @@ public class SniperEnemy : MonoBehaviour
         }
         aimLaser();
 
+        if(shootCounter > 4)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void aimLaser()
@@ -139,6 +148,8 @@ public class SniperEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
         {
+            DifficultyManager.enemyKilledCount++;
+
             Destroy(gameObject);
             score.increaseScore(1000);
         }

@@ -11,7 +11,7 @@ public class SpawnBuffs : MonoBehaviour
 
 	public void spawnBuffs(Vector3 spawnPoint, float rotation)
 	{
-		if(Random.Range(0f, 100f) < 70)
+		if(Random.Range(0f, 100f) < 10)
 		{
 			int buffID = Random.Range(1, 4);
 			switch(buffID)

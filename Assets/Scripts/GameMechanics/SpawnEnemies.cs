@@ -73,8 +73,8 @@ public class SpawnEnemies : MonoBehaviour
         }
 
         //bulletHellTime();
-        if (hommingSpawnCd > 2.0f)
-            hommingSpawnCd = 5.0f/(1+((float)Score.scoreNum/20000));
+        if (normalSpawnCd > 0.5f)
+            normalSpawnCd = 2.8f/(1+((float)Score.scoreNum/20000));
 
     }
 
@@ -98,7 +98,7 @@ public class SpawnEnemies : MonoBehaviour
             spawnPointNormal = spawnPointNormal * 2 + (spawnPointNormal.normalized)*3;
             spawnPointNormal += new Vector3(2.0f, 0, 0);
             spawnPointNormal.x *= 1.5f;*/
-            Debug.Log("axis: " + axis);
+            //Debug.Log("axis: " + axis);
             if (axis == 0)
             {   //spawn at axis X
                 spawnPointNormal = new Vector3(Random.Range(-2.2f, 8.3f), plusOrMinus * 5.25f, 0.0f);

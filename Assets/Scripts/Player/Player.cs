@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
                 break;
             case "EnemyBullet":
                 if (!invincible)
-                    dmgTaken(20);
+                    dmgTaken(30);
                 break;
             case "LifeBuff":
                 Debug.Log("Life collected");
