@@ -15,8 +15,12 @@ public class HommingEnemy : MonoBehaviour
 
     Rigidbody2D body;
 
+    private float spawnTime = 0;
+
     void Start()
     {
+        spawnTime = Time.time;
+
         DifficultyManager.enemySpawnedCount++;
 
         scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
@@ -47,7 +51,8 @@ public class HommingEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
         {
-             DifficultyManager.enemyKilledCount++;
+            DifficultyManager.enemyKilledCount++;
+            DifficultyManager.enemyTotalLifeTime += Time.time - spawnTime;
 
             Destroy(gameObject);
             score.increaseScore(100);

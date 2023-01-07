@@ -26,8 +26,12 @@ public class NormalEnemy : MonoBehaviour
 
 	private Rigidbody2D body;
 
+	private float spawnTime = 0;
+
 	void Start()
 	{
+		spawnTime = Time.time;
+
 		DifficultyManager.enemySpawnedCount++;
 		
 		if (!gameObject.GetComponent<Rigidbody2D>())
@@ -53,6 +57,8 @@ public class NormalEnemy : MonoBehaviour
 		direction = target - transform.position;
 		rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 		GetComponent<Rigidbody2D>().rotation = rotation + 90;
+
+		Destroy(gameObject, 10);
 	}
 
 
@@ -103,9 +109,15 @@ public class NormalEnemy : MonoBehaviour
 	void death()
     {
 		DifficultyManager.enemyKilledCount++;
+		//DifficultyManager.enemyTotalLifeTime += Time.time - spawnTime;
 
 		spawnBuffs.spawnBuffs(transform.position, rotation);
 		Destroy(gameObject);
 		score.increaseScore(50);
+	}
+
+    private void OnDestroy()
+    {
+		DifficultyManager.enemyTotalLifeTime += Time.time - spawnTime;
 	}
 }

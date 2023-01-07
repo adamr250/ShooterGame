@@ -26,6 +26,8 @@ public class SniperEnemy : MonoBehaviour
     //public Transform firePoint;
     Transform trans;
 
+    private float spawnTime = 0;
+
     private bool isAiming = false;
     private bool isReloading = false;
     private bool isShooting = false;
@@ -33,6 +35,8 @@ public class SniperEnemy : MonoBehaviour
 
     void Start()
     {
+        spawnTime = Time.time;
+
         DifficultyManager.enemySpawnedCount++;
 
         scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
@@ -105,6 +109,7 @@ public class SniperEnemy : MonoBehaviour
 
         if(shootCounter > 4)
         {
+            DifficultyManager.enemyTotalLifeTime += Time.time - spawnTime;
             Destroy(gameObject);
         }
     }
@@ -149,9 +154,10 @@ public class SniperEnemy : MonoBehaviour
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
         {
             DifficultyManager.enemyKilledCount++;
+            DifficultyManager.enemyTotalLifeTime += Time.time - spawnTime;
 
             Destroy(gameObject);
-            score.increaseScore(1000);
+            score.increaseScore(250);
         }
     }
 }
