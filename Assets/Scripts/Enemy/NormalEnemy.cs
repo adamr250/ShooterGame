@@ -118,6 +118,6 @@ public class NormalEnemy : MonoBehaviour
 
     private void OnDestroy()
     {
-		DifficultyManager.enemyTotalLifeTime += Time.time - spawnTime;
+		DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;
 	}
 }

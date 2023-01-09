@@ -109,7 +109,7 @@ public class SniperEnemy : MonoBehaviour
 
         if(shootCounter > 4)
         {
-            DifficultyManager.enemyTotalLifeTime += Time.time - spawnTime;
+            DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;
             Destroy(gameObject);
         }
     }
@@ -154,7 +154,7 @@ public class SniperEnemy : MonoBehaviour
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
         {
             DifficultyManager.enemyKilledCount++;
-            DifficultyManager.enemyTotalLifeTime += Time.time - spawnTime;
+            DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;
 
             Destroy(gameObject);
             score.increaseScore(250);
