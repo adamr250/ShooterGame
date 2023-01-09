@@ -8,7 +8,7 @@ public class Life : MonoBehaviour
 {
     private int addLifeOnScore = 1000;
 
-    public static int lifeNum = 2;
+    public static int lifeNum = 3;
     public Text lifeText;
     //public GameObject playerObject;
 

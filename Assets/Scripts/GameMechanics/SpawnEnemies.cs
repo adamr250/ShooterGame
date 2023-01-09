@@ -159,7 +159,7 @@ public class SpawnEnemies : MonoBehaviour
             spawnPointNormal = spawnPointNormal * 2 + (spawnPointNormal.normalized)*3;
             spawnPointNormal += new Vector3(2.0f, 0, 0);
             spawnPointNormal.x *= 1.5f;*/
-            Debug.Log("axis: " + axis);
+            //Debug.Log("axis: " + axis);
             if (axis == 0)
             {   //spawn at axis X
                 spawnPointSniper = new Vector3(Random.Range(-2.2f, 8.3f), plusOrMinus * 4.25f, 0.0f);

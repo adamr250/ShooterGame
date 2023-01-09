@@ -1808,7 +1808,7 @@ MonoBehaviour:
   speed: 6
   boostedSpeed: 0
   shootCooldown: 1
-  invincible: 1
+  invincible: 0
   isCooldown: 0
   shield: {fileID: 846957844662520088, guid: b014a2a4bb123b543b0b3c8c74f51b0a, type: 3}
   lifeHolder: {fileID: 2089097213}
