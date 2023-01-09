@@ -96,11 +96,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootCooldown: 2
-  bulletPref: {fileID: 5404478362954745999, guid: 311050c06f5c9eb448a55eeb8dd0406e, type: 3}
+  bulletPref: {fileID: 5404478362954745999, guid: 6acf906ac4d6e384482057ac05170592, type: 3}
   speed: 0.5
   defaultDistanceRay: 100
-  lineRenderer: {fileID: 9169317241539684019}
-  firePoint: {fileID: 6037528568772006623}
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!120 &9169317241539684019
 LineRenderer:
   m_ObjectHideFlags: 0

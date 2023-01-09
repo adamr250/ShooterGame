@@ -12,6 +12,11 @@ public class Life : MonoBehaviour
     public Text lifeText;
     //public GameObject playerObject;
 
+    private void Start()
+    {
+        lifeText.text = lifeNum.ToString();
+    }
+
     void Update()
     {
         if(Score.scoreNum > addLifeOnScore)
@@ -22,6 +27,7 @@ public class Life : MonoBehaviour
 
         if(lifeNum <= 0)
         {
+
             SceneManager.LoadSceneAsync(0);
             //SceneManager.UnloadSceneAsync(1);
         }

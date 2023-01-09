@@ -4,36 +4,65 @@ using UnityEngine;
 
 public class SpawnBuffs : MonoBehaviour
 {
-    public GameObject heart;
-	public GameObject speed;
-	public GameObject attack;
-	public GameObject bomb;
+	/*public static GameObject heart;
+	public static GameObject speed;
+	public static GameObject attack;
+	public static GameObject bomb;*/
 
-	public void spawnBuffs(Vector3 spawnPoint, float rotation)
+	/*private Dictionary<GameObject, int> weightTable = new Dictionary<GameObject, int>()
 	{
-		if(Random.Range(0f, 100f) < 50)
+		{heart,  90},
+		{attack,  45},
+		{bomb, 60}
+	};*/
+
+	/*int[] weights = { 35, 90, 50 }; //odpowiednio 20%, 51%, 29%  (weights[x] / sum(weights) * 100)
+	GameObject[] buffType = { heart, attack, bomb };
+	*/
+
+	[SerializeField] GameObject[] buffType;
+	[SerializeField] int[] weights;
+	int weightsSum = 0;
+
+	private void Start()
+    {
+		if (weights.Length != buffType.Length)
 		{
-			int buffID = Random.Range(1, 4);
-			switch(buffID)
-            {
-				case 1:
-					Debug.Log("heart spawned");
-					Instantiate(heart, spawnPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
-					break;
-				case 2:
-					Debug.Log("attac boost spawned");
-					Instantiate(attack, spawnPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
-					break;
-				case 3:
-					Debug.Log("bomb spawned");
-					Instantiate(bomb, spawnPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
-					break;
-				/*case 4:
-					Debug.Log("speed boost spawned");
-					Instantiate(speed, spawnPoint, Quaternion.identity);
-					break;
-				*/
+			Debug.Log("Z³a iloœæ wzmocnieñ lub wag!!!");
+			return;
+		}
+
+		foreach (int i in weights)
+		{
+			weightsSum += i;
+		}
+		//Debug.Log("suma wag: " + weightsSum);
+	}
+
+    public void spawnBuffs(Vector3 spawnPoint)
+	{
+		if (weights.Length != buffType.Length)
+		{
+			Debug.Log("Z³a iloœæ wzmocnieñ lub wag!!!");
+			return;
+		}
+
+		if (Random.Range(0, 100) > 20)
+        {
+			return;
+        }
+
+		
+		int randomWeight = Random.Range(0, weightsSum);
+		for (int i = 0; i < weights.Length; ++i)
+		{
+			randomWeight -= weights[i];
+			if (randomWeight <= 0)
+			{
+				Instantiate(buffType[i], spawnPoint, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+				return;
 			}
 		}
+		return;
 	}
 }

@@ -24,6 +24,7 @@ public class SniperEnemy : MonoBehaviour
     [SerializeField] private float defaultDistanceRay = 15;
     LineRenderer lineRenderer;
     //public Transform firePoint;
+    [SerializeField] private LayerMask mask;
     Transform trans;
 
     private float spawnTime = 0;
@@ -74,7 +75,7 @@ public class SniperEnemy : MonoBehaviour
 
         if (Time.time > shootTimer)
         {
-            shootTimer = Time.time + shootCooldown;
+            shootTimer = Time.time + shootCooldown / (OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier);
             if (isAiming)
             {
                 //Debug.Log("isAiming");
@@ -88,15 +89,16 @@ public class SniperEnemy : MonoBehaviour
                 isAiming = false;
                 isShooting = false;
                 isReloading = true;
+                //isShooting = true;
                 lineRenderer.enabled = true;
             } else if(isReloading)
             {
                 if (!isFreshlySpawned)
                 {
                     Instantiate(bulletPref, lineRenderer.GetPosition(lineRenderer.positionCount - 1), Quaternion.Euler(0.0f, 0.0f, rotation - 90));
-                    isFreshlySpawned = false;
                     shootCounter++;
                 }
+                isFreshlySpawned = false;
 
                 //Debug.Log("isRealoading");
                 isAiming = true;
@@ -116,9 +118,9 @@ public class SniperEnemy : MonoBehaviour
 
     void aimLaser()
     {
-        if(Physics2D.Raycast(trans.position, transform.right))
+        if(Physics2D.Raycast(trans.position, transform.right, Mathf.Infinity, mask))
         {
-            RaycastHit2D hit = Physics2D.Raycast(child.transform.position, transform.right);
+            RaycastHit2D hit = Physics2D.Raycast(child.transform.position, transform.right, Mathf.Infinity, mask);
             draw2DRay(child.transform.position, hit.point);
             //draw2DRay(child.transform.position, child.transform.transform.right * defaultDistanceRay);
         }

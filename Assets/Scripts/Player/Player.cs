@@ -16,12 +16,8 @@ public class Player : MonoBehaviour
     private float shootTimer;
     private float startSpeed;
 
-    private bool speedBoosted = false;
-    private float speedBoostDuration = 15.0f;
-    private float speedBoostTimer;
-
     public static bool attackBoosted = false;
-    private float attackBoostDuration = 20.0f;
+    private float attackBoostDuration = 8.0f;
     private float attackBoostTimer;
 
     public float speed;
@@ -59,14 +55,11 @@ public class Player : MonoBehaviour
         movementVertical = Input.GetAxis("Vertical");// * speed * Time.deltaTime;
 	    movementHorizontal = Input.GetAxis("Horizontal");// * speed * Time.deltaTime;
 
-        if (speedBoosted && speedBoostTimer < Time.time)
-        {
-            speed = startSpeed;
-            speedBoosted = false;
-        }
-
         if (attackBoosted && attackBoostTimer < Time.time)
+        {
             attackBoosted = false;
+            Debug.Log("Attack buff ended");
+        }
 
         if(Input.GetKeyDown(KeyCode.Space) && Bomb.bombCount > 0)
         {
@@ -108,14 +101,13 @@ public class Player : MonoBehaviour
                 if (!invincible)
                     dmgTaken(30);
                 break;
+            case "SniperBullet":
+                if (!invincible)
+                    dmgTaken(51);
+                break;
             case "LifeBuff":
                 Debug.Log("Life collected");
                 life.lifeChangeValue(1);
-                break;
-            case "SpeedBuff":
-                speedBoosted = true;
-                speedBoostTimer = Time.time + speedBoostDuration;
-                speed = boostedSpeed;
                 break;
             case "AttackBuff":
                 attackBoosted = true;

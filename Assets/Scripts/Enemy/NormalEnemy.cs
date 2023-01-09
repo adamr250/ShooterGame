@@ -41,9 +41,7 @@ public class NormalEnemy : MonoBehaviour
 			body.constraints = RigidbodyConstraints2D.FreezeRotation;
 		}
 
-		shootTimer = 3*shootCooldown;
-
-		//Debug.Log("time: " + Time.time + ";  shootTimer:" + shootTimer);
+		shootTimer = 3*shootCooldown; //zapobiega strzelani od razu po pojawieniu, kiedy przeciwnik jest jeszcze poza map¹
 
 		scoreHolder = GameObject.FindGameObjectWithTag("ScoreVal");
 		score = scoreHolder.GetComponent<Score>();
@@ -66,8 +64,7 @@ public class NormalEnemy : MonoBehaviour
 	{
 		if (Time.time > shootTimer)
 		{
-			//Debug.Log(Time.time + ";  " + shootTimer);
-			shootTimer = Time.time + shootCooldown;
+			shootTimer = Time.time + shootCooldown/(OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier);
 			Shooting();
 		}
 	}
@@ -88,7 +85,7 @@ public class NormalEnemy : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			health = -1;
+			health = 0;
 		} 
 		else if(collision.gameObject.tag == "PlayerBullet")
         {
@@ -111,7 +108,7 @@ public class NormalEnemy : MonoBehaviour
 		DifficultyManager.enemyKilledCount++;
 		//DifficultyManager.enemyTotalLifeTime += Time.time - spawnTime;
 
-		spawnBuffs.spawnBuffs(transform.position, rotation);
+		spawnBuffs.spawnBuffs(transform.position);
 		Destroy(gameObject);
 		score.increaseScore(50);
 	}

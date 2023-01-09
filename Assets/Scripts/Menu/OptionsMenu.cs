@@ -9,13 +9,8 @@ public class OptionsMenu : MonoBehaviour
 
     TMPro.TMP_Dropdown dropdown;
     public static float defaultDifficultyMultiplier = 1.0f;
-
-    private void Awake()
-    {
-        defaultDifficultyMultiplier = 1.0f;
-        Debug.Log("Default difficulty: " + defaultDifficultyMultiplier);
-    }
-
+    
+    
     void Start()
     {
         dropdown = GetComponentInChildren<TMPro.TMP_Dropdown>();
@@ -41,7 +36,7 @@ public class OptionsMenu : MonoBehaviour
         } 
         else if (val == 2)
         {
-            defaultDifficultyMultiplier = 1.4f;
+            defaultDifficultyMultiplier = 1.2f;
         }
 
         Debug.Log("difficulty: " + defaultDifficultyMultiplier);

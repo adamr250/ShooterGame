@@ -34,18 +34,18 @@ public class DifficultyManager : MonoBehaviour
     
     private int scoreThreshold = 1000;
 
-    private float dynamicDifficultyMultiplier = 1;
+    public static float dynamicDifficultyMultiplier = 0;
 
 
     private void Start()
     {
         totalLifesCount = Life.lifeNum;
-        Debug.Log("(InGame) default difficulty: " + OptionsMenu.defaultDifficultyMultiplier);
+        //Debug.Log("(InGame) default difficulty: " + OptionsMenu.defaultDifficultyMultiplier);
     }
 
     void Update()
     {
-        //Debug.Log("time: " + enemyTotalLifetime);
+        Debug.Log("total difficulty: " + (OptionsMenu.defaultDifficultyMultiplier + dynamicDifficultyMultiplier));
         //if (!(enemyKilledCount > enemySpawnedCount))
         //    Debug.Log("spawned: " + enemySpawnedCount + ";  killed: " + enemyKilledCount + ";  precentage: " + enemyKilledPrecentage);
 

@@ -118,12 +118,12 @@ public class BossBodyManager : MonoBehaviour
     }
     
 
-    private void correctBossBodyPartsLocations()
+    /*private void correctBossBodyPartsLocations()
     {
         for (int i = 1; i < bossBody.Count; i++)
         {
             bossBody[i].GetComponent<CheckpointManager>().clearPartOfCheckpointList();
             weaponList[i - 1].GetComponent<CheckpointManager>().clearPartOfCheckpointList();
         }
-    }
+    }*/
 }

@@ -17,6 +17,7 @@ TagManager:
   - Bomb
   - Waypoint
   - Boss
+  - SniperBullet
   layers:
   - Default
   - TransparentFX
