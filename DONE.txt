@@ -29,3 +29,4 @@
 				Sniper: tępo strzelania
 				Boss: czasami próbuje taranować gracza (leci troche przed gracza (na tyle blisko, że stanie w miejscu(gracz) nie pomoże))
 			dostosywane poziomu trudności co 1k punktów
+-bugs: pociski mogły uderzyć przeciwnika naraz, sprawiając że niektóre funkcje wywoływały się kilkukrotnie (np. śmierć)

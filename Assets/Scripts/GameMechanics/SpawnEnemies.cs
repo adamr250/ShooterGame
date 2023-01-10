@@ -87,7 +87,7 @@ public class SpawnEnemies : MonoBehaviour
         int safetyBreak = 0;
         while (true)
         {
-            normalSpawnTimer = Time.time + normalSpawnCd;
+            normalSpawnTimer = Time.time + normalSpawnCd / (OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier);
 
             int axis = Random.Range(0, 2);
             int plusOrMinus = Random.Range(0, 2) * 2 - 1;

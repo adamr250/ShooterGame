@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossBodyManager : MonoBehaviour
 {
@@ -113,5 +114,10 @@ public class BossBodyManager : MonoBehaviour
     public void death()
     {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 }

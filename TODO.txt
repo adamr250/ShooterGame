@@ -4,6 +4,3 @@
 -różne typy wrogich pocisków (różna prędkość, dmg itp)
 -nowy wróg cannon
 -?warstwowe tło/paralaksa
-
-bug:
-kiedy masz attack boost możesz zrespić killka buffów na raz
