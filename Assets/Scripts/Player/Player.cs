@@ -58,7 +58,6 @@ public class Player : MonoBehaviour
         if (attackBoosted && attackBoostTimer < Time.time)
         {
             attackBoosted = false;
-            Debug.Log("Attack buff ended");
         }
 
         if(Input.GetKeyDown(KeyCode.Space) && Bomb.bombCount > 0)
@@ -106,7 +105,6 @@ public class Player : MonoBehaviour
                     dmgTaken(51);
                 break;
             case "LifeBuff":
-                Debug.Log("Life collected");
                 life.lifeChangeValue(1);
                 break;
             case "AttackBuff":

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class BossBodyManager : MonoBehaviour
 {
-    private float bodyPartsDistance = 0.3f;
+    private float bodyPartsDistance = 0.225f;
+
     [SerializeField] List<GameObject> bodyParts = new List<GameObject>();
     List<GameObject> bossBody = new List<GameObject>();
 
     [SerializeField] GameObject weaponObject;
     List<GameObject> weaponList = new List<GameObject>();
 
-    private float countUp = 0;
+    private float bodyPartSpawnDelay = 0;
 
     public static int bodyPartsDestroyedCounter = 0;
     public static bool bossBodyCompleted = false;
@@ -73,14 +74,14 @@ public class BossBodyManager : MonoBehaviour
 
         CheckpointManager checkpoint = bossBody[bossBody.Count - 1].GetComponent<CheckpointManager>();
 
-        if(countUp == 0)
+        if(bodyPartSpawnDelay == 0)
         {
             checkpoint.clearCheckpointList();
         }
 
-        countUp += Time.deltaTime;
+        bodyPartSpawnDelay += Time.deltaTime;
 
-        if(countUp >= bodyPartsDistance)
+        if(bodyPartSpawnDelay >= bodyPartsDistance)
         {
             GameObject tmp2 = Instantiate(bodyParts[0], checkpoint.checkpointList[0].position, checkpoint.checkpointList[0].rotation, transform);
             GameObject weapon = Instantiate(weaponObject, checkpoint.checkpointList[0].position, checkpoint.checkpointList[0].rotation, transform);
@@ -91,7 +92,7 @@ public class BossBodyManager : MonoBehaviour
             bossBody.Add(tmp2);
             bodyParts.RemoveAt(0);
             tmp2.GetComponent<CheckpointManager>().clearCheckpointList();
-            countUp = 0;
+            bodyPartSpawnDelay = 0;
 
             weaponList.Add(weapon);
         }
@@ -105,10 +106,7 @@ public class BossBodyManager : MonoBehaviour
         Destroy(bossBody[bossBody.Count - 1]);
         bossBody.RemoveAt(bossBody.Count - 1);
 
-        bodyPartsDestroyedCounter++;
-
-        //correctBossBodyPartsLocations();
-        
+        bodyPartsDestroyedCounter++;       
     }
 
 
@@ -116,14 +114,4 @@ public class BossBodyManager : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    
-
-    /*private void correctBossBodyPartsLocations()
-    {
-        for (int i = 1; i < bossBody.Count; i++)
-        {
-            bossBody[i].GetComponent<CheckpointManager>().clearPartOfCheckpointList();
-            weaponList[i - 1].GetComponent<CheckpointManager>().clearPartOfCheckpointList();
-        }
-    }*/
 }

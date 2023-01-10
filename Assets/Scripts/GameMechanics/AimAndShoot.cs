@@ -47,7 +47,7 @@ public class AimAndShoot : MonoBehaviour
                 Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
                 if(Player.attackBoosted)
                 {
-                    Debug.Log("Boosted Attack");
+                    //Debug.Log("Boosted Attack");
                     shootCooldown = shootCooldownBoosted;
                     //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 85.0f));
                     //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 95.0f));

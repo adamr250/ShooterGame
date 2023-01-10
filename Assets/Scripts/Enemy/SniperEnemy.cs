@@ -34,6 +34,8 @@ public class SniperEnemy : MonoBehaviour
     private bool isShooting = false;
     private bool isFreshlySpawned = true;
 
+    private bool gotKilled = false;
+
     void Start()
     {
         spawnTime = Time.time;
@@ -155,11 +157,23 @@ public class SniperEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
         {
-            DifficultyManager.enemyKilledCount++;
-            DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;
+            death();
+        }
+    }
 
-            Destroy(gameObject);
+    void death()
+    {
+        gotKilled = true;
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        if (gotKilled)
+        {
+            DifficultyManager.enemyKilledCount++;
             score.increaseScore(250);
         }
+        DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;
     }
 }

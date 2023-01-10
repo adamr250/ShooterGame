@@ -28,6 +28,8 @@ public class NormalEnemy : MonoBehaviour
 
 	private float spawnTime = 0;
 
+	private bool gotKilled = false;
+
 	void Start()
 	{
 		spawnTime = Time.time;
@@ -89,6 +91,7 @@ public class NormalEnemy : MonoBehaviour
 		} 
 		else if(collision.gameObject.tag == "PlayerBullet")
         {
+			//Debug.Log("Got hit");
 			health -= 51;
 		}
 
@@ -105,16 +108,18 @@ public class NormalEnemy : MonoBehaviour
 
 	void death()
     {
-		DifficultyManager.enemyKilledCount++;
-		//DifficultyManager.enemyTotalLifeTime += Time.time - spawnTime;
-
-		spawnBuffs.spawnBuffs(transform.position);
+		gotKilled = true;
 		Destroy(gameObject);
-		score.increaseScore(50);
 	}
 
     private void OnDestroy()
     {
+		if (gotKilled)
+		{
+			DifficultyManager.enemyKilledCount++;
+			spawnBuffs.spawnBuffs(transform.position);
+			score.increaseScore(50);
+		}
 		DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;
 	}
 }

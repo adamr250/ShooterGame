@@ -11,11 +11,11 @@ public class HommingEnemy : MonoBehaviour
 
     public float speed;
 
-    //private Vector2 movement;
-
     Rigidbody2D body;
 
     private float spawnTime = 0;
+
+    private bool gotKilled = false;
 
     void Start()
     {
@@ -51,11 +51,23 @@ public class HommingEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerBullet")
         {
-            DifficultyManager.enemyKilledCount++;
-            DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;
+            death();
+        }
+    }
 
-            Destroy(gameObject);
+    void death()
+    {
+        gotKilled = true;
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        if (gotKilled)
+        {
+            DifficultyManager.enemyKilledCount++;
             score.increaseScore(100);
         }
+        DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;
     }
 }

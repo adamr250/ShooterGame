@@ -32,6 +32,8 @@ public class HeadMovement : MonoBehaviour
         waypointManager = waypoint.GetComponent<WaypointManager>();
 
         body = GetComponent<Rigidbody2D>();
+
+        currentTarget = waypointTarget;
     }
 
     private void Update()
@@ -41,6 +43,27 @@ public class HeadMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if ( ((OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier) <= 0.9f) && (changeTargetTimer < Time.time) )
+        {
+            Debug.Log("diff multip: " + OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier);
+
+            changeTargetTimer = Time.time + changeTargetCooldown;
+            if (Random.Range(0, 10) < 5)
+            {
+                currentTarget = playerTarget;
+                Debug.Log("Target player");
+            }
+            else
+            {
+                currentTarget = waypointTarget;
+                Debug.Log("Target waypoint");
+            }
+        } 
+        else if((OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier) > 0.9f)
+        {
+            currentTarget = waypointTarget;
+        }
+
         body.velocity = body.transform.right * speed * Time.deltaTime;
 
         direction = currentTarget.transform.position - transform.position;
@@ -52,11 +75,11 @@ public class HeadMovement : MonoBehaviour
     {
         //waypointManager.refreshTimer();
         //target.transform.position = new Vector3(Random.Range(-2.0f, 8.0f), Random.Range(-5.0f, 5.0f), 0);
-        waypointManager.changePosition(currentTarget);
+        waypointManager.changePosition(waypointTarget);
     }
 
     public void OnDestroy()
     {
-        Destroy(currentTarget);
+        Destroy(waypointTarget);
     }
 }

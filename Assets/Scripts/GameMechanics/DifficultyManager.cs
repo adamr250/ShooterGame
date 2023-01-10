@@ -39,16 +39,15 @@ public class DifficultyManager : MonoBehaviour
 
     private void Start()
     {
-        totalLifesCount = Life.lifeNum;
+        //totalLifesCount = Life.lifeNum;
         //Debug.Log("(InGame) default difficulty: " + OptionsMenu.defaultDifficultyMultiplier);
     }
 
     void Update()
     {
-        Debug.Log("total difficulty: " + (OptionsMenu.defaultDifficultyMultiplier + dynamicDifficultyMultiplier));
+        //Debug.Log("total difficulty: " + (OptionsMenu.defaultDifficultyMultiplier + dynamicDifficultyMultiplier));
         //if (!(enemyKilledCount > enemySpawnedCount))
         //    Debug.Log("spawned: " + enemySpawnedCount + ";  killed: " + enemyKilledCount + ";  precentage: " + enemyKilledPrecentage);
-
 
         if(scoreThreshold <= Score.scoreNum)
         {
@@ -76,11 +75,15 @@ public class DifficultyManager : MonoBehaviour
         int additionalDeaths = deathsCount - deathsCountPrevious;
 
         float enemyKilledPrecentageThisRound = 100 * (float)(enemyKilledCount - enemyKilledCountPrevious) / (enemySpawnedCount - enemySpawnedCountPrevious);
-        enemyKilledTotalPrecentage = 100 * (float)(enemyKilledCount / enemySpawnedCount);
 
+        if (enemySpawnedCount > 0)
+        {
+            enemyKilledTotalPrecentage = 100 * (float)(enemyKilledCount / enemySpawnedCount);
+            enemyAverageLifetime = enemyLifetimeThisRound / (enemySpawnedCount - enemySpawnedCountPrevious);
+        }
         enemyLifetimeThisRound = enemyTotalLifetime - enemyTotalLifetimePrevious;
 
-        enemyAverageLifetime = enemyLifetimeThisRound / (enemySpawnedCount - enemySpawnedCountPrevious);
+
 
         //je¿eli wiêcej razy umar³eœ ni¿ dosta³eœ ¿ycia wynik bêdzie ujemny, je¿eli mianownik mia³by wyjœæ ujemny to znaczy ¿e ju¿ przegra³eœ
         evaluationLifes = (float)(lifesGained - additionalDeaths) / (totalLifesCount - deathsCount); 
@@ -102,9 +105,9 @@ public class DifficultyManager : MonoBehaviour
 
         dynamicDifficultyMultiplier = evaluationScore / 6;
 
-        Debug.Log("evaluations:  lifes - " + evaluationLifes + "; kills - " + evaluationKills + "; lifetime - " + evaluationEnemyLifetime);
-        Debug.Log("evaluationScore: " + evaluationScore);
-        Debug.Log("dynamic diff multip: " + dynamicDifficultyMultiplier);
+        //Debug.Log("evaluations:  lifes - " + evaluationLifes + "; kills - " + evaluationKills + "; lifetime - " + evaluationEnemyLifetime);
+        //Debug.Log("evaluationScore: " + evaluationScore);
+        //Debug.Log("dynamic diff multip: " + dynamicDifficultyMultiplier);
 
         updatePreviousVariables();
     }

@@ -21,3 +21,11 @@
 -normalEnemy umierają po czasie
 -ważone prawdopodobieństwo buffów
 -sniper: laser blokuje się o inne obiekry (przeciwnicy, buffy, pociski)
+-dynamiczny poziom tródności 
+			brane pod uwage: ilość śmierci, ilość posiadanych  żyć, ilość zabitych wrogów; 	
+			zmiany u wrogów: tempo pojawinia wrogów, prędkość ruchu, fire rate, zmienianie mechanik (sniper ucieka itd, boss taranuje); 
+				Normal: tępo strzelania
+				Homming: prędkość ruchu
+				Sniper: tępo strzelania
+				Boss: czasami próbuje taranować gracza (leci troche przed gracza (na tyle blisko, że stanie w miejscu(gracz) nie pomoże))
+			dostosywane poziomu trudności co 1k punktów
