@@ -16,17 +16,19 @@
 -sniper - laser jako imitacja celownika i strzału
 
 -boss: dodanie hp i mechanik umierania
--boss: mniej segmentow -> szybszy ruch i strzał
+-boss: mniej segmentow -> szybciej strzał
 -sniper umiera po oddaniu pewnej ilości strzałów strzałów
 -normalEnemy umierają po czasie
 -ważone prawdopodobieństwo buffów
--sniper: laser blokuje się o inne obiekry (przeciwnicy, buffy, pociski)
+-Menu -> Ustawienia: Wybór startowego poziomu trudności
+-sniper: laser blokował się o inne obiekry (przeciwnicy, buffy, pociski)
+-Boss czasami leci na gracza
 -dynamiczny poziom tródności 
 			brane pod uwage: ilość śmierci, ilość posiadanych  żyć, ilość zabitych wrogów; 	
 			zmiany u wrogów: tempo pojawinia wrogów, prędkość ruchu, fire rate, zmienianie mechanik (sniper ucieka itd, boss taranuje); 
 				Normal: tępo strzelania
 				Homming: prędkość ruchu
 				Sniper: tępo strzelania
-				Boss: czasami próbuje taranować gracza (leci troche przed gracza (na tyle blisko, że stanie w miejscu(gracz) nie pomoże))
+				Boss: czasami próbuje taranować gracza
 			dostosywane poziomu trudności co 1k punktów
--bugs: pociski mogły uderzyć przeciwnika naraz, sprawiając że niektóre funkcje wywoływały się kilkukrotnie (np. śmierć)
+-bug: pociski mogły uderzyć przeciwnika naraz, sprawiając że niektóre funkcje wywoływały się kilkukrotnie (np. śmierć)
