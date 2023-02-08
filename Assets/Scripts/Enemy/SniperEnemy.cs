@@ -16,7 +16,7 @@ public class SniperEnemy : MonoBehaviour
 
     private int shootCounter = 0;
 
-    public float shootCooldown = 2.0f;
+    public float shootCooldown = 1.0f;
     public GameObject bulletPref;
     public float speed = 3.0f;
     Rigidbody2D body;
