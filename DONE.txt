@@ -32,3 +32,13 @@
 				Boss: czasami próbuje taranować gracza
 			dostosywane poziomu trudności co 1k punktów
 -bug: pociski mogły uderzyć przeciwnika naraz, sprawiając że niektóre funkcje wywoływały się kilkukrotnie (np. śmierć)
+
+
+-zmiana funkcji liczącej evaluationLifes
+-zmiana wag prawdopodobieństw buffów przy niskim życiu
+-poprawa ogólnego balansu
+-dodanie niewrażliwości graczowi po otrzymaniu obrażeń (krótka) i po stacie życia (dłuższa)
+-dodanie logów dla dynamicznego poziomu trudności
+
+-gracz: chwilowa niewrażliwość po otrzymaniu obrażeń
+-buffs: zmiana prawdopodobieństwa wypadnięcia dodatkowego życie kiedy gracz ma mało żyć

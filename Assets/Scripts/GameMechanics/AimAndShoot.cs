@@ -14,7 +14,7 @@ public class AimAndShoot : MonoBehaviour
     private CursorMode cursorMode = CursorMode.Auto;
 
     private float shootCooldownDefault = 0.3f;
-    private float shootCooldownBoosted = 0.1f;
+    private float shootCooldownBoosted = 0.2f;
     private float shootCooldown;
     public float shotgunCooldown = 5.0f;
     public GameObject bulletPref;

@@ -1,3 +1,5 @@
+-posprzątać w kodzie
+
 -sniper: ucieka na wyższym poziomie trudności
 -mutacje wrogów (np: normal -> homming)
 

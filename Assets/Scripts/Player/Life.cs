@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Life : MonoBehaviour
 {
-    private int addLifeOnScore = 1000;
+    private int addLifeOnScore = 1500;
 
     public static int lifeNum = 4;
     public Text lifeText;
@@ -22,7 +22,7 @@ public class Life : MonoBehaviour
         if(Score.scoreNum > addLifeOnScore)
         {
             lifeChangeValue(1);
-            addLifeOnScore += addLifeOnScore;
+            addLifeOnScore += 1500;
         }
 
         if(lifeNum <= 0)
@@ -35,13 +35,13 @@ public class Life : MonoBehaviour
 
     public void lifeChangeValue(int x)
     {
-        if(x > 0)
+        /*if(x > 0)
         {
             DifficultyManager.totalLifesCount += x;
         } else
         {
             DifficultyManager.deathsCount++;
-        }
+        }*/
         lifeNum += x;
         lifeText.text = lifeNum.ToString();
 

@@ -21,7 +21,7 @@ public class SpawnBuffs : MonoBehaviour
 	*/
 
 	[SerializeField] GameObject[] buffType;
-	[SerializeField] int[] weights;
+	int[] weights = { 20, 50, 30 };  //life, attack, bomb
 	int weightsSum = 0;
 
 	private void Start()
@@ -39,6 +39,22 @@ public class SpawnBuffs : MonoBehaviour
 		//Debug.Log("suma wag: " + weightsSum);
 	}
 
+    private void Update()
+    {
+		if(Life.lifeNum == 1)
+        {
+			weights[0] = 120;   //life = 60%; attack = 25%; bomb = 15%
+		}
+        else if(Life.lifeNum == 2 || Life.lifeNum == 3)
+        {
+			weights[0] = 65;  //life = 45%; attack = 34.5%; bomb = 20.5%
+		} 
+		else
+        {
+			weights[0] = 20;  //life = 20%; attack = 50%; bomb = 30%
+		}
+	}
+
     public void spawnBuffs(Vector3 spawnPoint)
 	{
 		if (weights.Length != buffType.Length)
@@ -47,7 +63,7 @@ public class SpawnBuffs : MonoBehaviour
 			return;
 		}
 
-		if (Random.Range(0, 100) > 20)
+		if (Random.Range(0, 100) > 30)
         {
 			return;
         }
