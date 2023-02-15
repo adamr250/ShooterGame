@@ -91,7 +91,6 @@ public class NormalEnemy : MonoBehaviour
 		} 
 		else if(collision.gameObject.tag == "PlayerBullet")
         {
-			//Debug.Log("Got hit");
 			health -= 51;
 		}
 

@@ -35,6 +35,7 @@ public class HealthBar : MonoBehaviour
         slider.maxValue = health;
         slider.value = health;
     }
+
     public void damageTaken(int damage)
     {
         if (isInvulnerable)

@@ -17,74 +17,25 @@ public class DifficultyManager : MonoBehaviour
     private float enemyTotalLifetimePrevious = 0;
 
     private float enemyLifetimeThisRound = 0;
-    private float enemyLifetimeThisRoundPrevious = 0;
-
     private float enemyAverageLifetime = 0;
-    private float enemyAverageLifetimePrevious = 0;
-
-    private float enemyKilledTotalPrecentage = 0;
-    private float enemyKilledTotalPrecentagePrevious = 0;
-
-    
     private int scoreThreshold = 750;
-
     public static float dynamicDifficultyMultiplier = 0;
 
 
-    //int tmpTotalLifesCountPrevious = 0;
-    //int tmpDeathsCountPrevious = 0;
     private void Start()
     {
         createLogs("\n##############################\nNEW GAME LOGS\n");
-        //totalLifesCount = Life.lifeNum;
-        //tmpTotalLifesCountPrevious = totalLifesCount;
-        //tmpDeathsCountPrevious = deathsCount;
-        //Debug.Log("(InGame) default difficulty: " + OptionsMenu.defaultDifficultyMultiplier);
     }
 
-    //int tmpScoreThreshold = 200;
     void Update()
     {
-        //Debug.Log("total difficulty: " + (OptionsMenu.defaultDifficultyMultiplier + dynamicDifficultyMultiplier));
-        //if (!(enemyKilledCount > enemySpawnedCount))
-        //    Debug.Log("spawned: " + enemySpawnedCount + ";  killed: " + enemyKilledCount + ";  precentage: " + enemyKilledPrecentage);
-        
-        //if (tmpScoreThreshold <= Score.scoreNum)
-        //{
-        //   tmpScoreThreshold += 200;
-        //    tmpLifeScore();
-        //}
-
-
         if (scoreThreshold <= Score.scoreNum)
         {
             scoreThreshold += 750;
 
-            //Debug.Log("lifes: " + totalLifesCount);
             updateDifficulty();
         }
     }
-
-    
-    /*public void tmpLifeScore()
-    {
-        float tmpEvaluationLifes = 0;
-        int x = Life.lifeNum;
-
-        if (x >= 1 && x <= 4)
-        {
-            tmpEvaluationLifes = ((float)x / 3) - (4.0f / 3.0f);
-        } 
-        else if (x <= 7)
-        {
-            tmpEvaluationLifes = Mathf.Tan(((float)x / 2.275f) - 1.758242f) / 4;
-        } 
-        else
-        {
-            tmpEvaluationLifes = 1;
-        }
-        Debug.Log("tmp life score: " + Mathf.Round(tmpEvaluationLifes * 100f) / 100f);
-    }*/
 
     public void updateDifficulty()
     {
@@ -102,12 +53,11 @@ public class DifficultyManager : MonoBehaviour
 
         float enemyKilledPrecentageThisRound = 100 * (float)(enemyKilledCount - enemyKilledCountPrevious) / (enemySpawnedCount - enemySpawnedCountPrevious);
 
-        if (enemySpawnedCount > 0)
+        enemyLifetimeThisRound = enemyTotalLifetime - enemyTotalLifetimePrevious;
+        if (enemySpawnedCount != enemySpawnedCountPrevious)
         {
-            enemyKilledTotalPrecentage = 100 * (float)(enemyKilledCount / enemySpawnedCount);
             enemyAverageLifetime = enemyLifetimeThisRound / (enemySpawnedCount - enemySpawnedCountPrevious);
         }
-        enemyLifetimeThisRound = enemyTotalLifetime - enemyTotalLifetimePrevious;
 
 
         //zak³adamy ¿e 4 ¿ycie to granica. poni¿ej 4 ¿yæ wynik ujemny, powy¿ej - dodatni
@@ -147,9 +97,9 @@ public class DifficultyManager : MonoBehaviour
         Debug.Log("dynamic diff multip: " + dynamicDifficultyMultiplier);
 
         updatePreviousVariables();
-        string logContent = "Login Date: " + System.DateTime.Now + "\nScore: " + Score.scoreNum.ToString() + 
-                            "\n\tcurrentLifesCount:  " + currentLifesCount.ToString("F6") +
-                            "\n Variables: " + "\n\tenemyKilledPrecentageThisRound:  " + enemyKilledPrecentageThisRound.ToString("F6") +
+        string logContent = "Login Date: " + System.DateTime.Now + "\nScore: " + Score.scoreNum.ToString() +
+                            "\n Variables: " + "\n\tcurrentLifesCount:  " + currentLifesCount.ToString("F6") +
+                            "\n\tenemyKilledPrecentageThisRound:  " + enemyKilledPrecentageThisRound.ToString("F6") +
                             "\n\tenemyAverageLifetime:  " + enemyAverageLifetime.ToString("F6") +
                             "\n Evaluation Values: " + 
                             "\n\tLifes:  " + evaluationLifes.ToString("F6") + 
@@ -164,12 +114,9 @@ public class DifficultyManager : MonoBehaviour
     {
         enemySpawnedCountPrevious = enemySpawnedCount;
         enemyKilledCountPrevious = enemyKilledCount;
-        enemyKilledTotalPrecentagePrevious = enemyKilledTotalPrecentage;
 
 
         enemyTotalLifetimePrevious = enemyTotalLifetime;
-        enemyLifetimeThisRoundPrevious = enemyLifetimeThisRound;
-        enemyAverageLifetimePrevious = enemyAverageLifetime;
     }
 
     void createLogs(string content)

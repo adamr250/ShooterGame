@@ -10,7 +10,6 @@ public class Life : MonoBehaviour
 
     public static int lifeNum = 4;
     public Text lifeText;
-    //public GameObject playerObject;
 
     private void Start()
     {
@@ -27,7 +26,6 @@ public class Life : MonoBehaviour
 
         if(lifeNum <= 0)
         {
-
             SceneManager.LoadSceneAsync(0);
             //SceneManager.UnloadSceneAsync(1);
         }
@@ -35,15 +33,7 @@ public class Life : MonoBehaviour
 
     public void lifeChangeValue(int x)
     {
-        /*if(x > 0)
-        {
-            DifficultyManager.totalLifesCount += x;
-        } else
-        {
-            DifficultyManager.deathsCount++;
-        }*/
         lifeNum += x;
         lifeText.text = lifeNum.ToString();
-
     } 
 }

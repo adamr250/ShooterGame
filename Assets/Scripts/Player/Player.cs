@@ -13,8 +13,6 @@ public class Player : MonoBehaviour
     private float startX = 2.75f;
 	private float startY = -3.0f;
 	private float movementVertical, movementHorizontal;
-    private float shootTimer;
-    private float startSpeed;
 
     public static bool attackBoosted = false;
     private float attackBoostDuration = 8.0f;
@@ -30,30 +28,22 @@ public class Player : MonoBehaviour
     public GameObject health;
     public GameObject bombObject;
 
-    //private Transform playerShootTransform;
-    
     Rigidbody2D body;
 
     void Start()
     {
         transform.position = new Vector2(startX, startY);
-        startSpeed = speed;
-        boostedSpeed = speed * 2.0f;
         
         body = GetComponent<Rigidbody2D>();
         healthBar = health.GetComponent<HealthBar>();
         life = lifeHolder.GetComponent<Life>();
         bomb = bombObject.GetComponent<Bomb>();
-
-        //playerShootTransform = transform.Find("PlayerGun");
-
-        //Instantiate(shield, new Vector2(startX, startY - 0.5f), Quaternion.identity);
     }
 
     void Update()
     {
-        movementVertical = Input.GetAxis("Vertical");// * speed * Time.deltaTime;
-	    movementHorizontal = Input.GetAxis("Horizontal");// * speed * Time.deltaTime;
+        movementVertical = Input.GetAxis("Vertical");
+	    movementHorizontal = Input.GetAxis("Horizontal");
 
         if (attackBoosted && attackBoostTimer < Time.time)
         {
@@ -83,8 +73,6 @@ public class Player : MonoBehaviour
 
     void playerMovement() {
         body.velocity = new Vector2(movementHorizontal * speed, movementVertical * speed);
-        //transform.Translate(movementHorizontal, movementVertical, 0);
-        //rb2D.AddForce(transform.up * thrust);
     }
 
 	void OnCollisionEnter2D(Collision2D collision)

@@ -27,7 +27,6 @@ public class AimAtPlayer : MonoBehaviour
     private void Update()
     {
         shootCooldown = defaultShootCooldown / (1 + (float)BossBodyManager.bodyPartsDestroyedCounter / 3.5f);
-        //Debug.Log("shoot cd: " + shootCooldown);
     }
     void FixedUpdate()
     {

@@ -1,4 +1,6 @@
 -posprzątać w kodzie
+-sniper: ogarnąć po co jest zmienna bool isFreshlySpawned
+
 
 -sniper: ucieka na wyższym poziomie trudności
 -mutacje wrogów (np: normal -> homming)

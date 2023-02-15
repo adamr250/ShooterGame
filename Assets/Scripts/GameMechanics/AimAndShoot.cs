@@ -36,30 +36,22 @@ public class AimAndShoot : MonoBehaviour
             float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             GameObject.Find("PlayerSprite").transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotation-90);
 
-            //if (Time.time > shootTimer1)
-            //{
             if (Input.GetMouseButton(0) && Time.time > shootTimer)
             {
-
-                shootTimer = Time.time + shootCooldown;
-
                 playerGun = GameObject.Find("PlayerGun").transform.position;
                 Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
+                
                 if(Player.attackBoosted)
                 {
-                    //Debug.Log("Boosted Attack");
                     shootCooldown = shootCooldownBoosted;
-                    //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 85.0f));
-                    //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 95.0f));
-                    //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 87.5f));
-                    //Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 92.5f));
-                } else
+                } 
+                else
                 {
                     shootCooldown = shootCooldownDefault;
                 }
 
+                shootTimer = Time.time + shootCooldown;
             };
-            //}
 
             if (Time.time > shotgunTimer)
             {
@@ -68,7 +60,12 @@ public class AimAndShoot : MonoBehaviour
                     shotgunTimer = Time.time + shotgunCooldown;
 
                     playerGun = GameObject.Find("PlayerGun").transform.position;
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 70));
+                    
+                    for (int i = 75; i <= 110; i += 5)
+                    {
+                        Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - i));
+                    }
+                    /*Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 70));
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 75));
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 80));
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 85));
@@ -77,6 +74,7 @@ public class AimAndShoot : MonoBehaviour
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 100));
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 105));
                     Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 110));
+                    */
                 };
             }
         }

@@ -23,7 +23,7 @@ public class SniperEnemy : MonoBehaviour
 
     [SerializeField] private float defaultDistanceRay = 15;
     LineRenderer lineRenderer;
-    //public Transform firePoint;
+
     [SerializeField] private LayerMask mask;
     Transform trans;
 
@@ -34,7 +34,7 @@ public class SniperEnemy : MonoBehaviour
     private bool isShooting = false;
     private bool isFreshlySpawned = true;
 
-    private bool gotKilled = false;
+    private bool gotKilled = false; //czy zostal zabity przez gracza
 
     void Start()
     {
@@ -124,7 +124,6 @@ public class SniperEnemy : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(child.transform.position, transform.right, Mathf.Infinity, mask);
             draw2DRay(child.transform.position, hit.point);
-            //draw2DRay(child.transform.position, child.transform.transform.right * defaultDistanceRay);
         }
         else
         {
@@ -136,22 +135,6 @@ public class SniperEnemy : MonoBehaviour
         lineRenderer.SetPosition(0, startPos);
         lineRenderer.SetPosition(1, endPos);
     }
-
-    /*private void FixedUpdate()
-    {
-        float distance = Vector2.Distance(target, transform.position);
-        if(distance<3)
-        {
-            Debug.Log(distance);
-            movement(direction);
-        }
-    }
-
-    void movement(Vector2 dir)
-    {
-        body.MovePosition((Vector2)transform.position - (dir * speed * Time.deltaTime));
-        body.velocity = body.transform.right * speed * Time.deltaTime;
-    }*/
 
     void OnCollisionEnter2D(Collision2D collision)
     {

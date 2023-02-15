@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    private Vector3 directory;
-    private Vector3 eulerAngles;
-
     [SerializeField] private float speed;
     [SerializeField] private float lifeTime;
 
@@ -18,24 +15,15 @@ public class EnemyBullet : MonoBehaviour
         {
             gameObject.AddComponent<Rigidbody2D>();
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+            gameObject.GetComponent<Rigidbody2D>().mass = 0.0001f;
         }
         body = gameObject.GetComponent<Rigidbody2D>();
-    }
 
-    /*private void Setup(Vector3 direction)
-    {
-        this.direction = direction;
-        eulerAngles = transform.rotation.eulerAngles;
-    }*/
+        Destroy(gameObject, lifeTime);
+    }
 
     void FixedUpdate()
     {
-        /*body.velocity = -body.transform.up * speed * Time.deltaTime;
-        float movement = speed * Time.deltaTime;
-		transform.Translate(0, movement, 0);
-        */Destroy(gameObject, lifeTime);
-
-        //float speed = 50f;
         body.velocity = body.transform.up * speed * Time.deltaTime;
     }
 
@@ -43,7 +31,6 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Player")
         {   
-            //Debug.Log("transform.rotation angles x: " + eulerAngles.x + " y: " + eulerAngles.y + " z: " + eulerAngles.z); 
             Destroy(gameObject);
         }
     }

@@ -4,21 +4,6 @@ using UnityEngine;
 
 public class SpawnBuffs : MonoBehaviour
 {
-	/*public static GameObject heart;
-	public static GameObject speed;
-	public static GameObject attack;
-	public static GameObject bomb;*/
-
-	/*private Dictionary<GameObject, int> weightTable = new Dictionary<GameObject, int>()
-	{
-		{heart,  90},
-		{attack,  45},
-		{bomb, 60}
-	};*/
-
-	/*int[] weights = { 35, 90, 50 }; //odpowiednio 20%, 51%, 29%  (weights[x] / sum(weights) * 100)
-	GameObject[] buffType = { heart, attack, bomb };
-	*/
 
 	[SerializeField] GameObject[] buffType;
 	int[] weights = { 20, 50, 30 };  //life, attack, bomb
@@ -36,7 +21,6 @@ public class SpawnBuffs : MonoBehaviour
 		{
 			weightsSum += i;
 		}
-		//Debug.Log("suma wag: " + weightsSum);
 	}
 
     private void Update()
@@ -63,12 +47,13 @@ public class SpawnBuffs : MonoBehaviour
 			return;
 		}
 
+		//losujemy czy buff sie pojawi
 		if (Random.Range(0, 100) > 30)
         {
 			return;
         }
 
-		
+		//losujemy, ktory buff sie pojawi
 		int randomWeight = Random.Range(0, weightsSum);
 		for (int i = 0; i < weights.Length; ++i)
 		{

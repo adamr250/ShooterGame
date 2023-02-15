@@ -34,10 +34,4 @@ public class CheckpointManager : MonoBehaviour
         checkpointList.Clear();
         checkpointList.Add(new Checkpoint(transform.position, transform.rotation));
     }
-
-    public void clearPartOfCheckpointList()
-    {
-        //for(int i = )
-        checkpointList.RemoveRange(0, 2);
-    }
 }

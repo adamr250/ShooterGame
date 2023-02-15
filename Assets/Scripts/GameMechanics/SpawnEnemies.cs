@@ -16,12 +16,12 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] private GameObject hommingEnemy;
     [SerializeField] private float hommingSpawnCd = 7.0f;
     private float hommingSpawnTimer;
-    private Vector3 spawnPointHomming;// = new Vector3(10f, 3.0f, 0.0f);
+    private Vector3 spawnPointHomming;
 
     [SerializeField] private GameObject sniperEnemy;
     [SerializeField] private float sniperSpawnCd = 7.3f;
     private float sniperSpawnTimer;
-    private Vector3 spawnPointSniper;// = new Vector3(10f, 3.0f, 0.0f);
+    private Vector3 spawnPointSniper;
 
     [SerializeField] GameObject boss;
 
@@ -39,8 +39,6 @@ public class SpawnEnemies : MonoBehaviour
 
     private void Start()
     {
-        //bossManager.SetActive(false);
-
         hommingSpawnTimer = hommingSpawnCd;
         sniperSpawnTimer = sniperSpawnCd;
         normalSpawnTimer = normalSpawnCd;
@@ -67,8 +65,6 @@ public class SpawnEnemies : MonoBehaviour
         } else if(!bossIsSpawned)
         {
             bossIsSpawned = true;
-            //bossManager.GetComponent<BossBodyManager>().enabled = true;
-            //bossManager.SetActive(true);
             Instantiate(boss, new Vector3(-4.83f, 4.08f, 0.0f), Quaternion.identity);
         }
 
@@ -80,9 +76,7 @@ public class SpawnEnemies : MonoBehaviour
 
     public void spawnNormal()
     {
-        bool canSpawnHere = false; //responsible for overlaping
-        //canSpawnHere1 = false; //responsible for distance from player
-        //canSpawnHere2 = false; //responsible for distance from map center
+        bool canSpawnHere = false; 
 
         int safetyBreak = 0;
         while (true)
@@ -91,14 +85,7 @@ public class SpawnEnemies : MonoBehaviour
 
             int axis = Random.Range(0, 2);
             int plusOrMinus = Random.Range(0, 2) * 2 - 1;
-            //spawnPointNormal = new Vector3(Random.Range(-2f, 8f), Random.Range(3.5f, 4.5f), 0f);
-            /*spawnPointNormal = Random.insideUnitCircle;
-            Debug.Log("random spawn point: " + spawnPointNormal);
-            Debug.Log("corrected spawn point: " + spawnPointNormal*3 + " + " + (spawnPointNormal.normalized));
-            spawnPointNormal = spawnPointNormal * 2 + (spawnPointNormal.normalized)*3;
-            spawnPointNormal += new Vector3(2.0f, 0, 0);
-            spawnPointNormal.x *= 1.5f;*/
-            //Debug.Log("axis: " + axis);
+
             if (axis == 0)
             {   //spawn at axis X
                 spawnPointNormal = new Vector3(Random.Range(-2.2f, 8.3f), plusOrMinus * 5.25f, 0.0f);
@@ -144,7 +131,7 @@ public class SpawnEnemies : MonoBehaviour
     public void spawnSniper()
     {
         bool canSpawnHere = false;
-        //spawnPointSniper = new Vector3(Random.Range(-2f, 8f), Random.Range(4.0f, 4.75f), 0.0f);
+
         int safetyBreak = 0;
         while (true)
         {
@@ -152,14 +139,7 @@ public class SpawnEnemies : MonoBehaviour
 
             int axis = Random.Range(0, 2);
             int plusOrMinus = Random.Range(0, 2) * 2 - 1;
-            //spawnPointNormal = new Vector3(Random.Range(-2f, 8f), Random.Range(3.5f, 4.5f), 0f);
-            /*spawnPointNormal = Random.insideUnitCircle;
-            Debug.Log("random spawn point: " + spawnPointNormal);
-            Debug.Log("corrected spawn point: " + spawnPointNormal*3 + " + " + (spawnPointNormal.normalized));
-            spawnPointNormal = spawnPointNormal * 2 + (spawnPointNormal.normalized)*3;
-            spawnPointNormal += new Vector3(2.0f, 0, 0);
-            spawnPointNormal.x *= 1.5f;*/
-            //Debug.Log("axis: " + axis);
+
             if (axis == 0)
             {   //spawn at axis X
                 spawnPointSniper = new Vector3(Random.Range(-2.2f, 8.3f), plusOrMinus * 4.25f, 0.0f);

@@ -43,10 +43,9 @@ public class HeadMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        //jesli poziom trudnosi jest odpowiednio niski boss czasami lecie na gracza zamiast w strone waypointu
         if ( ((OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier) <= 0.9f) && (changeTargetTimer < Time.time) )
         {
-            Debug.Log("diff multip: " + OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier);
-
             changeTargetTimer = Time.time + changeTargetCooldown;
             if (Random.Range(0, 10) < 5)
             {
@@ -59,7 +58,7 @@ public class HeadMovement : MonoBehaviour
                 Debug.Log("Target waypoint");
             }
         } 
-        else if((OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier) > 0.9f)
+        else
         {
             currentTarget = waypointTarget;
         }
@@ -73,8 +72,6 @@ public class HeadMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        //waypointManager.refreshTimer();
-        //target.transform.position = new Vector3(Random.Range(-2.0f, 8.0f), Random.Range(-5.0f, 5.0f), 0);
         waypointManager.changePosition(waypointTarget);
     }
 

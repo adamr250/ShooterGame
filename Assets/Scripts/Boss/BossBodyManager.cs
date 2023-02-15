@@ -39,14 +39,6 @@ public class BossBodyManager : MonoBehaviour
 
     void bodyMovement()
     {
-        /*bossBody[0].GetComponent<Rigidbody2D>().velocity = bossBody[0].transform.right * speed * Time.deltaTime;
-
-        if(Input.GetAxis("Horizontal") != 0)
-        {
-            bossBody[0].transform.Rotate(new Vector3(0, 0, -turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal")));
-            Debug.Log(Input.GetAxis("Horizontal"));
-        }*/
-
         if(bossBody.Count > 1)
         {
             for(int i = 1; i < bossBody.Count; i++)

@@ -9,7 +9,6 @@ public class MainMenu : MonoBehaviour
 
     public void playGame()
     {
-        //Debug.Log("PLAY");
         SceneManager.LoadSceneAsync(1);
         //SceneManager.UnloadSceneAsync(0);
     }
@@ -22,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     public void quitGame()
     {
-        //Application.Quit();
         Debug.Log("Quit");
+        Application.Quit();
     }
 }

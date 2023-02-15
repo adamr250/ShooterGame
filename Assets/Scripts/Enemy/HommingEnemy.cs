@@ -15,7 +15,7 @@ public class HommingEnemy : MonoBehaviour
 
     private float spawnTime = 0;
 
-    private bool gotKilled = false;
+    private bool gotKilled = false; //czy zosta³ zabity przez gracza
 
     void Start()
     {

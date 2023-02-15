@@ -5,7 +5,6 @@ using UnityEngine;
 public class DamageManager : MonoBehaviour
 {
     BossHealthBar bossHealthBar;
-    //[SerializeField] private GameObject bossHealth;
 
     void Start()
     {
@@ -23,6 +22,5 @@ public class DamageManager : MonoBehaviour
     public void dmgTaken(int dmg)
     {
         bossHealthBar.damageTaken(dmg);
-        //Debug.Log("Boss damaged");
     }
 }

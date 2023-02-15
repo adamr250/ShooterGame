@@ -11,8 +11,6 @@ public class WaypointManager : MonoBehaviour
     {
         transformCD = 5;
         transformTimer = transformCD + Time.time;
-
-        //Debug.Log("timer 1: " + transformTimer);
     }
 
     void Update()
@@ -27,7 +25,6 @@ public class WaypointManager : MonoBehaviour
     {
         transformTimer = Time.time + transformCD;
         target.transform.position = new Vector3(Random.Range(-2.0f, 8.0f), Random.Range(-5.0f, 5.0f), 0);
-        //Debug.Log("Waypoint_Pos: " + tmp++);
     }    
 
     public void refreshTimer()
