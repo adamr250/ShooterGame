@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
     private int playerMaxHealth = 100;
     private float invulnerabilityTimer = 0.0f;
     private float afterDeathInvulnerabilityDuration = 0.8f;
-    private float afterDamageInvulnerabilityDuration = 0.4f;
+    private float afterDamageInvulnerabilityDuration = 0.3f;
     private bool isInvulnerable = false;
 
     public GameObject lifeHolder;

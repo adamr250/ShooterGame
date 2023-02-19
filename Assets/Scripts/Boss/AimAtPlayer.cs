@@ -49,7 +49,7 @@ public class AimAtPlayer : MonoBehaviour
             shootTimer = Time.time + shootCooldown;
             if (BossHealthBar.isInvulnerable || !BossBodyManager.bossBodyCompleted)
                 return;
-            Instantiate(bulletPref, weaponPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
+            Instantiate(bulletPref, weaponPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90 + Random.Range(-10.0f, 10.0f)));
         }
     }
 }

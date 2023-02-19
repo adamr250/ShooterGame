@@ -8,9 +8,9 @@ public class HeadMovement : MonoBehaviour
 
     [SerializeField] private GameObject waypoint;
     [SerializeField] private float speed;
-    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float defaultRotationSpeed = 2.25f;
 
-    private float defaultRotationSpeed;
+    private float rotationSpeed;
 
     private GameObject playerTarget;
     private GameObject waypointTarget;
@@ -25,10 +25,10 @@ public class HeadMovement : MonoBehaviour
 
     void Start()
     {
-        defaultRotationSpeed = rotationSpeed;
+        rotationSpeed = defaultRotationSpeed;
 
         waypointTarget = Instantiate(waypoint, new Vector3(Random.Range(-2.0f, 8.0f), Random.Range(-5.0f, 5.0f), 0), Quaternion.identity);
-        playerTarget = GameObject.Find("TargetForBoss");
+        playerTarget = GameObject.Find("Player");
         waypointManager = waypoint.GetComponent<WaypointManager>();
 
         body = GetComponent<Rigidbody2D>();
@@ -38,7 +38,7 @@ public class HeadMovement : MonoBehaviour
 
     private void Update()
     {
-        rotationSpeed = defaultRotationSpeed * (1 + (float)BossBodyManager.bodyPartsDestroyedCounter / 7);
+        rotationSpeed = defaultRotationSpeed * (1 + (10 - (float)BossBodyManager.bodyPartsCount) / 7);
     }
 
     void FixedUpdate()
@@ -78,5 +78,6 @@ public class HeadMovement : MonoBehaviour
     public void OnDestroy()
     {
         Destroy(waypointTarget);
+        rotationSpeed = defaultRotationSpeed;
     }
 }

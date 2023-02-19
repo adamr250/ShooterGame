@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoint: {fileID: 234856885942222305, guid: 74fb14996bc616a4aab1a64a677224be, type: 3}
   speed: 200
-  rotationSpeed: 2.25
+  defaultRotationSpeed: 2.25
 --- !u!114 &7967804021398897934
 MonoBehaviour:
   m_ObjectHideFlags: 0

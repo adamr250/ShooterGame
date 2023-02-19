@@ -19,6 +19,8 @@ public class BossBodyManager : MonoBehaviour
     public static int bodyPartsDestroyedCounter = 0;
     public static bool bossBodyCompleted = false;
 
+    public static int bodyPartsCount = 0;
+
     void Start()
     {
         spawnEnemies = GameObject.Find("GameCore").GetComponent<SpawnEnemies>();
@@ -28,6 +30,8 @@ public class BossBodyManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        bodyPartsCount = bossBody.Count;
+
         if(bodyParts.Count > 0)
         {
             createBody();

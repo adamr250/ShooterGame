@@ -6,6 +6,7 @@ public class AimAndShoot : MonoBehaviour
 {
     private Vector3 mouse;
     private Vector3 playerGun;
+    private Vector3 playerGun_Buff;
     private float shootTimer = 0.0f;
     private float shotgunTimer = 0.0f;
 
@@ -39,12 +40,14 @@ public class AimAndShoot : MonoBehaviour
             if (Input.GetMouseButton(0) && Time.time > shootTimer)
             {
                 playerGun = GameObject.Find("PlayerGun").transform.position;
+                playerGun_Buff = GameObject.Find("PlayerGun_Buff").transform.position;
                 Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
                 
                 if(Player.attackBoosted)
                 {
                     shootCooldown = shootCooldownBoosted;
-                } 
+                    Instantiate(bulletPref, playerGun_Buff, Quaternion.Euler(0.0f, 0.0f, rotation + 90));
+                }
                 else
                 {
                     shootCooldown = shootCooldownDefault;
@@ -65,16 +68,6 @@ public class AimAndShoot : MonoBehaviour
                     {
                         Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - i));
                     }
-                    /*Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 70));
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 75));
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 80));
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 85));
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 90));
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 95));
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 100));
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 105));
-                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - 110));
-                    */
                 };
             }
         }
