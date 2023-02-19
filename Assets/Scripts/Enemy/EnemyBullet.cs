@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float lifeTime;
+    private float speed = 200.0f;
+    private float lifeTime_Enemy = 1.5f;
+    private float lifeTime_Boss = 2.5f;
 
     private Rigidbody2D body;
 
@@ -18,8 +19,15 @@ public class EnemyBullet : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().mass = 0.0001f;
         }
         body = gameObject.GetComponent<Rigidbody2D>();
-
-        Destroy(gameObject, lifeTime);
+        
+        if(gameObject.tag == "EnemyBullet")
+        {
+            Destroy(gameObject, lifeTime_Enemy);
+        }
+        else if(gameObject.tag == "BossBullet")
+        {
+            Destroy(gameObject, lifeTime_Boss);
+        }
     }
 
     void FixedUpdate()

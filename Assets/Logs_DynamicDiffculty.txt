@@ -176,3 +176,945 @@ Score: 11310
 	Enemy Lifetime:  -1
 Dynamic Difficulty Multiplier:  +nieskończoność
 -----------------------------------------------------------------------------------------
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+Login Date: 18.02.2023 16:51:20
+Score: 1590
+ Variables: 
+	currentLifesCount:  6,000000
+	enemyKilledPrecentageThisRound:  90,000000
+	enemyAverageLifetime:  1,834124
+ Evaluation Values: 
+	Lifes:  0,301875
+	Kills Precentage:  0,500000
+	Enemy Lifetime:  0,3886254
+Dynamic Difficulty Multiplier:  0,198417
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:51:33
+Score: 2320
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  1,854415
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  0,3818617
+Dynamic Difficulty Multiplier:  0,396977
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:51:42
+Score: 3060
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  87,500000
+	enemyAverageLifetime:  1,743498
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,375000
+	Enemy Lifetime:  0,4188339
+Dynamic Difficulty Multiplier:  0,298972
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:51:51
+Score: 3790
+ Variables: 
+	currentLifesCount:  9,000000
+	enemyKilledPrecentageThisRound:  87,500000
+	enemyAverageLifetime:  2,249464
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,375000
+	Enemy Lifetime:  0,2501787
+Dynamic Difficulty Multiplier:  0,270863
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:52:00
+Score: 4740
+ Variables: 
+	currentLifesCount:  9,000000
+	enemyKilledPrecentageThisRound:  87,500000
+	enemyAverageLifetime:  4,437811
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,375000
+	Enemy Lifetime:  -0,4792703
+Dynamic Difficulty Multiplier:  0,149288
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:52:08
+Score: 5260
+ Variables: 
+	currentLifesCount:  10,000000
+	enemyKilledPrecentageThisRound:  57,142860
+	enemyAverageLifetime:  2,956096
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  0,01463461
+Dynamic Difficulty Multiplier:  0,002439
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:52:16
+Score: 6050
+ Variables: 
+	currentLifesCount:  10,000000
+	enemyKilledPrecentageThisRound:  87,500000
+	enemyAverageLifetime:  4,312878
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,375000
+	Enemy Lifetime:  -0,4376259
+Dynamic Difficulty Multiplier:  0,156229
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:52:25
+Score: 6840
+ Variables: 
+	currentLifesCount:  11,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  3,497366
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  -0,1657887
+Dynamic Difficulty Multiplier:  0,305702
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:52:30
+Score: 7540
+ Variables: 
+	currentLifesCount:  11,000000
+	enemyKilledPrecentageThisRound:  80,000000
+	enemyAverageLifetime:  2,128458
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,000000
+	Enemy Lifetime:  0,2905141
+Dynamic Difficulty Multiplier:  0,215086
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:52:41
+Score: 8250
+ Variables: 
+	currentLifesCount:  12,000000
+	enemyKilledPrecentageThisRound:  50,000000
+	enemyAverageLifetime:  3,341512
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1138373
+Dynamic Difficulty Multiplier:  -0,018973
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:52:49
+Score: 9080
+ Variables: 
+	currentLifesCount:  12,000000
+	enemyKilledPrecentageThisRound:  128,571400
+	enemyAverageLifetime:  7,828134
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  2,428571
+	Enemy Lifetime:  -1
+Dynamic Difficulty Multiplier:  0,404762
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:52:56
+Score: 9750
+ Variables: 
+	currentLifesCount:  12,000000
+	enemyKilledPrecentageThisRound:  85,714290
+	enemyAverageLifetime:  3,827986
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,285714
+	Enemy Lifetime:  -0,2759952
+Dynamic Difficulty Multiplier:  0,168287
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:53:46
+Score: 10500
+ Variables: 
+	currentLifesCount:  11,000000
+	enemyKilledPrecentageThisRound:  80,000000
+	enemyAverageLifetime:  8,251673
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,000000
+	Enemy Lifetime:  -1
+Dynamic Difficulty Multiplier:  0,000000
+-----------------------------------------------------------------------------------------
+
+##############################
+NEW GAME LOGS
+Login Date: 18.02.2023 16:54:16
+Score: 10710
+ Variables: 
+	currentLifesCount:  12,000000
+	enemyKilledPrecentageThisRound:  86,607140
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,330357
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  0,201705
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  13,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  14,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  15,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  16,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  17,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  18,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  19,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  19,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  19,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  19,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  19,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  19,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:54:16
+Score: 10720
+ Variables: 
+	currentLifesCount:  19,000000
+	enemyKilledPrecentageThisRound:  NaN
+	enemyAverageLifetime:  3,360373
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  -0,1201244
+Dynamic Difficulty Multiplier:  -0,020021
+-----------------------------------------------------------------------------------------
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+Login Date: 18.02.2023 16:56:10
+Score: 1590
+ Variables: 
+	currentLifesCount:  4,000000
+	enemyKilledPrecentageThisRound:  90,000000
+	enemyAverageLifetime:  1,795485
+ Evaluation Values: 
+	Lifes:  0,000000
+	Kills Precentage:  0,500000
+	Enemy Lifetime:  0,4015049
+Dynamic Difficulty Multiplier:  0,150251
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:56:22
+Score: 2260
+ Variables: 
+	currentLifesCount:  5,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  1,850174
+ Evaluation Values: 
+	Lifes:  0,117561
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  0,3832752
+Dynamic Difficulty Multiplier:  0,250139
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:56:33
+Score: 3070
+ Variables: 
+	currentLifesCount:  5,000000
+	enemyKilledPrecentageThisRound:  80,000000
+	enemyAverageLifetime:  1,966668
+ Evaluation Values: 
+	Lifes:  0,117561
+	Kills Precentage:  0,000000
+	Enemy Lifetime:  0,344444
+Dynamic Difficulty Multiplier:  0,077001
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:56:40
+Score: 3990
+ Variables: 
+	currentLifesCount:  6,000000
+	enemyKilledPrecentageThisRound:  116,666700
+	enemyAverageLifetime:  3,624350
+ Evaluation Values: 
+	Lifes:  0,301875
+	Kills Precentage:  1,833333
+	Enemy Lifetime:  -0,2081168
+Dynamic Difficulty Multiplier:  0,321182
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:56:46
+Score: 4500
+ Variables: 
+	currentLifesCount:  6,000000
+	enemyKilledPrecentageThisRound:  80,000000
+	enemyAverageLifetime:  2,566623
+ Evaluation Values: 
+	Lifes:  0,301875
+	Kills Precentage:  0,000000
+	Enemy Lifetime:  0,144459
+Dynamic Difficulty Multiplier:  0,074389
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:57:00
+Score: 5290
+ Variables: 
+	currentLifesCount:  7,000000
+	enemyKilledPrecentageThisRound:  76,923080
+	enemyAverageLifetime:  3,772259
+ Evaluation Values: 
+	Lifes:  0,970510
+	Kills Precentage:  -0,153846
+	Enemy Lifetime:  -0,2574195
+Dynamic Difficulty Multiplier:  0,093207
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:57:05
+Score: 6000
+ Variables: 
+	currentLifesCount:  7,000000
+	enemyKilledPrecentageThisRound:  80,000000
+	enemyAverageLifetime:  4,357065
+ Evaluation Values: 
+	Lifes:  0,970510
+	Kills Precentage:  0,000000
+	Enemy Lifetime:  -0,4523549
+Dynamic Difficulty Multiplier:  0,086359
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:57:13
+Score: 6920
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  5,168991
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  -0,722997
+Dynamic Difficulty Multiplier:  0,212834
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:57:20
+Score: 7590
+ Variables: 
+	currentLifesCount:  7,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  3,479309
+ Evaluation Values: 
+	Lifes:  0,970510
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  -0,1597697
+Dynamic Difficulty Multiplier:  0,301790
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:57:27
+Score: 8310
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  4,439078
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  -0,4796928
+Dynamic Difficulty Multiplier:  0,253385
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:57:39
+Score: 9180
+ Variables: 
+	currentLifesCount:  9,000000
+	enemyKilledPrecentageThisRound:  69,230770
+	enemyAverageLifetime:  3,296929
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -0,538462
+	Enemy Lifetime:  -0,09897629
+Dynamic Difficulty Multiplier:  0,060427
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:57:48
+Score: 9870
+ Variables: 
+	currentLifesCount:  9,000000
+	enemyKilledPrecentageThisRound:  66,666660
+	enemyAverageLifetime:  4,076531
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -0,666667
+	Enemy Lifetime:  -0,3588438
+Dynamic Difficulty Multiplier:  -0,004252
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 16:58:17
+Score: 10500
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  +nieskończoność
+	enemyAverageLifetime:  4,076531
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  +nieskończoność
+	Enemy Lifetime:  -0,3588438
+Dynamic Difficulty Multiplier:  +nieskończoność
+-----------------------------------------------------------------------------------------
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+Login Date: 18.02.2023 19:13:21
+Score: 1560
+ Variables: 
+	currentLifesCount:  5,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  2,299796
+ Evaluation Values: 
+	Lifes:  0,117561
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  0,2334015
+Dynamic Difficulty Multiplier:  0,225160
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:13:29
+Score: 2440
+ Variables: 
+	currentLifesCount:  6,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  3,971431
+ Evaluation Values: 
+	Lifes:  0,301875
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  -0,3238104
+Dynamic Difficulty Multiplier:  0,163011
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:13:35
+Score: 3050
+ Variables: 
+	currentLifesCount:  6,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  2,143741
+ Evaluation Values: 
+	Lifes:  0,301875
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  0,2854197
+Dynamic Difficulty Multiplier:  0,264549
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:13:44
+Score: 3780
+ Variables: 
+	currentLifesCount:  7,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  2,866130
+ Evaluation Values: 
+	Lifes:  0,970510
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  0,04462321
+Dynamic Difficulty Multiplier:  0,335856
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:13:52
+Score: 4560
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  88,888890
+	enemyAverageLifetime:  3,269118
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,444444
+	Enemy Lifetime:  -0,08970586
+Dynamic Difficulty Multiplier:  0,225790
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:14:04
+Score: 5280
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  60,000000
+	enemyAverageLifetime:  2,829802
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  0,05673265
+Dynamic Difficulty Multiplier:  0,009455
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:14:12
+Score: 6160
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  87,500000
+	enemyAverageLifetime:  2,434675
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,375000
+	Enemy Lifetime:  0,1884416
+Dynamic Difficulty Multiplier:  0,260574
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:14:21
+Score: 6900
+ Variables: 
+	currentLifesCount:  9,000000
+	enemyKilledPrecentageThisRound:  87,500000
+	enemyAverageLifetime:  3,379923
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,375000
+	Enemy Lifetime:  -0,126641
+Dynamic Difficulty Multiplier:  0,208060
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:14:30
+Score: 7500
+ Variables: 
+	currentLifesCount:  9,000000
+	enemyKilledPrecentageThisRound:  70,000000
+	enemyAverageLifetime:  2,927327
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -0,500000
+	Enemy Lifetime:  0,02422436
+Dynamic Difficulty Multiplier:  0,087371
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:14:37
+Score: 8270
+ Variables: 
+	currentLifesCount:  10,000000
+	enemyKilledPrecentageThisRound:  71,428570
+	enemyAverageLifetime:  5,204655
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  -0,428571
+	Enemy Lifetime:  -0,734885
+Dynamic Difficulty Multiplier:  -0,027243
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:14:47
+Score: 9020
+ Variables: 
+	currentLifesCount:  9,000000
+	enemyKilledPrecentageThisRound:  87,500000
+	enemyAverageLifetime:  6,169876
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,375000
+	Enemy Lifetime:  -1
+Dynamic Difficulty Multiplier:  0,062500
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:14:55
+Score: 9750
+ Variables: 
+	currentLifesCount:  11,000000
+	enemyKilledPrecentageThisRound:  87,500000
+	enemyAverageLifetime:  4,617397
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,375000
+	Enemy Lifetime:  -0,5391324
+Dynamic Difficulty Multiplier:  0,139311
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 19:15:15
+Score: 10500
+ Variables: 
+	currentLifesCount:  12,000000
+	enemyKilledPrecentageThisRound:  125,000000
+	enemyAverageLifetime:  17,242420
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  2,250000
+	Enemy Lifetime:  -1
+Dynamic Difficulty Multiplier:  0,375000
+-----------------------------------------------------------------------------------------
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+Login Date: 18.02.2023 22:35:58
+Score: 1520
+ Variables: 
+	currentLifesCount:  5,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  2,428940
+ Evaluation Values: 
+	Lifes:  0,117561
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  0,1903534
+Dynamic Difficulty Multiplier:  0,217986
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:36:05
+Score: 2840
+ Variables: 
+	currentLifesCount:  6,000000
+	enemyKilledPrecentageThisRound:  80,000000
+	enemyAverageLifetime:  1,208447
+ Evaluation Values: 
+	Lifes:  0,301875
+	Kills Precentage:  0,000000
+	Enemy Lifetime:  0,5971844
+Dynamic Difficulty Multiplier:  0,149843
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:36:08
+Score: 3020
+ Variables: 
+	currentLifesCount:  6,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  3,240728
+ Evaluation Values: 
+	Lifes:  0,301875
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  -0,08024279
+Dynamic Difficulty Multiplier:  0,203605
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:36:09
+Score: 4080
+ Variables: 
+	currentLifesCount:  7,000000
+	enemyKilledPrecentageThisRound:  50,000000
+	enemyAverageLifetime:  1,294682
+ Evaluation Values: 
+	Lifes:  0,970510
+	Kills Precentage:  -1,000000
+	Enemy Lifetime:  0,5684395
+Dynamic Difficulty Multiplier:  0,089825
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:36:12
+Score: 4510
+ Variables: 
+	currentLifesCount:  7,000000
+	enemyKilledPrecentageThisRound:  300,000000
+	enemyAverageLifetime:  8,539242
+ Evaluation Values: 
+	Lifes:  0,970510
+	Kills Precentage:  11,000000
+	Enemy Lifetime:  -1
+Dynamic Difficulty Multiplier:  1,828418
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:36:22
+Score: 5260
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  91,666660
+	enemyAverageLifetime:  2,764231
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,583333
+	Enemy Lifetime:  0,07858952
+Dynamic Difficulty Multiplier:  0,276987
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:37:11
+Score: 6200
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  80,000000
+	enemyAverageLifetime:  5,078330
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,000000
+	Enemy Lifetime:  -0,6927765
+Dynamic Difficulty Multiplier:  0,051204
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:37:17
+Score: 6810
+ Variables: 
+	currentLifesCount:  9,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  2,938091
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  0,02063624
+Dynamic Difficulty Multiplier:  0,336773
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:37:27
+Score: 7510
+ Variables: 
+	currentLifesCount:  9,000000
+	enemyKilledPrecentageThisRound:  90,000000
+	enemyAverageLifetime:  2,839406
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,500000
+	Enemy Lifetime:  0,05353141
+Dynamic Difficulty Multiplier:  0,258922
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:37:32
+Score: 8250
+ Variables: 
+	currentLifesCount:  10,000000
+	enemyKilledPrecentageThisRound:  125,000000
+	enemyAverageLifetime:  4,092361
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  2,250000
+	Enemy Lifetime:  -0,3641205
+Dynamic Difficulty Multiplier:  0,480980
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:37:40
+Score: 9040
+ Variables: 
+	currentLifesCount:  10,000000
+	enemyKilledPrecentageThisRound:  80,000000
+	enemyAverageLifetime:  2,893593
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,000000
+	Enemy Lifetime:  0,03546906
+Dynamic Difficulty Multiplier:  0,172578
+-----------------------------------------------------------------------------------------
+Login Date: 18.02.2023 22:37:48
+Score: 9770
+ Variables: 
+	currentLifesCount:  11,000000
+	enemyKilledPrecentageThisRound:  87,500000
+	enemyAverageLifetime:  4,104584
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,375000
+	Enemy Lifetime:  -0,3681946
+Dynamic Difficulty Multiplier:  0,167801
+-----------------------------------------------------------------------------------------
+
+##############################
+NEW GAME LOGS
+Login Date: 18.02.2023 22:58:22
+Score: 2000
+ Variables: 
+	currentLifesCount:  1,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  1,771790
+ Evaluation Values: 
+	Lifes:  -1,000000
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  0,4094035
+Dynamic Difficulty Multiplier:  0,068234
+-----------------------------------------------------------------------------------------
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS

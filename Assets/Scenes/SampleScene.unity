@@ -884,15 +884,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977db1181ed0c7c4b807df619ffc1569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnNormalOff: 0
-  spawnHommingOff: 0
-  spawnSniperOff: 0
+  spawnNormalOff: 1
+  spawnHommingOff: 1
+  spawnSniperOff: 1
   normalEnemy: {fileID: 6234781747577869134, guid: 9a3645aa098705948a59a773ccac909b, type: 3}
   normalSpawnCd: 2.8
   hommingEnemy: {fileID: 7164936644740793517, guid: 2be86baaad704844e8b47c1e5f42c078, type: 3}
   hommingSpawnCd: 4.3
   sniperEnemy: {fileID: 6037528568567741527, guid: dab1f5b3e682cec43a4e0b2a092ade6a, type: 3}
-  sniperSpawnCd: 6.3
+  sniperSpawnCd: 7.1
   boss: {fileID: 2443744641368675913, guid: 3a18f35c625132f4e9cb8317164bd325, type: 3}
   colliders: []
   radius: 20
@@ -900,10 +900,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   scoreToSpawnNormal: 0
-  scoreToSpawnHomming: 800
-  scoreToSpawnSniper: 2500
-  scoreToSpawnBoss: 100
-  bossManager: {fileID: 0}
+  scoreToSpawnHomming: 900
+  scoreToSpawnSniper: 3000
+  scoreToSpawnBoss: 10
 --- !u!114 &376018261
 MonoBehaviour:
   m_ObjectHideFlags: 0

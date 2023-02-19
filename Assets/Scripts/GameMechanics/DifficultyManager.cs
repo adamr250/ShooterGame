@@ -18,7 +18,7 @@ public class DifficultyManager : MonoBehaviour
 
     private float enemyLifetimeThisRound = 0;
     private float enemyAverageLifetime = 0;
-    private int scoreThreshold = 750;
+    public static int scoreThreshold = 1000;
     public static float dynamicDifficultyMultiplier = 0;
 
 
@@ -31,7 +31,7 @@ public class DifficultyManager : MonoBehaviour
     {
         if (scoreThreshold <= Score.scoreNum)
         {
-            scoreThreshold += 750;
+            scoreThreshold += 1000;
 
             updateDifficulty();
         }
@@ -60,9 +60,9 @@ public class DifficultyManager : MonoBehaviour
         }
 
 
-        //zak³adamy ¿e 4 ¿ycie to granica. poni¿ej 4 ¿yæ wynik ujemny, powy¿ej - dodatni
+        //zak³adamy ¿e 4 ¿ycia to granica. poni¿ej 4 ¿yæ, wynik ujemny, powy¿ej - dodatni
         int currentLifesCount = Life.lifeNum;
-        if (currentLifesCount < 4)
+        if (currentLifesCount <= 4)
         {
             evaluationLifes = ((float)currentLifesCount / 3) - (4.0f / 3.0f);
         }

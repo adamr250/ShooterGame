@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ac42bcfeccf894caa52c257d9c871f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPref: {fileID: 5404478362954745999, guid: 311050c06f5c9eb448a55eeb8dd0406e, type: 3}
+  bulletPref: {fileID: 5404478362954745999, guid: 97094ce8fa2b7204d931cfbdfa02cd01, type: 3}
   shootCooldown: 1
 --- !u!50 &8294944259349723816
 Rigidbody2D:
@@ -59,7 +59,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

@@ -18,6 +18,7 @@ TagManager:
   - Waypoint
   - Boss
   - SniperBullet
+  - BossBullet
   layers:
   - Default
   - TransparentFX

@@ -81,16 +81,18 @@ public class Player : MonoBehaviour
         switch (tagName)
         {
             case "Enemy":
+            case "Boss":
                 if (!invincible)
                     dmgTaken(100);
                 break;
             case "EnemyBullet":
+            case "BossBullet":
                 if (!invincible)
-                    dmgTaken(30);
+                    dmgTaken(20);
                 break;
             case "SniperBullet":
                 if (!invincible)
-                    dmgTaken(51);
+                    dmgTaken(60);
                 break;
             case "LifeBuff":
                 life.lifeChangeValue(1);

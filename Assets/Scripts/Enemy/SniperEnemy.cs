@@ -16,9 +16,8 @@ public class SniperEnemy : MonoBehaviour
 
     private int shootCounter = 0;
 
-    public float shootCooldown = 1.0f;
+    public float shootCooldown = 1.4f;
     public GameObject bulletPref;
-    public float speed = 3.0f;
     Rigidbody2D body;
 
     [SerializeField] private float defaultDistanceRay = 15;
@@ -32,7 +31,7 @@ public class SniperEnemy : MonoBehaviour
     private bool isAiming = false;
     private bool isReloading = false;
     private bool isShooting = false;
-    private bool isFreshlySpawned = true;
+    //private bool isFreshlySpawned = true;
 
     private bool gotKilled = false; //czy zostal zabity przez gracza
 
@@ -95,12 +94,12 @@ public class SniperEnemy : MonoBehaviour
                 lineRenderer.enabled = true;
             } else if(isReloading)
             {
-                if (!isFreshlySpawned)
-                {
+                //if (!isFreshlySpawned)
+                //{
                     Instantiate(bulletPref, lineRenderer.GetPosition(lineRenderer.positionCount - 1), Quaternion.Euler(0.0f, 0.0f, rotation - 90));
                     shootCounter++;
-                }
-                isFreshlySpawned = false;
+                //}
+                //isFreshlySpawned = false;
 
                 //Debug.Log("isRealoading");
                 isAiming = true;
@@ -111,7 +110,7 @@ public class SniperEnemy : MonoBehaviour
         }
         aimLaser();
 
-        if(shootCounter > 4)
+        if(shootCounter > 5)
         {
             DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;
             Destroy(gameObject);

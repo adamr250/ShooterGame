@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BossBodyManager : MonoBehaviour
 {
+    SpawnEnemies spawnEnemies;
     private float bodyPartsDistance = 0.225f;
 
     [SerializeField] List<GameObject> bodyParts = new List<GameObject>();
@@ -20,6 +21,7 @@ public class BossBodyManager : MonoBehaviour
 
     void Start()
     {
+        spawnEnemies = GameObject.Find("GameCore").GetComponent<SpawnEnemies>();
         //countUp = bodyPartsDistance;
         createBody();
     }
@@ -110,6 +112,6 @@ public class BossBodyManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        SceneManager.LoadSceneAsync(0);
+        spawnEnemies.increaseBossScoreThreshold();
     }
 }
