@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    public static bool Paused = false;
+    public static bool isPaused = false;
+
+    [SerializeField] GameObject pauseText;
 
     void Update()
     {
@@ -16,19 +18,21 @@ public class Pause : MonoBehaviour
 
     public void pauseGame()
     {
+        isPaused = !isPaused;
 
-        if (Paused)
+        if (!isPaused)
         {
             Time.timeScale = 1.0f;
-            Paused = false;
+            pauseText.SetActive(true);
             Debug.Log("Unpaused");
 
         }
-        else if (!Paused)
+        else if (isPaused)
         {
             Time.timeScale = 0f;
-            Paused = true;
+            pauseText.SetActive(false);
             Debug.Log("Paused");
+
         }
     }
 }

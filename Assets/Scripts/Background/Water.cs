@@ -12,7 +12,7 @@ public class Water : MonoBehaviour
         transform.Translate(0, -movement, 0);
 
         if (transform.position.y <= -10.0f) {
-            transform.position = new Vector3(0.0f, 10.0f, 100.0f);
+            transform.position = new Vector3(0.0f, 10.0f, 10.0f);
         }
     }
 }

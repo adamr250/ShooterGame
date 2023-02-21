@@ -29,7 +29,7 @@ public class AimAndShoot : MonoBehaviour
 
     void Update()
     {
-        if (!Pause.Paused)
+        if (!Pause.isPaused)
         {
             mouse = transform.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
 

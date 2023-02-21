@@ -55,7 +55,7 @@ public class SpawnBuffs : MonoBehaviour
 
 		//losujemy, ktory buff sie pojawi
 		int randomWeight = Random.Range(0, weightsSum);
-		for (int i = 0; i < weights.Length; ++i)
+		for (int i = 0; i < weights.Length; i++)
 		{
 			randomWeight -= weights[i];
 			if (randomWeight <= 0)
