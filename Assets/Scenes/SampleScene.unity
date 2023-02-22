@@ -902,8 +902,8 @@ MonoBehaviour:
     m_Bits: 128
   scoreToSpawnNormal: 0
   scoreToSpawnHomming: 900
-  scoreToSpawnSniper: 3000
-  scoreToSpawnBoss: 10000
+  scoreToSpawnSniper: 300
+  scoreToSpawnBoss: 10
 --- !u!114 &376018261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba142f6d0af020478d260646e1a547e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseText: {fileID: 408279668}
 --- !u!114 &376018264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,7 +1517,7 @@ MonoBehaviour:
   speed: 6
   boostedSpeed: 0
   shootCooldown: 1
-  invincible: 1
+  invincible: 0
   isCooldown: 0
   shield: {fileID: 846957844662520088, guid: b014a2a4bb123b543b0b3c8c74f51b0a, type: 3}
   lifeHolder: {fileID: 2089097213}

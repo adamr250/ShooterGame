@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
             attackBoosted = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && Bomb.bombCount > 0)
+        if(Input.GetKeyDown(KeyCode.Space) && Bomb.bombCount > 0 && !Pause.isPaused)
         {
             bomb.bombTextDisplay(-1);
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -86,9 +86,12 @@ public class Player : MonoBehaviour
                     dmgTaken(100);
                 break;
             case "EnemyBullet":
-            case "BossBullet":
                 if (!invincible)
                     dmgTaken(20);
+                break;
+            case "BossBullet":
+                if (!invincible)
+                    dmgTaken(25);
                 break;
             case "SniperBullet":
                 if (!invincible)

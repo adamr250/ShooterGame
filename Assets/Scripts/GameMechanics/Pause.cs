@@ -23,14 +23,14 @@ public class Pause : MonoBehaviour
         if (!isPaused)
         {
             Time.timeScale = 1.0f;
-            pauseText.SetActive(true);
+            pauseText.SetActive(false);
             Debug.Log("Unpaused");
 
         }
         else if (isPaused)
         {
             Time.timeScale = 0f;
-            pauseText.SetActive(false);
+            pauseText.SetActive(true);
             Debug.Log("Paused");
 
         }

@@ -58,7 +58,7 @@ public class SpawnBuffs : MonoBehaviour
 		for (int i = 0; i < weights.Length; i++)
 		{
 			randomWeight -= weights[i];
-			if (randomWeight <= 0)
+			if (randomWeight < 0)
 			{
 				Instantiate(buffType[i], spawnPoint, Quaternion.Euler(0.0f, 0.0f, 0.0f));
 				return;
