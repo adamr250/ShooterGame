@@ -5,7 +5,9 @@ using UnityEngine;
 public class HommingEnemy : MonoBehaviour
 {
     Score score;
+    SpawnBuffs spawnBuffs;
 
+    private GameObject buffsObject;
     private GameObject scoreHolder;
     private Vector3 direction;
 
@@ -27,6 +29,9 @@ public class HommingEnemy : MonoBehaviour
         score = scoreHolder.GetComponent<Score>();
 
         body = GetComponent<Rigidbody2D>();
+
+        buffsObject = GameObject.Find("GameCore");
+        spawnBuffs = buffsObject.GetComponent<SpawnBuffs>();
     }
 
     void Update()
@@ -66,6 +71,7 @@ public class HommingEnemy : MonoBehaviour
         if (gotKilled)
         {
             DifficultyManager.enemyKilledCount++;
+            spawnBuffs.spawnBuffs(transform.position);
             score.increaseScore(100);
         }
         DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;

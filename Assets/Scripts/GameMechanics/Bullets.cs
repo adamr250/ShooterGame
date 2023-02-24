@@ -7,10 +7,6 @@ public class Bullets : MonoBehaviour
     private float speed = 200.0f;
 
     private float[] bulletLifeTime = { 1.5f, 2.5f, 0.2f, 0.75f }; //Normal, Boss, Sniper, Player
-    //private float lifeTime_Enemy = 1.5f;
-    //private float lifeTime_Boss = 2.5f;
-    //private float lifeTime_Sniper = 0.2f;
-    //private float lifeTime_Player = 0.75f;
     private float playerBulletSpeed = 400.0f;
 
     private Rigidbody2D body;
@@ -51,7 +47,7 @@ public class Bullets : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (gameObject.tag != "Player")
+        if (gameObject.tag != "PlayerBullet")
         {
             if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Player")
             {

@@ -42,3 +42,6 @@
 
 -gracz: chwilowa niewrażliwość po otrzymaniu obrażeń
 -buffs: zmiana prawdopodobieństwa wypadnięcia dodatkowego życie kiedy gracz ma mało żyć
+
+-posprzątać w kodzie
+-sniper: ogarnąć po co jest zmienna bool isFreshlySpawned (odpowiedź: po nic xD)

@@ -82,8 +82,10 @@ public class DifficultyManager : MonoBehaviour
             evaluationKills = -1;
 
         //zak³adamy ¿e max czas ¿ycia wrogów to 6s, wszystko powy¿ej jest automatycznie -1
-        if (enemyAverageLifetime <= 6)
-            evaluationEnemyLifetime = -((enemyAverageLifetime / 3.0f) - 1);
+        if (enemyAverageLifetime <= 1)
+            evaluationEnemyLifetime = 1;
+        if (enemyAverageLifetime > 1 && enemyAverageLifetime < 6)
+            evaluationEnemyLifetime = -0.4f * enemyAverageLifetime + 1.4f;
         else
             evaluationEnemyLifetime = -1;
 

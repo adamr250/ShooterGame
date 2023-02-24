@@ -1,5 +1,4 @@
--posprzątać w kodzie
--sniper: ogarnąć po co jest zmienna bool isFreshlySpawned
+-usunąć konsolę
 
 
 -sniper: ucieka na wyższym poziomie trudności

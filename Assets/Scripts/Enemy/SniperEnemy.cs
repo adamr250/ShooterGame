@@ -5,11 +5,12 @@ using UnityEngine;
 public class SniperEnemy : MonoBehaviour
 {
     Score score;
+    SpawnBuffs spawnBuffs;
 
+    private GameObject buffsObject;
     private GameObject scoreHolder;
     private float shootTimer = 0.0f;
     private Transform child;
-    private Vector3 enemyGun;
     private Vector3 target;
     private Vector3 direction;
     private float rotation;
@@ -31,7 +32,6 @@ public class SniperEnemy : MonoBehaviour
     private bool isAiming = false;
     private bool isReloading = false;
     private bool isShooting = false;
-    //private bool isFreshlySpawned = true;
 
     private bool gotKilled = false; //czy zostal zabity przez gracza
 
@@ -55,13 +55,14 @@ public class SniperEnemy : MonoBehaviour
 
         shootTimer = Time.time + shootCooldown;
         isReloading = true;
+
+        buffsObject = GameObject.Find("GameCore");
+        spawnBuffs = buffsObject.GetComponent<SpawnBuffs>();
     }
 
 
     void Update()
     {
-        enemyGun = child.transform.position;
-
         if (isShooting)
         {
             target = GameObject.Find("Player").transform.position;
@@ -79,29 +80,21 @@ public class SniperEnemy : MonoBehaviour
             shootTimer = Time.time + shootCooldown / (OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier);
             if (isAiming)
             {
-                //Debug.Log("isAiming");
                 isAiming = false;
                 isShooting = true;
                 isReloading = false;
                 lineRenderer.enabled = true;
             } else if(isShooting)
             {
-                //Debug.Log("isShooting");
                 isAiming = false;
                 isShooting = false;
                 isReloading = true;
-                //isShooting = true;
                 lineRenderer.enabled = true;
             } else if(isReloading)
             {
-                //if (!isFreshlySpawned)
-                //{
-                    Instantiate(bulletPref, lineRenderer.GetPosition(lineRenderer.positionCount - 1), Quaternion.Euler(0.0f, 0.0f, rotation - 90));
-                    shootCounter++;
-                //}
-                //isFreshlySpawned = false;
+                Instantiate(bulletPref, lineRenderer.GetPosition(lineRenderer.positionCount - 1), Quaternion.Euler(0.0f, 0.0f, rotation - 90));
+                shootCounter++;
 
-                //Debug.Log("isRealoading");
                 isAiming = true;
                 isShooting = false;
                 isReloading = false;
@@ -155,6 +148,7 @@ public class SniperEnemy : MonoBehaviour
         {
             DifficultyManager.enemyKilledCount++;
             score.increaseScore(250);
+            spawnBuffs.spawnBuffs(transform.position);
         }
         DifficultyManager.enemyTotalLifetime += Time.time - spawnTime;
     }
