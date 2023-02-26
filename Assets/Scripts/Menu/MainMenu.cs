@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 
     public void playGame()
     {
+        gameObject.GetComponent<ResetValues>().reserValues();
         SceneManager.LoadSceneAsync(1);
         //SceneManager.UnloadSceneAsync(0);
     }

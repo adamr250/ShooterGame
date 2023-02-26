@@ -17,8 +17,8 @@ public class AimAndShoot : MonoBehaviour
     private float shootCooldownDefault = 0.3f;
     private float shootCooldownBoosted = 0.2f;
     private float shootCooldown;
-    public float shotgunCooldown = 5.0f;
-    public GameObject bulletPref;
+    private float shotgunCooldown = 5.0f;
+    [SerializeField] GameObject bulletPref;
 
     void Start()
     {

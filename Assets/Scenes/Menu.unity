@@ -1456,6 +1456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 908710666}
   - component: {fileID: 908710667}
+  - component: {fileID: 908710668}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1498,6 +1499,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionMenu: {fileID: 1682020903}
+--- !u!114 &908710668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908710665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f73161b14aab64dbd9ce80871d515f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &958804670
 GameObject:
   m_ObjectHideFlags: 0

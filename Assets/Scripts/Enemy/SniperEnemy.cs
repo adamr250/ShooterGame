@@ -17,8 +17,8 @@ public class SniperEnemy : MonoBehaviour
 
     private int shootCounter = 0;
 
-    public float shootCooldown = 1.4f;
-    public GameObject bulletPref;
+    [SerializeField] private float shootCooldown = 1.4f;
+    [SerializeField] GameObject bulletPref;
     Rigidbody2D body;
 
     [SerializeField] private float defaultDistanceRay = 15;

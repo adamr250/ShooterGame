@@ -13,8 +13,8 @@ public class HealthBar : MonoBehaviour
     private float afterDamageInvulnerabilityDuration = 0.3f;
     private bool isInvulnerable = false;
 
-    public GameObject lifeHolder;
-    public Slider slider;
+    [SerializeField] GameObject lifeHolder;
+    [SerializeField] Slider slider;
 
     void Start()
     {

@@ -10,29 +10,24 @@ public class Player : MonoBehaviour
     HealthBar healthBar;
     Bomb bomb;
 
-    private float startX = 2.75f;
-	private float startY = -3.0f;
 	private float movementVertical, movementHorizontal;
 
     public static bool attackBoosted = false;
     private float attackBoostDuration = 8.0f;
     private float attackBoostTimer;
 
-    public float speed;
-    public float boostedSpeed;
-    public float shootCooldown = 2.0f;
-    public bool invincible;
-    public bool isCooldown;
-    public GameObject shield;
-    public GameObject lifeHolder;
-    public GameObject health;
-    public GameObject bombObject;
+    [SerializeField] private float speed = 6.0f;
+    [SerializeField] private bool invincible;
+
+    [SerializeField] private GameObject lifeHolder;
+    [SerializeField] private GameObject health;
+    [SerializeField] private GameObject bombObject;
 
     Rigidbody2D body;
 
     void Start()
     {
-        transform.position = new Vector2(startX, startY);
+        transform.position = new Vector2(2.75f, -3.0f);
         
         body = GetComponent<Rigidbody2D>();
         healthBar = health.GetComponent<HealthBar>();
@@ -50,7 +45,7 @@ public class Player : MonoBehaviour
             attackBoosted = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && Bomb.bombCount > 0 && !Pause.isPaused)
+        if(Input.GetKeyDown(KeyCode.Space) && !Pause.isPaused)
         {
             bomb.bombTextDisplay(-1);
             bomb.activateBomb();

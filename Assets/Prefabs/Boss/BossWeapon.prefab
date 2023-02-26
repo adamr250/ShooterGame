@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPref: {fileID: 5404478362954745999, guid: 97094ce8fa2b7204d931cfbdfa02cd01, type: 3}
-  shootCooldown: 11111
+  shootCooldown: 1
 --- !u!50 &8294944259349723816
 Rigidbody2D:
   serializedVersion: 4

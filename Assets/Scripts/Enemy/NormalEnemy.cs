@@ -7,7 +7,7 @@ public class NormalEnemy : MonoBehaviour
 	Score score;
 	SpawnBuffs spawnBuffs;
 
-	[SerializeField] private float speed;
+	[SerializeField] private float speed; // = 75;
 
 	private float shootTimer;
 	private Transform child;
@@ -17,9 +17,9 @@ public class NormalEnemy : MonoBehaviour
 
 	private float rotation;
 
-	public int health;
-	public float shootCooldown;
-	public GameObject bulletPref;
+	[SerializeField] private int health; // = 100;
+	[SerializeField] private float shootCooldown; // = 0.59;
+	[SerializeField] private GameObject bulletPref;
 
 	private Vector3 target;
 	private Vector3 direction;

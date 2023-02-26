@@ -18,8 +18,12 @@ public class BossHealthBar : MonoBehaviour
     private float invulnerabilityDuration = 1.0f;
     private float invulnerabilityTimer = 0.0f;
 
+    Camera cam;
     void Start()
     {
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        gameObject.transform.parent.gameObject.GetComponent<Canvas>().worldCamera = cam;
+
         healthThreshold = bossMaxHealth;
         healthSegmentValue = bossMaxHealth / 8;
         healthSegment = healthSegmentValue;

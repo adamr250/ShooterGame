@@ -15,7 +15,7 @@ public class DamageManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            dmgTaken(20);
+            dmgTaken(15);
         }
     }
 

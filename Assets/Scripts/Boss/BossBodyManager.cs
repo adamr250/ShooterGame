@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BossBodyManager : MonoBehaviour
 {
     SpawnEnemies spawnEnemies;
-    private float bodyPartsDistance = 0.225f;
+    private float bodyPartsDistance = 0.235f;
 
     [SerializeField] List<GameObject> bodyParts = new List<GameObject>();
     List<GameObject> bossBody = new List<GameObject>();
@@ -62,35 +62,33 @@ public class BossBodyManager : MonoBehaviour
 
     void createBody()
     {
+        //tworzy glowe
         if(bossBody.Count == 0)
         {
-            GameObject tmp1 = Instantiate(bodyParts[0], transform.position, transform.rotation, transform);
-            if (!tmp1.GetComponent<CheckpointManager>())
-                tmp1.AddComponent<CheckpointManager>();
-            bossBody.Add(tmp1);
+            GameObject head = Instantiate(bodyParts[0], transform.position, transform.rotation, transform);
+            if (!head.GetComponent<CheckpointManager>())
+                head.AddComponent<CheckpointManager>();
+            bossBody.Add(head);
             bodyParts.RemoveAt(0);
         }
 
+        //pobierami liste pozycji ostatniego stworzonego segmentu
         CheckpointManager checkpoint = bossBody[bossBody.Count - 1].GetComponent<CheckpointManager>();
-
-        if(bodyPartSpawnDelay == 0)
-        {
-            checkpoint.clearCheckpointList();
-        }
 
         bodyPartSpawnDelay += Time.deltaTime;
 
+        //tworzy cialo i bronie
         if(bodyPartSpawnDelay >= bodyPartsDistance)
         {
-            GameObject tmp2 = Instantiate(bodyParts[0], checkpoint.checkpointList[0].position, checkpoint.checkpointList[0].rotation, transform);
+            GameObject body = Instantiate(bodyParts[0], checkpoint.checkpointList[0].position, checkpoint.checkpointList[0].rotation, transform);
             GameObject weapon = Instantiate(weaponObject, checkpoint.checkpointList[0].position, checkpoint.checkpointList[0].rotation, transform);
 
-            if (!tmp2.GetComponent<CheckpointManager>())
-                tmp2.AddComponent<CheckpointManager>();
+            if (!body.GetComponent<CheckpointManager>())
+                body.AddComponent<CheckpointManager>();
 
-            bossBody.Add(tmp2);
+            bossBody.Add(body);
             bodyParts.RemoveAt(0);
-            tmp2.GetComponent<CheckpointManager>().clearCheckpointList();
+            body.GetComponent<CheckpointManager>().clearCheckpointList();
             bodyPartSpawnDelay = 0;
 
             weaponList.Add(weapon);

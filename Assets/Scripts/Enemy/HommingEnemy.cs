@@ -11,7 +11,7 @@ public class HommingEnemy : MonoBehaviour
     private GameObject scoreHolder;
     private Vector3 direction;
 
-    public float speed;
+    [SerializeField] private float speed;
 
     Rigidbody2D body;
 
@@ -49,7 +49,8 @@ public class HommingEnemy : MonoBehaviour
 
     void moveHommingEnemy (Vector2 dir)
     {
-        body.MovePosition((Vector2)transform.position + (dir * (speed * (OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier)) * Time.deltaTime));
+        body.velocity = body.transform.right * speed * Time.deltaTime;
+        //body.MovePosition((Vector2)transform.position + (dir * (speed * (OptionsMenu.defaultDifficultyMultiplier + DifficultyManager.dynamicDifficultyMultiplier)) * Time.deltaTime));
     }
 
     void OnCollisionEnter2D(Collision2D collision)

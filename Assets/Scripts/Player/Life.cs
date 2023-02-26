@@ -9,7 +9,7 @@ public class Life : MonoBehaviour
     private int addLifeOnScore = 1500;
 
     public static int lifeNum = 4;
-    public Text lifeText;
+    [SerializeField] Text lifeText;
 
     private void Start()
     {
