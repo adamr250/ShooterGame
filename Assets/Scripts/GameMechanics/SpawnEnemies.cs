@@ -72,7 +72,7 @@ public class SpawnEnemies : MonoBehaviour
         }
 
         //bulletHellTime();
-        if (normalSpawnCd > 1.0f)
+        if (normalSpawnCd > 0.8f)
             normalSpawnCd = 2.8f/(1+((float)Score.scoreNum/20000));
 
     }

@@ -37,9 +37,6 @@ public class AimAndShoot : MonoBehaviour
             float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             GameObject.Find("PlayerSprite").transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotation-90);
 
-            //Debug.Log("m: " + mouse + "; P: " + GameObject.Find("PlayerSprite").transform.position);
-            //Debug.Log("dir: " + direction + "; k¹t: " + Mathf.Atan2(direction.y, direction.x) + "stopnie: " + rotation);
-
             if (Input.GetMouseButton(0) && Time.time > shootTimer)
             {
                 playerGun = GameObject.Find("PlayerGun").transform.position;
@@ -59,19 +56,16 @@ public class AimAndShoot : MonoBehaviour
                 shootTimer = Time.time + shootCooldown;
             };
 
-            if (Time.time > shotgunTimer)
+            if (Time.time > shotgunTimer && (Input.GetMouseButtonDown(1)) )
             {
-                if (Input.GetMouseButtonDown(1))
-                {
-                    shotgunTimer = Time.time + shotgunCooldown;
+                shotgunTimer = Time.time + shotgunCooldown;
 
-                    playerGun = GameObject.Find("PlayerGun").transform.position;
+                playerGun = GameObject.Find("PlayerGun").transform.position;
                     
-                    for (int i = 75; i <= 110; i += 5)
-                    {
-                        Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - i));
-                    }
-                };
+                for (int i = 75; i <= 110; i += 5)
+                {
+                    Instantiate(bulletPref, playerGun, Quaternion.Euler(0.0f, 0.0f, rotation - i));
+                }
             }
         }
 

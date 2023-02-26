@@ -53,17 +53,7 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && Bomb.bombCount > 0 && !Pause.isPaused)
         {
             bomb.bombTextDisplay(-1);
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
-
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                Destroy(enemies[i]);
-            }
-            for (int i = 0; i < enemyBullets.Length; i++)
-            {
-                Destroy(enemyBullets[i]);
-            }
+            bomb.activateBomb();
         }
     }
 
@@ -83,19 +73,19 @@ public class Player : MonoBehaviour
             case "Enemy":
             case "Boss":
                 if (!invincible)
-                    dmgTaken(100);
+                    healthBar.damageTaken(100);
                 break;
             case "EnemyBullet":
                 if (!invincible)
-                    dmgTaken(20);
+                    healthBar.damageTaken(20);
                 break;
             case "BossBullet":
                 if (!invincible)
-                    dmgTaken(25);
+                    healthBar.damageTaken(25);
                 break;
             case "SniperBullet":
                 if (!invincible)
-                    dmgTaken(60);
+                    healthBar.damageTaken(60);
                 break;
             case "LifeBuff":
                 life.lifeChangeValue(1);
@@ -110,10 +100,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void dmgTaken(int dmg)
-    {
-        healthBar.damageTaken(dmg);
-    }
     public void godmode()
     {
         invincible = !invincible;
