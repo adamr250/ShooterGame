@@ -26,7 +26,7 @@ public class AimAtPlayer : MonoBehaviour
 
     private void Update()
     {
-        shootCooldown = defaultShootCooldown / (1 + (float)BossBodyManager.bodyPartsDestroyedCounter / 3.5f);
+        shootCooldown = defaultShootCooldown / (1 + (float)BossBodyManager.bodyPartsDestroyedCounter / 7.0f);
     }
     void FixedUpdate()
     {
@@ -49,7 +49,7 @@ public class AimAtPlayer : MonoBehaviour
             shootTimer = Time.time + shootCooldown;
             if (BossHealthBar.isInvulnerable || !BossBodyManager.bossBodyCompleted)
                 return;
-            Instantiate(bulletPref, weaponPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90 + Random.Range(-10.0f, 10.0f)));
+            Instantiate(bulletPref, weaponPoint, Quaternion.Euler(0.0f, 0.0f, rotation - 90 + Random.Range(-6.0f, 6.0f)));
         }
     }
 }

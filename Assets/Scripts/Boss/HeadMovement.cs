@@ -63,7 +63,7 @@ public class HeadMovement : MonoBehaviour
             currentTarget = waypointTarget;
         }
 
-        body.velocity = body.transform.right * speed * Time.deltaTime;
+        body.velocity = body.transform.right * speed;
 
         direction = currentTarget.transform.position - transform.position;
         float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

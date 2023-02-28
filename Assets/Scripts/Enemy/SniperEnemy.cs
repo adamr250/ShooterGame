@@ -112,7 +112,7 @@ public class SniperEnemy : MonoBehaviour
 
     void aimLaser()
     {
-        if(Physics2D.Raycast(trans.position, transform.right, Mathf.Infinity, mask))
+        if(Physics2D.Raycast(trans.position, transform.right, defaultDistanceRay, mask))
         {
             RaycastHit2D hit = Physics2D.Raycast(child.transform.position, transform.right, Mathf.Infinity, mask);
             draw2DRay(child.transform.position, hit.point);

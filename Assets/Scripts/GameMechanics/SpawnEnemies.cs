@@ -71,7 +71,6 @@ public class SpawnEnemies : MonoBehaviour
             Instantiate(boss, new Vector3(-4.83f, 4.08f, 0.0f), Quaternion.identity);
         }
 
-        //bulletHellTime();
         if (normalSpawnCd > 0.8f)
             normalSpawnCd = 2.8f/(1+((float)Score.scoreNum/20000));
 

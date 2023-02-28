@@ -53,11 +53,7 @@ public class Player : MonoBehaviour
     }
 
 	void FixedUpdate() {
-        playerMovement();
-    }
-
-    void playerMovement() {
-        body.velocity = new Vector2(movementHorizontal * speed, movementVertical * speed);
+        body.velocity = new Vector2(movementHorizontal, movementVertical) * speed;
     }
 
 	void OnCollisionEnter2D(Collision2D collision)

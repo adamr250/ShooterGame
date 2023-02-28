@@ -7,7 +7,7 @@ public class NormalEnemy : MonoBehaviour
 	Score score;
 	SpawnBuffs spawnBuffs;
 
-	[SerializeField] private float speed; // = 75;
+	[SerializeField] private float speed; // = 1.5f;
 
 	private float shootTimer;
 	private Transform child;
@@ -39,7 +39,10 @@ public class NormalEnemy : MonoBehaviour
 		if (!gameObject.GetComponent<Rigidbody2D>())
         {
 			body = gameObject.AddComponent<Rigidbody2D>();
+			body.mass = 1;
 			body.gravityScale = 0;
+			body.drag = 0;
+			body.angularDrag = 0;
 			body.constraints = RigidbodyConstraints2D.FreezeRotation;
 		}
 
@@ -73,8 +76,8 @@ public class NormalEnemy : MonoBehaviour
 
 	private void FixedUpdate()
     {
-		movement();
-    }
+		body.velocity = speed *  -body.transform.up;
+	}
 
 	void Shooting()
 	{
@@ -98,11 +101,6 @@ public class NormalEnemy : MonoBehaviour
 		{
 			death();
 		}
-	}
-
-	void movement()
-    {
-		body.velocity = -body.transform.up * speed * Time.deltaTime;
 	}
 
 	void death()
