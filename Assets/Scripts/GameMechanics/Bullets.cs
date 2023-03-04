@@ -8,6 +8,7 @@ public class Bullets : MonoBehaviour
 
     private float[] bulletLifeTime = { 1.5f, 2.5f, 0.2f, 0.75f }; //Normal, Boss, Sniper, Player
     private float playerBulletSpeed = 400.0f;
+    public static float bossBulletSpeed = 250.0f;
 
     private Rigidbody2D body;
 
@@ -29,6 +30,7 @@ public class Bullets : MonoBehaviour
                 break;
             case "BossBullet":
                 Destroy(gameObject, bulletLifeTime[1]);
+                speed = bossBulletSpeed;
                 break;
             case "SniperBullet":
                 Destroy(gameObject, bulletLifeTime[2]);

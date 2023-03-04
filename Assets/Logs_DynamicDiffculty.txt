@@ -1625,3 +1625,48 @@ NEW GAME LOGS
 
 ##############################
 NEW GAME LOGS
+
+##############################
+NEW GAME LOGS
+Login Date: 02.03.2023 19:49:27
+Score: 2000
+ Variables: 
+	currentLifesCount:  6,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  1,893268
+ Evaluation Values: 
+	Lifes:  0,301875
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  0,6426926
+Dynamic Difficulty Multiplier:  0,324095
+-----------------------------------------------------------------------------------------
+Login Date: 02.03.2023 19:49:44
+Score: 3010
+ Variables: 
+	currentLifesCount:  6,000000
+	enemyKilledPrecentageThisRound:  100,000000
+	enemyAverageLifetime:  2,094724
+ Evaluation Values: 
+	Lifes:  0,301875
+	Kills Precentage:  1,000000
+	Enemy Lifetime:  0,5621105
+Dynamic Difficulty Multiplier:  0,310664
+-----------------------------------------------------------------------------------------
+Login Date: 02.03.2023 19:49:56
+Score: 4190
+ Variables: 
+	currentLifesCount:  8,000000
+	enemyKilledPrecentageThisRound:  90,909090
+	enemyAverageLifetime:  2,127849
+ Evaluation Values: 
+	Lifes:  1,000000
+	Kills Precentage:  0,545454
+	Enemy Lifetime:  0,5488603
+Dynamic Difficulty Multiplier:  0,349052
+-----------------------------------------------------------------------------------------
+
+##############################
+NEW GAME LOGS
+
+##############################
+NEW GAME LOGS

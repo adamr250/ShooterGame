@@ -35,13 +35,13 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] private int scoreToSpawnBoss;
     private int increaseScoreToSpawnBoss;
 
-    private bool bossIsSpawned = false;
+    public static bool bossIsSpawned = false;
 
     private void Start()
     {
         hommingSpawnTimer = hommingSpawnCd;
         sniperSpawnTimer = sniperSpawnCd;
-        normalSpawnTimer = normalSpawnCd;
+        normalSpawnTimer = normalSpawnCd + 2.0f; //dodajemy 2 aby pierwszy wróg pojawi³ siê z opuŸnieniem
 
         increaseScoreToSpawnBoss = scoreToSpawnBoss/2;
     }
@@ -67,7 +67,7 @@ public class SpawnEnemies : MonoBehaviour
         } else if(!bossIsSpawned)
         {
             bossIsSpawned = true;
-            DifficultyManager.scoreThreshold += 1000;
+            //DifficultyManager.scoreThreshold += 1000;
             Instantiate(boss, new Vector3(-4.83f, 4.08f, 0.0f), Quaternion.identity);
         }
 

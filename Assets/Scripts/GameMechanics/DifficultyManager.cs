@@ -32,13 +32,17 @@ public class DifficultyManager : MonoBehaviour
         if (scoreThreshold <= Score.scoreNum)
         {
             scoreThreshold += 1000;
-
+            if (SpawnEnemies.bossIsSpawned)
+            {
+                return;
+            }
             updateDifficulty();
         }
     }
 
     public void updateDifficulty()
     {
+
         if (Score.scoreNum < 1500)
         {
             updatePreviousVariables();
@@ -76,12 +80,15 @@ public class DifficultyManager : MonoBehaviour
         }
 
         //zak³adamy ¿e 60% zabitych wrogów to minimum, wszystko poni¿ej jest uatomatycznie -1
-        if (enemyKilledPrecentageThisRound >= 60)
+        //dla 80% funkcja przymuje 0
+        if (enemyKilledPrecentageThisRound >= 100)
+            evaluationKills = 1;
+        else if (enemyKilledPrecentageThisRound >= 60)
             evaluationKills = ((enemyKilledPrecentageThisRound - 60) / 20) - 1;
         else
             evaluationKills = -1;
 
-        //zak³adamy ¿e max czas ¿ycia wrogów to 6s, wszystko powy¿ej jest automatycznie -1
+        //zak³adamy ¿e max czas ¿ycia wrogów to 6s, wszystko powy¿ej jest automatycznie -1, zak³adamy, ¿e min czas ¿ycia to 1 sek.
         if (enemyAverageLifetime <= 1)
             evaluationEnemyLifetime = 1;
         if (enemyAverageLifetime > 1 && enemyAverageLifetime < 6)
@@ -93,10 +100,6 @@ public class DifficultyManager : MonoBehaviour
         float evaluationScore = evaluationLifes + evaluationKills + evaluationEnemyLifetime;
 
         dynamicDifficultyMultiplier = evaluationScore / 6;
-
-        Debug.Log("evaluations:  lifes - " + evaluationLifes + "; kills - " + evaluationKills + "; lifetime - " + evaluationEnemyLifetime);
-        //Debug.Log("evaluationScore: " + evaluationScore);
-        Debug.Log("dynamic diff multip: " + dynamicDifficultyMultiplier);
 
         updatePreviousVariables();
         string logContent = "Login Date: " + System.DateTime.Now + "\nScore: " + Score.scoreNum.ToString() +
@@ -116,7 +119,6 @@ public class DifficultyManager : MonoBehaviour
     {
         enemySpawnedCountPrevious = enemySpawnedCount;
         enemyKilledCountPrevious = enemyKilledCount;
-
 
         enemyTotalLifetimePrevious = enemyTotalLifetime;
     }

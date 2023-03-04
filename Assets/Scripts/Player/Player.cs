@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     private float attackBoostDuration = 8.0f;
     private float attackBoostTimer;
 
-    [SerializeField] private float speed = 6.0f;
+    [SerializeField] private float speed; // 6.0f;
     [SerializeField] private bool invincible;
 
     [SerializeField] private GameObject lifeHolder;

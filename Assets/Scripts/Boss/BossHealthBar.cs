@@ -66,11 +66,7 @@ public class BossHealthBar : MonoBehaviour
             slider.value = healthThreshold;
             healthSegment = healthSegmentValue;
             bossBodyManager.destoryBodySegment();
-
-            Debug.Log("Body part destroyed");
         }
-
-        Debug.Log("boss health: " + slider.value);
 
         if (slider.value <= 0)
         {
