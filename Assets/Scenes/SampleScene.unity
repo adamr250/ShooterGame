@@ -787,9 +787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977db1181ed0c7c4b807df619ffc1569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnNormalOff: 1
-  spawnHommingOff: 1
-  spawnSniperOff: 1
+  spawnNormalOff: 0
+  spawnHommingOff: 0
+  spawnSniperOff: 0
   normalEnemy: {fileID: 6234781747577869134, guid: 9a3645aa098705948a59a773ccac909b, type: 3}
   normalSpawnCd: 2.8
   hommingEnemy: {fileID: 7164936644740793517, guid: 2be86baaad704844e8b47c1e5f42c078, type: 3}
@@ -805,7 +805,7 @@ MonoBehaviour:
   scoreToSpawnNormal: 0
   scoreToSpawnHomming: 900
   scoreToSpawnSniper: 3000
-  scoreToSpawnBoss: 10
+  scoreToSpawnBoss: 10000
 --- !u!114 &376018261
 MonoBehaviour:
   m_ObjectHideFlags: 0
