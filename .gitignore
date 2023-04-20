@@ -1,3 +1,7 @@
 Temp/
 Logs/
 Library/
+.vs*
+*.csproj
+*.sln
+Builds\ShooterGame_Data\Logs_DynamicDiffculty.txt
